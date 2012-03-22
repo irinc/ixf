@@ -1,8 +1,8 @@
 /*!
  * IxF Plugins 
  * @description This file is a collection of jquery plugins and modernizr used by IxF.
- * @version     1.1.2 - 2012/3/19
- * @copyright   Intellectual Reserve, Inc.
+ * @version     1.1.2 - 2012/3/22
+ * @copyright   Copyright © 2012 by Intellectual Reserve, Inc.
  * @URL         http://irinc.github.com/ixf
  * global       ixf, $, window
  */
@@ -12,10 +12,10 @@ var ixf = ixf || {};
 /*!
  * fixSelect
  * @description	Allows us to style the select box across browsers
- * @version		1.1.3 - 2011/8/11
- * @author		Aaron Barker
- * @requires	ui.core.js (1.8+)
- * @licence		Licensed under the MIT license.
+ * @version     1.1.3 - 2011/8/11
+ * @copyright   Intellectual Reserve, Inc.
+ * @URL         http://irinc.github.com/ixf
+ * @requires    ui.core.js (1.8+)
  */
 (function($) {
 	$.widget("ixf.fixSelect", {
@@ -213,10 +213,11 @@ var ixf = ixf || {};
 /*!
  * fillHeight
  * @description	allows one of X siblings to take up all available space that the other siblings are not taking up.
- * @version		1.0 beta 2  - 2010/10/08
- * @author		Aaron Barker
- * @requires	ui.core.js (1.8+)
- * @Notes		call it on the element you want to fill the height. Requires the immediate parent to have a height set. It's expected (but not required) that the target element has an overflow:auto or something to allow scrolling if needed for excess content. 
+ * @version     1.0 beta 2  - 2010/10/08
+ * @copyright   Intellectual Reserve, Inc.
+ * @URL         http://irinc.github.com/ixf
+ * @requires	  ui.core.js (1.8+)
+ * @Notes		    call it on the element you want to fill the height. Requires the immediate parent to have a height set. It's expected (but not required) that the target element has an overflow:auto or something to allow scrolling if needed for excess content.
  */
 (function($) {
 	$.widget("ixf.fillHeight", {
@@ -259,7 +260,8 @@ var ixf = ixf || {};
  * fixHeader
  * @description	Fixes the header at the top of the page/scrollable element when it reaches the top. Scrolls of page with the end of the table.
  * @version		1.4  - 2011/04/11
- * @author		Aaron Barker
+ * @copyright   Intellectual Reserve, Inc.
+ * @URL         http://irinc.github.com/ixf
  * @requires	ui.core.js (1.8+)
  * @optional	jCaret (http://plugins.jquery.com/project/jCaret)
  */
@@ -611,10 +613,12 @@ var ixf = ixf || {};
  *
  * http://docs.jquery.com/UI/Watermark
  *
+ * @copyright   Intellectual Reserve, Inc.
+ * @URL         http://irinc.github.com/ixf
+
  * Depends:
  *	ui.core.js
-
-Not officially released jQuery UI version (http://jqueryui.pbworks.com/Watermark) modified to work with jQuery UI 1.8+ - AB
+ * Not officially released jQuery UI version (http://jqueryui.pbworks.com/Watermark) modified to work with jQuery UI 1.8+ - AB
  */
 (function($) {
 
@@ -682,11 +686,12 @@ Not officially released jQuery UI version (http://jqueryui.pbworks.com/Watermark
 })(jQuery);
 /*!
  * makeVisible
- * @description	Scrolls the target element into view when out of the screen (above or below), doesn't scroll if it is onscreen.
- * @version		1.0.5  - 2011/01/11
- * @author		Aaron Barker
- * @requires	ui.core.js (1.8+), scrollTo plugin
- * @optional	easing plugin
+ * @description Scrolls the target element into view when out of the screen (above or below), doesn't scroll if it is onscreen.
+ * @version     1.0.5  - 2011/01/11
+ * @copyright   Intellectual Reserve, Inc.
+ * @URL         http://irinc.github.com/ixf
+ * @requires    ui.core.js (1.8+), scrollTo plugin
+ * @optional    easing plugin
  */
 (function($) { // hide the namespace
 	$.fn.makeVisible = function(options) {
@@ -819,12 +824,10 @@ Not officially released jQuery UI version (http://jqueryui.pbworks.com/Watermark
 /*!
  * MultiSelect
  * @description	Take a multiple select element and breakes it into individual selects
- * @version		2.0.7 - 2011/08/16
- * @author		Aaron Barker
- * @requires	ui.core.js (1.8+)
- * @optional	
- * @copyright	Intellectual Reserve, Inc.
- * @licence		Licensed under the MIT license. http://www.opensource.org/licenses/mit-license.php
+ * @version		  2.0.7 - 2011/08/16
+ * @copyright   Intellectual Reserve, Inc.
+ * @URL         http://irinc.github.com/ixf
+ * @requires	  ui.core.js (1.8+)
  */
 (function($) {
 
@@ -1126,13 +1129,11 @@ Not officially released jQuery UI version (http://jqueryui.pbworks.com/Watermark
 /*!
  * finder
  * @description	Mimics the OS X finder. A different way to look at a tree view
- * @version		1.2.3  - 2010/12/03
- * @author		Aaron Barker
- * @requires	ui.core.js (1.8+), scrollTo plugin
- * @optional	easing plugin
- * @copyright	Intellectual Reserve, Inc.
- * @licence		Licensed under the MIT license. http://www.opensource.org/licenses/mit-license.php
- * @url			http://github.com/aaronbarker/finder
+ * @version		  1.2.3  - 2010/12/03
+ * @copyright   Intellectual Reserve, Inc.
+ * @URL         http://irinc.github.com/ixf
+ * @requires	  ui.core.js (1.8+), scrollTo plugin
+ * @optional	  easing plugin
  */
 (function($) {
 
@@ -1779,9 +1780,10 @@ Not officially released jQuery UI version (http://jqueryui.pbworks.com/Watermark
 /*!
  * masterDetail
  * @description	Facilitates the loading of content from a list/table into a target area. Provides keyboard navigation of the list and caching.
- * @version		1.2.4  - 2011/04/26
- * @author		Aaron Barker
- * @requires	ui.core.js (1.8+), makeVisible
+ * @version		  1.2.4  - 2011/04/26
+ * @copyright   Intellectual Reserve, Inc.
+ * @URL         http://irinc.github.com/ixf
+ * @requires	  ui.core.js (1.8+), makeVisible
  */
 (function($) {
 	$.widget("ixf.masterDetail", {
@@ -2251,11 +2253,11 @@ Not officially released jQuery UI version (http://jqueryui.pbworks.com/Watermark
 /*!
  * timePicker
  * @description	A time picker for jQuery UI. Parts taken from timePicker by Sam Collet (http://www.texotela.co.uk/code/jquery/timepicker/)
- * @version		1.5  - 2010/10/25
- * @author		Aaron Barker
- * @requires	ui.core.js (1.8+)
- * @optional	scrollTo plugin
- * @licence		Licensed under the MIT license
+ * @version		  1.5  - 2010/10/25
+ * @copyright   Intellectual Reserve, Inc.
+ * @URL         http://irinc.github.com/ixf
+ * @requires	  ui.core.js (1.8+)
+ * @optional	  scrollTo plugin
  */
 (function($) {
 
@@ -2857,7 +2859,7 @@ Now third party scripts
 
 })( jQuery );
 /*!
- * jQuery jTouchScroll plugin 1.0 - http://www.dealinium.com/common/jScrollTouch
+ * jScrollTouch plugin 1.0 - http://www.dealinium.com/common/jScrollTouch
  *
  * Copyright (c) 2010 Damien Rottemberg
  *
@@ -4467,6 +4469,7 @@ Now third party scripts
  * Licensed under the MIT License:
  * http://www.opensource.org/licenses/mit-license.php
  *
+ * http://plugins.jquery.com/project/jCaret
  */
 	(function($){
 		  $.fn.caret = function(s, e) {
