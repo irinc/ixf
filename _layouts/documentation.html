@@ -48,11 +48,11 @@
 
 <div class="ixf-subheader" role="navigation">
 	<ul class="ixf-subnav">
-		<li class="first selected"><a href="../documentation/index.html"><span>Introduction</span></a></li>
-		<li><a href="../documentation/general.html"><span>General Tips &amp; Tricks</span></a></li>
-		<li><a href="../documentation/ajax-sites.html"><span>Ajax Sites</span></a></li>
-		<li><a href="../documentation/data-attributes.html"><span>Data- Attributes</span></a></li>
-		<li class="last"><a href="../documentation/themeroller.html"><span>Themeroller</span></a></li>
+		<li class="first {{page.doc-menu-introduction}}"><a href="../documentation/index.html"><span>Introduction</span></a></li>
+		<li class="{{page.doc-menu-general-tips}}"><a href="../documentation/general.html"><span>General Tips &amp; Tricks</span></a></li>
+		<li class="{{page.doc-menu-ajax-sites}}"><a href="../documentation/ajax-sites.html"><span>Ajax Sites</span></a></li>
+		<li class="{{page.doc-menu-data-attributes}}"><a href="../documentation/data-attributes.html"><span>Data- Attributes</span></a></li>
+		<li class="last {{page.doc-menu-themeroller}}"><a href="../documentation/themeroller.html"><span>Themeroller</span></a></li>
 	</ul>
 	<!-- END ixf-subnav -->
 </div>
@@ -63,16 +63,7 @@
 <div class="ixf-panel ui-layout-center padding-md">
 
 	<h1>{{page.title}}</h1>
-	<p>Documentation for all the individual plugins are included in the <a href="../demo/list.html">Demos & Examples</a> and <a href="../layout/index.html">Layouts</a> sections.</p>
-	<p>For help on how everything integrates together, please see the demos and examples.</p>
-
-	<h2>Screencasts</h2>
-	<p>Littered throughout this site are screencasts to help you understand how things work. Here is a list of everything so far.  Grab a bag of popcorn (extra butter) and enjoy.</p>
-	
-	<ul>
-		<li><a href="../screencasts/bundles.html">Bundles</a></li>
-		<li><a href="../screencasts/using-kickstart.html">Using Kickstart</a></li>
-	</ul>
+{{content}}
 
 </div>
 </div>
