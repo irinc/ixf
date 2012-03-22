@@ -1,0 +1,16 @@
+<h1>Demos &amp; Examples Introduction</h1>
+
+<p>The demos &amp; examples section shows you some of the things that are available via the IxF. Most of the plugins are much more robust then what is shown in the examples, but we can't really show off all of their features without making the site a big gangly mess.</p>
+
+<p>Make sure to take a look at the code to see how things are setup. <strong>DO NOT</strong> take your code by looking at Firebug or other inspectors of the browser code. Almost every plugin modifies the source after the content is loaded and so using this modified code will not work correctly. Only use the normal "view-source" option in your respective browser.</p>
+
+<h2>Documentation</h2>
+<p>Most of the plugins/widgets/etc used in the IxF are built and maintained elsewhere as official jQuery UI plugins, community plugins, or written in-house (but separate from the IxF). Reproducing documentation and examples from these other sources would be time consuming and quickly get out of date. So we will point to other documentation whenever possible.</p>
+<p>For many items, we have chosen specific options to expose via the IxF to allow for quick configuration. This section will help to expose what those options are, and how you can call them.</p>
+
+<h2>Defaults</h2>
+
+<p>A number of things in the IxF have defaults that you are able to leverage by simply adding specific classes to specific elements. These defaults are just meant to make things easy for basic situations. The full functionality of any plugin we are using is still available for you.  Please see the documentation for any given plugin (hopefully documented on the example pages... if not, <a href="../intro/feedback.html">let us know</a>) to see what all is possible if the defaults are not meeting your needs.</p>
+<script type="text/javascript">
+	ixf.setup($("#detail"));
+</script>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> <!-- Make IE play nice (needs to be first thing inside of head for IE apparently), use chrome frame if available -->
+	<title>Layouts - Interaction Framework</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!-- BEGIN IXF ASSETS -->
+	<link rel="stylesheet" type="text/css" media="all" href="../ixf/styles/screen.css" />
+	<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="../ixf/styles/screen-ie.css" /><![endif]-->
+	<script type="text/javascript" src="../ixf/scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="../ixf/scripts/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../ixf/scripts/ixf-plugins.js"></script>
+	<script type="text/javascript" src="../ixf/scripts/ixf-utilities.js"></script>
+	<!-- END IXF ASSETS -->
+
+	<link rel="stylesheet" type="text/css" media="all" href="../css/project.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="../css/syntaxHighlighter.css" />
+	<script type="text/javascript" src="../js/project.js" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/lib/syntaxHighlighter.js" charset="utf-8"></script>
+</head>
+
+<body>
+<a href="#body" class="invisible">Skip to content</a>
+<div class="ixf-header" role="navigation">
+	<div class="ixf-appname">
+		<a href="#appmenu" class="ixf-appname-link ixf-popup" data-pop-direction="left" title="IxF Layouts">Interaction Framework</a>
+	</div>
+	<!-- END ixf-appname -->
+
+	<div class="ixf-tools">
+		<a href="#x" class="ixf-tools-link">No Arrow</a>
+		<a href="#messages-menu" class="ixf-tools-link menu-arrow ixf-popup ixf-tools-link" data-pop-direction="right" title="6 Messages"><span class="messagecount">6</span> Messages</a>
+		<a href="#myoptions-menu" class="ixf-tools-link ixf-popup ixf-tools-link menu-arrow" data-pop-direction="right" title="Johanssen Lippincottlestein">Options</a>
+	</div>
+	<!-- END ixf-tools -->
+
+	<ul class="ixf-nav">
+		<li class="first"><a href="../index.html"><span>Introduction</span></a></li>
+		<li><a href="../demo/list.html#detail=intro"><span>Demos &amp; Examples</span></a></li>
+		<li class="selected"><a href="../layout/index.html"><span>Layouts</span></a></li>
+		<li class="last"><a href="../documentation/index.html"><span>Documentation</span></a></li>
+	</ul>
+	<!-- END ixf-nav -->
+
+</div>
+<!-- END ixf-header -->
+
+<div class="ixf-subheader" role="navigation">
+	<ul class="ixf-subnav">
+		<li class="first selected"><a href="../layout/index.html"><span>Standard Panels</span></a></li>
+		<li><a href="../layout/two-panes.html"><span>Master/Detail</span></a></li>
+		<li><a href="../layout/toolbox.html"><span>Toolbox</span></a></li>
+		<li><a href="../layout/finder.html"><span>Finder (Alt)</span></a></li>
+		<li><a href="../layout/three-panes.html"><span>Master/Detail (3 Panes)</span></a></li>
+		<li class="last"><a href="../layout/accordion-pane.html"><span>Master/Detail (Accordion)</span></a></li>
+	</ul>
+	<!-- END ixf-subnav -->
+</div>
+<!-- END ixf-subheader -->
+
+<div class="ixf-panels">
+
+<div class="ixf-panel ui-layout-center">
+	<div class="ixf-panel ui-layout-north padding-sm">
+		<h2>Mid-north Center Panel With "padding-sm" around it.</h2>
+		<p>To create a split center panel like this with a sidebar, the north and "south" panel need to be nested inside an outside center panel. View source to see how it all comes together.</p>
+		
+		
+	</div><!-- /ixf-panel -->
+
+	<div class="ixf-panel ui-layout-center">
+		<div class="ixf-container padding-md margin-md">
+			<p>Center Panel With "ixf-container", "margin-md" and "padding-md" around it.</p>
+			<h1>Custom Configuration</h1>
+			<p>The system we are using for the panels is extremely robust. Likewise it can be quite daunting to configure deeper then what we provide out of the box.  If you want to take it to the next level, this will help you do that.</p>
+
+			<p>To configure the layout script insert the following either in your project.js if you want it to be a global customization, or on the specific page where you want it to occur.  The following MUST NOT BE in an onload (ie: $(function(){STUFF HERE})). Just put it on the page so it runs as it is loaded.  If this doesn't make sense, maybe you shouldn't be trying this out ;)</p>
+
+		<pre><code>ixf.layoutDefaults = {
+	west:{
+		size: 500
+	},
+	defaults:{
+		size:400
+	}
+}</code></pre>
+
+			<p>In the above, set anything you want to be applied to ALL PANES in the <code>defaults</code> section.  If you want it to be applied only to a specific pane use the <code>west</code> section (changing west to the direction you want to apply to).</p>
+			<p>You can also set options directly on a given pane using <a href="../documentation/data-attributes.html">data- attributes</a>. Set it on the wrapping elements for defaults for all sub-panes, or on the individual panes to target that pane specifically.</p>
+
+			<table class="ixf-table ixf-table-default">
+				<thead>
+				<tr>
+					<th><a href="#d">Name</a></th>
+					<th><a href="#d">Type</a></th>
+					<th><a href="#d">Default</a></th>
+					<th><a href="#d">Options</a></th>
+					<th><a href="#d">Description</a></th>
+				</tr>
+				</thead>
+				<tr>
+					<td><nobr>layout-closable</nobr></td>
+					<td>boolean</td>
+					<td>true</td>
+					<td></td>
+					<td>Can the user close the pane</td>
+				</tr>
+				<tr>
+					<td><nobr>layout-resizable</nobr></td>
+					<td>boolean</td>
+					<td>true</td>
+					<td></td>
+					<td>Can the user resize the pane</td>
+				</tr>
+				<tr>
+					<td><nobr>layout-minsize</nobr></td>
+					<td>number</td>
+					<td></td>
+					<td></td>
+					<td>Minimimum size the pane can be resized to</td>
+				</tr>
+				<tr>
+					<td><nobr>layout-maxsize</nobr></td>
+					<td>number</td>
+					<td></td>
+					<td></td>
+					<td>Maximum size the pane can be resized to</td>
+				</tr>
+				<tr>
+					<td><nobr>layout-size</nobr></td>
+					<td>number</td>
+					<td></td>
+					<td></td>
+					<td>Size the pane starts out at</td>
+				</tr>
+				<tr>
+					<td><nobr>layout-initclosed</nobr></td>
+					<td>boolean</td>
+					<td></td>
+					<td></td>
+					<td>Should the pane start closed</td>
+				</tr>
+				<tr>
+					<td><nobr>layout-options</nobr></td>
+					<td>string</td>
+					<td></td>
+					<td></td>
+					<td>You can pass any <a href="http://layout.jquery-dev.net/documentation.cfm">additional options</a> you want to set custom for the panels via this. Must be formated with single quotes wrapping the value and double quotes used inside (ex: data-layout-options='{"size":"150"}')</td>
+				</tr>
+			</table>
+			<p class="text-sm">Options Column = The script only recognizes these values</p>
+			<p>To see what all you can configure see the <a href="http://layout.jquery-dev.net/documentation.cfm" title="UI.Layout Plug-in - Documentation">plugin documentation page</a>. Good luck, it's pretty crazy in there.</p>
+		</div><!-- /ixf-container -->
+	</div><!-- /ixf-panel -->
+</div><!-- /ixf-panel -->
+
+
+<div class="ixf-panel ui-layout-west">
+		<div class="padding-sm">
+			<h2>West panel containing a div with <span class="nowrap">"padding-sm"</span></h2>
+
+			<p>The <a href="http://layout.jquery-dev.net/">panel system </a>will automatically detect what panels you have on your page.  The classes you give each pane are as follows, hopefully their relative location on the page is obvious:</p>
+			<ul>
+				<li>ui-layout-east</li>
+				<li>ui-layout-west</li>
+				<li>ui-layout-north</li>
+				<li>ui-layout-south</li>
+				<li>ui-layout-center (the main content area)</li>
+			</ul>
+		
+			<p>Pages are not required to have a ui-layout-center for their content if they aren't using multiple panels.</p>
+		
+			<p>The panel system doesn't care about what content is in each panel.  So you can make it have padding or be all the way out to the edge (full bleed). If the content is taller then the available space it will automatically get a scrollbar for that pane.</p>
+		
+			<h2>Features</h2>
+			<ul>
+				<li>Each pane (nsew) can be resized using the resizing bar between two panes.</li>
+				<li>You can click the 3 dot handle graphic to close the pane. You can click the dots to fully reopen again, or click elsewhere on the resizing bar to open temporarily. It will close after your mouse leaves the pane.</li>
+				<li>Each pane (nsew) has a default starting size and an optional min/max size.</li>
+				<li>Each pane (nsew) can be closed by default</li>
+				<li>The class names dictate location, not source order. Center can come before east (in the source) if you want that to be first in the tab-order, for accessibility, etc. </li>
+				<li>You can embed panels within panels. But you always need a center pane.</li>
+			</ul>
+		</div><!-- /padding-sm -->
+</div><!-- /ixf-panel -->
+
+<div class="ixf-panel ui-layout-east sunken">
+	<div class="padding-md">
+		<h2>East Panel with a class of "sunken" and a div with "padding-md" set on it.</h2>
+	</div><!-- /padding-md -->
+</div><!-- /ixf-panel -->
+</div>
+<!-- END ixf-panels -->
+
+
+<!-- These menu lists do not need to show state, so they do not need to be in the menu system -->
+<div id="myoptions-menu">
+	<dl class="ixf-form form-h1 smtext margin-sm float-left">
+		<dt>Text Size</dt>
+		<dd class="options-vertical">
+			<fieldset>
+				<legend class="invisible">Contact Type</legend>
+				<span class="ixf-option"><input type="radio" value="option1" id="option1" name="font" /> <label for="option1">Small</label></span>
+				<span class="ixf-option"><input type="radio" value="option2" id="option2" name="font" checked="checked" /> <label for="option2">Medium</label></span>
+				<span class="ixf-option"><input type="radio" value="option3" id="option3" name="font" /> <label for="option3">Large</label></span>
+			</fieldset>
+		</dd>
+	</dl>
+
+	<dl class="ixf-form form-h1 smtext margin-sm float-left">
+		<dt>Screen</dt>
+		<dd class="options-vertical">
+			<fieldset>
+				<legend class="invisible">Contact Type</legend>
+				<span class="ixf-option"><input type="radio" value="option4" id="option4" name="screen" checked="checked" /> <label for="option4">Normal</label></span>
+				<span class="ixf-option"><input type="radio" value="option5" id="option5" name="screen" /> <label for="option5">High Contrast</label></span>
+				<span class="ixf-option"><input type="radio" value="option6" id="option6" name="screen" /> <label for="option6">Projector</label></span>
+			</fieldset>
+		</dd>
+	</dl>
+
+	<hr class="margin-sm" />
+	<div class="ixf-popup-actions margin-sm">
+		<a href="#x" class="sprite person prefix right">My Account</a>
+		<a href="#x" class="sprite locked prefix left">Sign Out</a>
+	</div>
+</div>
+
+
+
+<div id="appmenu">
+	<ul class="ixf-list nolinks">
+		<li class="selected"><a href="../index.html">IxF - Main/Intro</a></li>
+		<li><a href="../demo/list.html#detail=widgets">IxF - Widgets Page</a></li>
+		<li><a href="../layout/signin.html">Sign In Layout</a></li>
+		<li><a href="../layout/small.html">Small App Layout 1</a></li>
+		<li><a href="../layout/small2.html">Small App Layout 2</a></li>
+	</ul>
+</div>
+
+<div id="messages-menu" class="padding-sm">
+	<ul>
+		<li><a href="#d">3 Reconciliation Reports Due</a></li>
+		<li><a href="#d">2 Minutes Require Approval</a></li>
+		<li><a href="#d">2 Overdue Expense Report</a></li>
+	</ul>
+</div>
+</body>
+</html>

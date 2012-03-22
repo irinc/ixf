@@ -1,0 +1,238 @@
+<h1>Time Picker</h1>
+
+<div class="source">
+	<input type="text" name="timepicker" class="md timepicker" value="" data-tp-secondField="#ixf-timepicker2" />
+	<input type="text" name="timepicker" class="md" value="" id="ixf-timepicker2" />
+</div>
+
+	
+
+<div class="ixf-tabs-wrapper" id="docs">
+	<ul class="ixf-tabs">
+		<li><a href="#overview"><span>Overview</span></a></li>
+		<li><a href="#documentation"><span>Documentation</span></a></li>
+		<li><a href="#ixfapi"><span>Ixf API</span></a></li>
+	</ul>
+	<div id="overview" class="padding-md"><p>Takes any provided <code>&lt;input type="text"&gt;</code> or <code>&lt;textarea&gt;</code> field that has a <code>placeholder</code> attribute and uses the value of the placeholder attribute to make a placeholder or hint for that field.  The placeholder will disappear when the user focuses on the field and return if the user leaves the field and there is no text entered by the user.</p></div>
+	<div id="documentation" class="padding-md">
+		<h3>HTML</h3>
+		<p>Other then marking the appropriate input fields with the ID or class needed to reference that field as a target for the script to act upon, nothing is required to be done to the HTML of the page for the calendar to work. </p>
+
+		<h3>CSS</h3>
+		<p>Other than the ".ui.timePicker" class, there are no other CSS edits required. You may edit the CSS file to make the time picker appearance more closely resemble your specific project if desired.</p>
+
+		<h3>API</h3>
+		<p>These are the variables that you can set to turn on and off various options.  </p>
+
+		<div class="code-example"><pre class="code javascript"><code>$("#example").timePicker({step:15});</code></pre></div>
+
+		<table class="ixf-table ixf-table-default">
+			<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Default</th>
+				<th>Options</th>
+				<th>Description</th>
+			</tr>
+			</thead>
+			<tr>
+				<td>step</td>
+				<td>number</td>
+				<td>30</td>
+				<td></td>
+				<td>number of minutes between suggested options</td>
+			</tr>
+			<tr>
+				<td>height</td>
+				<td>number</td>
+				<td>200</td>
+				<td></td>
+				<td>How tall you want the select lists to be</td>
+			</tr>
+			<tr>
+				<td>startTime</td>
+				<td>string</td>
+				<td></td>
+				<td></td>
+				<td>The earliest selectable time (2:00am)</td>
+			</tr>
+			<tr>
+				<td>endTime</td>
+				<td>string</td>
+				<td></td>
+				<td></td>
+				<td>The latest selectable time (5:00pm)</td>
+			</tr>
+			<tr>
+				<td>separator</td>
+				<td>string</td>
+				<td>:</td>
+				<td></td>
+				<td>Character used to separate the hours/minutes</td>
+			</tr>
+			<tr>
+				<td>parseSeparators</td>
+				<td>string</td>
+				<td>[:;\.,]</td>
+				<td></td>
+				<td>Regular expression of what separators to allow the user to use</td>
+			</tr>
+			<tr>
+				<td>am</td>
+				<td>string</td>
+				<td>AM</td>
+				<td></td>
+				<td>Text to use for am (for display after user selects)</td>
+			</tr>
+			<tr>
+				<td>pm</td>
+				<td>string</td>
+				<td>PM</td>
+				<td></td>
+				<td>Text to use for pm (for display after user selects)</td>
+			</tr>
+			<tr>
+				<td>parseAm</td>
+				<td>string</td>
+				<td>(a|A)</td>
+				<td></td>
+				<td>Regex for what to look for to identify AM via manual entry</td>
+			</tr>
+			<tr>
+				<td>secondField</td>
+				<td>string</td>
+				<td></td>
+				<td></td>
+				<td>selector of the second field if wanting a range</td>
+			</tr>
+			<tr>
+				<td>duration</td>
+				<td>number</td>
+				<td>60</td>
+				<td></td>
+				<td>starting duration for when you have a range</td>
+			</tr>
+			<tr>
+				<td>autoSelect</td>
+				<td>boolean</td>
+				<td>true</td>
+				<td></td>
+				<td>should the script always start with an item selected</td>
+			</tr>
+			<tr>
+				<td>show24Hours</td>
+				<td>boolean</td>
+				<td>false</td>
+				<td></td>
+				<td>should we display things in 24 hour time (18 instead of 6pm)</td>
+			</tr>
+			<tr>
+				<td>showDuration</td>
+				<td>boolean</td>
+				<td>true</td>
+				<td></td>
+				<td>should the "(2 hours)" be shown</td>
+			</tr>
+			<tr>
+				<td>enforceRange</td>
+				<td>boolean</td>
+				<td>true</td>
+				<td></td>
+				<td>should we force the user to stay within the startTime and endTime</td>
+			</tr>
+			<tr>
+				<td>useMakeVisible</td>
+				<td>boolean</td>
+				<td>true</td>
+				<td></td>
+				<td>should we use makeVisble to slide the timePicker into view (if it's loaded on the page)</td>
+			</tr>
+			<tr>
+				<td>makeVisibleOptions</td>
+				<td>options</td>
+				<td>{pad:10,speed:100}</td>
+				<td></td>
+				<td>paramaters to pass into the makeVisible call (if used)</td>
+			</tr>
+			<tr>
+				<td>uiCorners</td>
+				<td>string</td>
+				<td>ui-corner-bottom</td>
+				<td></td>
+				<td>Which type of corners do you want to use from UI</td>
+			</tr>
+			<tr>
+				<td>listId</td>
+				<td>string</td>
+				<td>timepicker-list</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>onPick</td>
+				<td>function</td>
+				<td></td>
+				<td></td>
+				<td>callback to fire when the user picks or enters a time. is passed the plugin object (has element, options, etc in it)</td>
+			</tr>
+			<tr>
+				<td>onPickSecond</td>
+				<td>function</td>
+				<td></td>
+				<td></td>
+				<td>callback to fire when the user picks or enters a time on the second field. is passed the plugin object (has element, options, etc in it)</td>
+			</tr>
+			<tr>
+				<td>onAutoAdjust</td>
+				<td>function</td>
+				<td></td>
+				<td></td>
+				<td>callback that will fire on the second field when it gets auto-adjusted. is passed the second field</td>
+			</tr>
+			<tr>
+				<td>onOutOfRange</td>
+				<td>function</td>
+				<td></td>
+				<td></td>
+				<td>callback to fire when the user enters a time that is out of the startTime/endTime range. is passed the entered text, startTime, endTime, options</td>
+			</tr>
+		</table>
+		<p><strong>Options</strong> = The script only recognizes these values</p>
+	</div>
+	<div id="ixfapi" class="padding-md">	<p>The following <a href="../documentation/data-attributes.html">data- attributes</a> can be used to quickly setup timepicker fields.</p>
+
+<table class="ixf-table ixf-table-default">
+	<thead>
+		<tr>
+			<th><a href="#d">Name</a></th>
+			<th><a href="#d">Type</a></th>
+			<th><a href="#d">Default</a></th>
+			<th><a href="#d">Options</a></th>
+			<th><a href="#d">Description</a></th>
+		</tr>
+	</thead>
+	<tr>
+		<td><nobr>data-tp-startTime</nobr></td>
+		<td>string</td>
+		<td></td>
+		<td></td>
+		<td>The earliest selectable time (2:00am)</td>
+	</tr>
+	<tr>
+		<td><nobr>data-tp-endTime</nobr></td>
+		<td>string</td>
+		<td></td>
+		<td></td>
+		<td>The latest selectable time (5:00pm)</td>
+	</tr>
+	<tr>
+		<td><nobr>data-tp-secondField</nobr></td>
+		<td>string</td>
+		<td></td>
+		<td></td>
+		<td>selector of the second field if wanting a range</td>
+	</tr>
+</table>
+<p class="text-sm">Options Column = The script only recognizes these values</p></div>
+</div><!-- /ixf-tabs-wrapper -->
