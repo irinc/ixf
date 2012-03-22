@@ -1,7 +1,7 @@
 /*!
  * IxF Plugins 
  * @description This file is a collection of jquery plugins and modernizr used by IxF.
- * @version     1.1.2 - 2012/3/21
+ * @version     1.1.2 - 2012/3/19
  * @copyright   Intellectual Reserve, Inc.
  * @URL         http://irinc.github.com/ixf
  * global       ixf, $, window
