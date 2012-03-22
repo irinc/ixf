@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> <!-- Make IE play nice (needs to be first thing inside of head for IE apparently), use chrome frame if available -->
+	<title>Introduction - Interaction Framework</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!-- BEGIN IXF ASSETS -->
+	<link rel="stylesheet" type="text/css" media="all" href="../ixf/styles/screen.css" />
+	<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="../ixf/styles/screen-ie.css" /><![endif]-->
+	<script type="text/javascript" src="../ixf/scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="../ixf/scripts/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../ixf/scripts/ixf-plugins.js"></script>
+	<script type="text/javascript" src="../ixf/scripts/ixf-utilities.js"></script>
+	<!-- END IXF ASSETS -->
+
+	<link rel="stylesheet" type="text/css" media="all" href="../css/project.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="../css/syntaxHighlighter.css" />
+	<script type="text/javascript" src="../js/project.js" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/lib/syntaxHighlighter.js" charset="utf-8"></script>
+</head>
+
+<body>
+<a href="#body" class="invisible">Skip to content</a>
+<div class="ixf-header" role="navigation">
+	<div class="ixf-appname">
+		<a href="#appmenu" class="ixf-appname-link ixf-popup" data-pop-direction="left" title="IxF Layouts">Interaction Framework</a>
+	</div>
+	<!-- END ixf-appname -->
+
+	<div class="ixf-tools">
+		<a href="#x" class="ixf-tools-link">No Arrow</a>
+		<a href="#messages-menu" class="ixf-tools-link menu-arrow ixf-popup ixf-tools-link" data-pop-direction="right" title="6 Messages"><span class="messagecount">6</span> Messages</a>
+		<a href="#myoptions-menu" class="ixf-tools-link ixf-popup ixf-tools-link menu-arrow" data-pop-direction="right" title="Johanssen Lippincottlestein">Options</a>
+	</div>
+	<!-- END ixf-tools -->
+
+	<ul class="ixf-nav">
+		<li class="first"><a href="../index.html"><span>Introduction</span></a></li>
+		<li><a href="../demo/list.html#detail=intro"><span>Demos &amp; Examples</span></a></li>
+		<li><a href="../layout/index.html"><span>Layouts</span></a></li>
+		<li class="last selected"><a href="../documentation/index.html"><span>Documentation</span></a></li>
+	</ul>
+	<!-- END ixf-nav -->
+
+</div>
+<!-- END ixf-header -->
+
+<div class="ixf-subheader" role="navigation">
+	<ul class="ixf-subnav">
+		<li class="first"><a href="../index.html"><span>Main</span></a></li>
+		<li><a href="../intro/philosophy.html"><span>Philosophy</span></a></li>
+		<li><a href="../intro/features.html"><span>Basic Features</span></a></li>
+		<li><a href="../intro/changelog.html"><span>Changelog</span></a></li>
+		<li><a href="../intro/kickstart.html"><span>KickStart</span></a></li>
+		<li><a href="../intro/feedback.html"><span>Feedback</span></a></li>
+		<li><a href="../intro/goodies.html"><span>Goodies</span></a></li>
+		<li><a href="../intro/browsers.html"><span>Browser Support</span></a></li>
+		<li class="last selected"><a href="../intro/faq.html"><span>FAQ</span></a></li>
+	</ul>
+	<!-- END ixf-subnav -->
+</div>
+<!-- END ixf-subheader -->
+
+<div class="ixf-panels">
+		<div class="ixf-panel ui-layout-center padding-md">
+			<h1>FAQ</h1>
+			<p>This is a quick first stab at an FAQ. We will make it a better interface soon.</p>
+			<div id="what">
+				<h2>What is the IxF?</h2>
+				
+				<p>The IxF is a framework for getting your web application project up and running fast. The IxF is made up of three main components. Style, Plugins, Glue.</p>
+				<h3>Style</h3>
+				<p>The IxF comes with a great looking style out of the box. Different components look like they were made to <a href="../demo/list.html#detail=widgets">work together</a>. Hopefully it is everything you need right out of the box, but you are of course able to customize it if needed. We hope you don't need to customize it too much, as that defeats the purpose of it saving you time.</p>
+
+				<p>If you just want a different color from the black based stuff around the sides, give our <a href="../documentation/themeroller.html">themeroller</a> a try.</p>
+
+				<h3>Plugins</h3>
+				<p>The IxF comes stocked with a number of plugins that we feel will make your webapp shine. Here is the <a href="../documentation/general.html#plugins">full list of available plugins</a>. You of course can add anything you need that is specific to your project.</p>
+
+				<h3>Glue</h3>
+				<p>The IxF comes with some extra code to help you get up and running faster, that has come to be known as the "Glue" (you know, holds it all together).  Instead of needing to go to each plugins documentation to learn how to use it, we expose the most common settings via an API that we feel is much easier to learn. We by no means are trying to cover all potential situations. Just the things we think will come up the most often. If you've heard of the <a href="http://en.wikipedia.org/wiki/Pareto_principle" title="Pareto principle - Wikipedia, the free encyclopedia">80/20 rule</a>, we try to take care of the 80 (the simple stuff that there is a lot of, that will take 20% of your time) to give you more time to focus on the 20 (the difficult stuff that will take 80% of your time).</p>
+
+				<p>Now we know that these common settings will not fit uncommon situations. Every plugin is included in it's entirety. If the glue doesn't do what you need, you can run an instance of the plugin that you can completely control. Nothing in the IxF runs without you telling it to via specific classes as specified in the documentation.</p>
+			</div>
+			<div id="why">
+				<h2>Why use the IxF?</h2>
+				<p>There is no reason to reinvent the wheel (datatable, forms, etc) over and over for each new project. The IxF takes care of the things you see all the time in web apps. This allows you the time to come up with other cool stuff beyond what the IxF provides. Hopefully the IxF got you up and running so fast (both designers and developers) that now you have more time to work on the harder problems that are specific to your application.</p>
+
+				<p>A few more benefits</p>
+				<ul>
+					<li><strong>Consistency</strong> - The more apps that are built with the IxF the more consistency users will experience. Widgets will look and act the same from app to app. There will be less learning curve.</li>
+					<li><strong>Time/Money/Tithing Savings</strong> - The IxF gets you up and running fast. Less time spent getting up and running equals less dollars spent. Less dollars spent equals less tithing dollars spent.</li>
+					<li><strong>A better product</strong> - If you stay up to date with the IxF then you get the benefit of fixed bugs and enhancements from the dozens of other projects that are also using it. You get a more stable product, without all the effort. Hey look more time/money/tithing savings!</li>
+					<li><strong>A more robust product</strong> - You get to spend more time on the custom stuff for your project. If you have 6 weeks for a project and would normally spend 3 weeks getting the IxF-esque foundational stuff ready, that leaves you 3 weeks for the custom stuff.  Get up and running in 1-3 days, and now you have more time to focus on the problems specific to your project.</li>
+				</ul>
+			</div>
+			<div id="who">
+				<h2>Who is the IxF for?</h2>
+				<p>Designers and developers of all skill levels. Oh and lets not forget our users.</p>
+
+				<p>We have a wide range of skillsets in both designers and developers. From those who are just stepping into this new world of JavaScript, to experts who have done it for years. Anyone along that continuum can benefit from the IxF. For novices, they may not understand the complexities of a given plugin, so the IxF hopefully makes it easy to implement without needing to know those complexities. Even if experts can understand the complexities of a given plugin, that doesn't mean they need to spend time and brain cells doing so. Their expertise can be put to better use solving real problems, not learning how to configure a basic plugin.</p>
+
+				<h3>Designers</h3>
+				<p>Designers get the benefit of not needing to design yet another datatable (or other components). They can spend time coming up with stuff outside the normal box of what a webapp is. Focus on fixing problems specific to the project, not reinventing the wheel.</p>
+
+				<p>Prototyping is very easy and simple to learn. You can have an instance of the IxF duplicated and ready to be modified within minutes. No need to spend hours or days laying the fundamentals of a project.</p>
+
+				<h3>Developers</h3>
+				<p>The IxF is not just a prototyping tool. It's ready for production. The exact same things that make the IxF fast to prototype with also make it fast to develop with.</p>
+
+				<h3>Users</h3>
+				<p>Our users benefit from consistency across all apps that use the IxF. Widgets look and act the same, so there is less learning curve.</p>
+
+				<p>Users also get a more robust product that hopefully solves their problems better. This is facilitated by the IxF taking care of the basics, allowing designers and developers to spend more time on the tough problems.</p>
+				<h2>What is the browser support like?</h2>
+				<p>Please see our <a href="browsers.html">browser support</a> page for details.</p>
+			</div>
+			<div id="php">
+				<h2>What's with all the PHP?</h2>
+				<p>First and foremost know that PHP is <strong>NOT required</strong> to use the IxF.</p>
+
+				<p>Even this demo site is quite complex, and we would be foolish not to use global include files and a few if statements to make maintenance easier for us. PHP is free, relatively simple, easy to install, doesn't require compiling, etc, etc. So we went with it.</p>
+
+				<p>The general functionality of the IxF is agnostic of any backend. The IxF dictates some HTML structure that should be used, which is then leveraged via CSS and JS. Really the CSS and JS is where the large majority of the IxF magic happens. The IxF has been successfully used on stack, Java, .Net, Rails, PHP and GWT implementations so far.</p>
+			</div>
+			<div id="mobile">
+				<h2>What about mobile?</h2>
+				<p>There is an amazing effort going in to <a href="http://jquerymobile.com/" title="jQuery Mobile | jQuery Mobile">jQuery Mobile</a>. They have a fantastic list of <a href="http://jquerymobile.com/gbs/" title="Mobile Graded Browser Support | jQuery Mobile">supported browsers</a> and is being built by some of the smartest minds in the industry. We would be foolish to try to reinvent what they are already doing and giving away for free.</p>
+
+				<p>jQuery Mobile is still in it's early stages of development. We are waiting for it to stabilize (coming very soon) before we seriously dig into it.  It is highly likely that we will just suggest using it straight out of the box. There will not be a 1-to-1 match up for mobile features to desktop features. But we will try to provide guidance on how to make both work together with as much consistency as possible.</p>
+			</div>
+			<div id="dontwant">
+				<h2>What if I don't want to use certain IxF components?</h2>
+				<p>Then don't. Nothing in the IxF is forced down your throat.  You have to use certain classes to make the IxF start the configuration process for you.  If you want to roll your own take on tabs, autocomplete, etc. just use a unique class and you are good to go. Similarly you don't have to use the included components at all. You can bring in your own autocomplete if you really want.</p>
+
+				<p>Now the style is a bit of a different situation. Even if you roll your own autocomplete, tabs, datepicker, etc. it will still have the standard IxF look and feel. It just won't be configured using the IxF defaults.</p>
+			</div>
+			<div id="smallfiles">
+				<h2>Why isn't the IxF broken into small files?</h2>
+
+				<p>This is something we debate constantly.  There are a few tradeoffs here.</p>
+
+				<h3>Modules (smaller files)</h3>
+				<p>The plusses of modularizing everything is easily changing out a given module, and users only download exactly what they need (not the full package with parts the site may not actually use).</p>
+
+				<p>The negatives are needing to track all those modules to make sure you have what you need. Providing the option to easily change something out can promote inconsistency from app to app.  A lot of work has been put into making the current components work well together and be easy to implement. Much of that would be lost.</p>
+				
+				<h3>Combined</h3>
+				<p>Naturally the plusses and minuses are the opposite of what are listed for the modules.</p>
+
+				<p>Plusses are you don't have to track down what you need, everything you need is included and ready to go. Users download one larger file at the start of their session, and they are done. All other pages come up fast because the files are cached (if you are using a CDN). If you are using a CDN, you get the benefit of the herd, in that if your user has visited another site using the IxF (and is pointing to the same CDN files), they likely already have the files needed for your site as well. Then there is no download time.  If every site had their own specific conglomeration of components, we could never benefit from pointing to the same files.</p>
+
+				<p>We get consistency because we are all using the same components and they will work and act the same from site to site. You get the IxF configuration options which help you get up and running faster.</p>
+
+				<p>Negatives are you get the larger file that users have to download. You can't change things out if the IxF's component doesn't do exactly what you want.</p>
+			</div>
+		</div>
+</div><!-- /ixf-panel -->
+
+
+<!-- These menu lists do not need to show state, so they do not need to be in the menu system -->
+<div id="myoptions-menu">
+	<dl class="ixf-form form-h1 smtext margin-sm float-left">
+		<dt>Text Size</dt>
+		<dd class="options-vertical">
+			<fieldset>
+				<legend class="invisible">Contact Type</legend>
+				<span class="ixf-option"><input type="radio" value="option1" id="option1" name="font" /> <label for="option1">Small</label></span>
+				<span class="ixf-option"><input type="radio" value="option2" id="option2" name="font" checked="checked" /> <label for="option2">Medium</label></span>
+				<span class="ixf-option"><input type="radio" value="option3" id="option3" name="font" /> <label for="option3">Large</label></span>
+			</fieldset>
+		</dd>
+	</dl>
+
+	<dl class="ixf-form form-h1 smtext margin-sm float-left">
+		<dt>Screen</dt>
+		<dd class="options-vertical">
+			<fieldset>
+				<legend class="invisible">Contact Type</legend>
+				<span class="ixf-option"><input type="radio" value="option4" id="option4" name="screen" checked="checked" /> <label for="option4">Normal</label></span>
+				<span class="ixf-option"><input type="radio" value="option5" id="option5" name="screen" /> <label for="option5">High Contrast</label></span>
+				<span class="ixf-option"><input type="radio" value="option6" id="option6" name="screen" /> <label for="option6">Projector</label></span>
+			</fieldset>
+		</dd>
+	</dl>
+
+	<hr class="margin-sm" />
+	<div class="ixf-popup-actions margin-sm">
+		<a href="#x" class="sprite person prefix right">My Account</a>
+		<a href="signin.html" class="sprite locked prefix left">Sign Out</a>
+	</div>
+</div>
+
+
+
+<div id="appmenu">
+	<ul class="ixf-list nolinks">
+		<li class="selected"><a href="../index.html">IxF - Main/Intro</a></li>
+		<li><a href="../demo/list.html#detail=widgets">IxF - Widgets Page</a></li>
+		<li><a href="../layout/signin.html">Sign In Layout</a></li>
+		<li><a href="../layout/small.html">Small App Layout 1</a></li>
+		<li><a href="../layout/small2.html">Small App Layout 2</a></li>
+	</ul>
+</div>
+
+<div id="messages-menu" class="padding-sm">
+	<ul>
+		<li><a href="#d">3 Reconciliation Reports Due</a></li>
+		<li><a href="#d">2 Minutes Require Approval</a></li>
+		<li><a href="#d">2 Overdue Expense Report</a></li>
+	</ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> <!-- Make IE play nice (needs to be first thing inside of head for IE apparently), use chrome frame if available -->
+	<title>Layouts - Interaction Framework</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!-- BEGIN IXF ASSETS -->
+	<link rel="stylesheet" type="text/css" media="all" href="../ixf/styles/screen.css" />
+	<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="../ixf/styles/screen-ie.css" /><![endif]-->
+	<script type="text/javascript" src="../ixf/scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="../ixf/scripts/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../ixf/scripts/ixf-plugins.js"></script>
+	<script type="text/javascript" src="../ixf/scripts/ixf-utilities.js"></script>
+	<!-- END IXF ASSETS -->
+
+	<link rel="stylesheet" type="text/css" media="all" href="../css/project.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="../css/syntaxHighlighter.css" />
+	<script type="text/javascript" src="../js/project.js" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/lib/syntaxHighlighter.js" charset="utf-8"></script>
+</head>
+
+<body class="toolbox">
+<a href="#body" class="invisible">Skip to content</a>
+<div class="ixf-header" role="navigation">
+	<div class="ixf-appname">
+		<a href="#appmenu" class="ixf-appname-link ixf-popup" data-pop-direction="left" title="IxF Layouts">Interaction Framework</a>
+	</div>
+	<!-- END ixf-appname -->
+
+	<div class="ixf-tools">
+		<a href="#x" class="ixf-tools-link">No Arrow</a>
+		<a href="#messages-menu" class="ixf-tools-link menu-arrow ixf-popup ixf-tools-link" data-pop-direction="right" title="6 Messages"><span class="messagecount">6</span> Messages</a>
+		<a href="#myoptions-menu" class="ixf-tools-link ixf-popup ixf-tools-link menu-arrow" data-pop-direction="right" title="Johanssen Lippincottlestein">Options</a>
+	</div>
+	<!-- END ixf-tools -->
+
+	<ul class="ixf-nav">
+		<li class="first"><a href="../index.html"><span>Introduction</span></a></li>
+		<li><a href="../demo/list.html#detail=intro"><span>Demos &amp; Examples</span></a></li>
+		<li class="selected"><a href="../layout/index.html"><span>Layouts</span></a></li>
+		<li class="last"><a href="../documentation/index.html"><span>Documentation</span></a></li>
+	</ul>
+	<!-- END ixf-nav -->
+
+</div>
+<!-- END ixf-header -->
+
+<div class="ixf-subheader" role="navigation">
+	<ul class="ixf-subnav">
+		<li class="first"><a href="../layout/index.html"><span>Standard Panels</span></a></li>
+		<li><a href="../layout/two-panes.html"><span>Master/Detail</span></a></li>
+		<li class="selected"><a href="../layout/toolbox.html"><span>Toolbox</span></a></li>
+		<li><a href="../layout/finder.html"><span>Finder (Alt)</span></a></li>
+		<li><a href="../layout/three-panes.html"><span>Master/Detail (3 Panes)</span></a></li>
+		<li class="last"><a href="../layout/accordion-pane.html"><span>Master/Detail (Accordion)</span></a></li>
+	</ul>
+	<!-- END ixf-subnav -->
+</div>
+<!-- END ixf-subheader -->
+
+<div class="ixf-panels">
+
+	<script type="text/javascript">
+		$(function(){		
+			//Change Selected Tool
+			$("#selector-demo li").click(function(){
+				$(this).siblings().removeClass("selected");
+				$(this).addClass("selected");
+				if($(this).children("a").text() == "Annotated"){
+					$("#area1").hide();
+					$("#area2").show();
+				} else {
+					$("#area2").hide();
+					$("#area1").show();
+				}
+			});
+		});
+	</script>
+
+<div class="ixf-panel ui-layout-west toolbox-master">
+
+<ul class="ixf-fixed margin-top-md" id="selector-demo">
+	<li class="selected">
+		<em class="sprite icon letter"></em>
+		<a href="#d">Inbox</a>
+		<strong>54</strong>	
+	</li>
+	<li>
+		<em class="sprite icon star"></em>
+		<a href="#d">Complete</a>
+		<strong>6</strong>
+	</li>
+	<li>
+		<em class="sprite icon notepad"></em>
+		<a href="#d">Verification</a>
+		<strong>13</strong>
+	</li>
+	<li>
+		<em class="sprite icon locked"></em>
+		<a href="#d">Confidential</a>
+		<strong>7</strong>
+	</li>
+	<li>
+		<em class="sprite icon note"></em>
+		<a href="#d">Annotated</a>
+		<strong>0</strong>
+	</li>
+</ul>
+<!-- /master -->
+
+</div><!-- /ixf-panel -->
+
+
+<div class="ixf-panel ui-layout-center toolbox-detail">
+		
+<div class="lift margin-top-md margin-right-md padding-md margin-left-md">
+
+	<div class="panel-loading">
+		<p>Loading...</p><span></span>
+	</div><!-- /panel-loading -->
+
+<div id="area1">
+<div class="ixf-toolbar">
+	<span class="tool"><a href="#X" class="sprite delete prefix">Delete Checked</a></span>
+	<span class="tool"><a href="#d" class="sprite add prefix" id="addItem">Add Item</a></span>
+	<input type="text" name="some_name" value="" id="demo-filter" class="ixf-filter float-right" />
+</div><!-- /ixf-toolbar -->
+
+	<table class="ixf-table ixf-fixed">
+		<thead>
+		<tr>
+			<th class="iconwidth">&nbsp;</th>
+			<th><a href="#x">Header</a></th>
+			<th><a href="#x">Header</a></th>
+			<th><a href="#x" class="down">Header</a></th>
+			<th class="iconwidth">&nbsp;</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td class="iconwidth"><span class="ixf-option no-label"><input type="checkbox" name="some_name0" value="" id="some_name0"> <label for="some_name0">Select row</label></span></td>
+			<td><a href="#x">Flintstone, Fred</a></td>
+			<td>1153466603</td>
+			<td>Data</td>
+			<td class="iconwidth"><a href="#x" class="rowdelete">Delete</a></td>
+		</tr>
+		<tr>
+			<td class="iconwidth"><span class="ixf-option no-label"><input type="checkbox" name="some_name1" value="" id="some_name1"> <label for="some_name1">Select row</label></span></td>
+			<td><a href="#x">Moore, Rick</a></td>
+			<td>2046594696</td>
+			<td>Data</td>
+			<td class="iconwidth"><a href="#x" class="rowdelete">Delete</a></td>
+		</tr>
+		<tr>
+			<td class="iconwidth"><span class="ixf-option no-label"><input type="checkbox" name="some_name2" value="" id="some_name2"> <label for="some_name2">Select row</label></span></td>
+			<td><a href="#x">Duck, Donald</a></td>
+			<td>445403504</td>
+			<td>Data</td>
+			<td class="iconwidth"><a href="#x" class="rowdelete">Delete</a></td>
+		</tr>
+		<tr>
+			<td class="iconwidth"><span class="ixf-option no-label"><input type="checkbox" name="some_name3" value="" id="some_name3"> <label for="some_name3">Select row</label></span></td>
+			<td><a href="#x">Flintstone, Fred</a></td>
+			<td>903325315</td>
+			<td>Data</td>
+			<td class="iconwidth"><a href="#x" class="rowdelete">Delete</a></td>
+		</tr>
+		<tr>
+			<td class="iconwidth"><span class="ixf-option no-label"><input type="checkbox" name="some_name4" value="" id="some_name4"> <label for="some_name4">Select row</label></span></td>
+			<td><a href="#x">Moore, Rick</a></td>
+			<td>1748213957</td>
+			<td>Data</td>
+			<td class="iconwidth"><a href="#x" class="rowdelete">Delete</a></td>
+		</tr>
+		<tr>
+			<td class="iconwidth"><span class="ixf-option no-label"><input type="checkbox" name="some_name5" value="" id="some_name5"> <label for="some_name5">Select row</label></span></td>
+			<td><a href="#x">Labrum, Clifton</a></td>
+			<td>357219796</td>
+			<td>Data</td>
+			<td class="iconwidth"><a href="#x" class="rowdelete">Delete</a></td>
+		</tr>
+		<tr>
+			<td class="iconwidth"><span class="ixf-option no-label"><input type="checkbox" name="some_name6" value="" id="some_name6"> <label for="some_name6">Select row</label></span></td>
+			<td><a href="#x">Bear, Yogi</a></td>
+			<td>235110126</td>
+			<td>Data</td>
+			<td class="iconwidth"><a href="#x" class="rowdelete">Delete</a></td>
+		</tr>
+		<tr>
+			<td class="iconwidth"><span class="ixf-option no-label"><input type="checkbox" name="some_name7" value="" id="some_name7"> <label for="some_name7">Select row</label></span></td>
+			<td><a href="#x">Flintstone, Fred</a></td>
+			<td>555984035</td>
+			<td>Data</td>
+			<td class="iconwidth"><a href="#x" class="rowdelete">Delete</a></td>
+		</tr>
+		<tr>
+			<td class="iconwidth"><span class="ixf-option no-label"><input type="checkbox" name="some_name8" value="" id="some_name8"> <label for="some_name8">Select row</label></span></td>
+			<td><a href="#x">Mouse, Minnie</a></td>
+			<td>1629962239</td>
+			<td>Data</td>
+			<td class="iconwidth"><a href="#x" class="rowdelete">Delete</a></td>
+		</tr>
+		<tr>
+			<td class="iconwidth"><span class="ixf-option no-label"><input type="checkbox" name="some_name9" value="" id="some_name9"> <label for="some_name9">Select row</label></span></td>
+			<td><a href="#x">Flintstone, Wilma</a></td>
+			<td>1541967580</td>
+			<td>Data</td>
+			<td class="iconwidth"><a href="#x" class="rowdelete">Delete</a></td>
+		</tr>
+		</tbody>
+	</table>
+	<p class="text-sm margin-top-sm">Items in left pane are for examples only. Data in this pane will not be filtered.</p>
+</div><!-- /area1 -->
+<div id="area2" class="nothing" style="display:none;">
+ <h1>There are no annotated records.</h1>
+ <p>Records can be annotated in the Inbox.</p>
+</div><!-- /area2 -->
+
+<script type="text/javascript">
+	$(function(){
+		var demo = $('#demo').dataTable({
+			bAutoWidth:false,
+			'sDom': '',
+			"oLanguage": {
+				"sSearch": ""
+			},
+			"iDisplayLength": 1000, // how many rows should be shown by default
+			fnDrawCallback:function(a){
+				// this updated the fixHeader script after any sorting, etc
+				if(a.nTable.fixHeader){
+					(a.nTable).fixHeader("makeCopy");
+				}
+			}
+		});
+		$("#demo-filter").bind("keyup",function(){
+			demo.fnFilter(this.value );
+		})
+	});
+</script>
+</div><!-- /padding-md -->
+</div>
+<!-- /ixf-panel -->
+
+</div>
+<!-- END ixf-panels -->
+
+
+<!-- These menu lists do not need to show state, so they do not need to be in the menu system -->
+<div id="myoptions-menu">
+	<dl class="ixf-form form-h1 smtext margin-sm float-left">
+		<dt>Text Size</dt>
+		<dd class="options-vertical">
+			<fieldset>
+				<legend class="invisible">Contact Type</legend>
+				<span class="ixf-option"><input type="radio" value="option1" id="option1" name="font" /> <label for="option1">Small</label></span>
+				<span class="ixf-option"><input type="radio" value="option2" id="option2" name="font" checked="checked" /> <label for="option2">Medium</label></span>
+				<span class="ixf-option"><input type="radio" value="option3" id="option3" name="font" /> <label for="option3">Large</label></span>
+			</fieldset>
+		</dd>
+	</dl>
+
+	<dl class="ixf-form form-h1 smtext margin-sm float-left">
+		<dt>Screen</dt>
+		<dd class="options-vertical">
+			<fieldset>
+				<legend class="invisible">Contact Type</legend>
+				<span class="ixf-option"><input type="radio" value="option4" id="option4" name="screen" checked="checked" /> <label for="option4">Normal</label></span>
+				<span class="ixf-option"><input type="radio" value="option5" id="option5" name="screen" /> <label for="option5">High Contrast</label></span>
+				<span class="ixf-option"><input type="radio" value="option6" id="option6" name="screen" /> <label for="option6">Projector</label></span>
+			</fieldset>
+		</dd>
+	</dl>
+
+	<hr class="margin-sm" />
+	<div class="ixf-popup-actions margin-sm">
+		<a href="#x" class="sprite person prefix right">My Account</a>
+		<a href="#x" class="sprite locked prefix left">Sign Out</a>
+	</div>
+</div>
+
+
+
+<div id="appmenu">
+	<ul class="ixf-list nolinks">
+		<li class="selected"><a href="../index.html">IxF - Main/Intro</a></li>
+		<li><a href="../demo/list.html#detail=widgets">IxF - Widgets Page</a></li>
+		<li><a href="../layout/signin.html">Sign In Layout</a></li>
+		<li><a href="../layout/small.html">Small App Layout 1</a></li>
+		<li><a href="../layout/small2.html">Small App Layout 2</a></li>
+	</ul>
+</div>
+
+<div id="messages-menu" class="padding-sm">
+	<ul>
+		<li><a href="#d">3 Reconciliation Reports Due</a></li>
+		<li><a href="#d">2 Minutes Require Approval</a></li>
+		<li><a href="#d">2 Overdue Expense Report</a></li>
+	</ul>
+</div>
+</body>
+</html>

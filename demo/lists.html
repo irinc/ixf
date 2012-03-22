@@ -1,0 +1,30 @@
+
+	<h1>Lists</h1>
+
+	<div class="ixf-toolbar">
+		<span class="tool"><a href="#addItem-menu" title="Popup Title" class="sprite add prefix ixf-popup" id="addItem">Click Me!</a></span>
+		<span class="tool float-right"><a href="#search-menu" title="Search" class="sprite search prefix ixf-popup" data-pop-direction="right" id="search">Search</a></span>
+	</div><!-- /ixf-toolbar -->
+
+
+	<ul class="ixf-list">
+		<li><a href="#x">Simple List Item</a></li>
+		<li><a href="#x" class="rowdelete">Delete</a> <a href="#x">Deletable Item</a></li>
+		<li>List Item, no link</li>
+	</ul>
+<div id="addItem-menu">
+	<dl class="ixf-form form-h1 smtext margin-sm">
+		<dt><label for="field-name">Field Name</label></dt>
+		<dd><input type="text" name="field-name" value="" id="field-name" /></dd>
+	</dl>
+
+	<hr class="margin-sm" />
+	<div class="ixf-popup-actions margin-sm">
+		<a href="#x" class="ixf-button primary float-right text-sm">Save</a>
+		<a href="#x" class="ixf-button float-left text-sm closer">Cancel</a>
+	</div>
+</div>
+<div id="search-menu" class="ixf-form text-sm padding-xs">
+	<input type="text" class="lg" name="field-name" value="" id="field-name" /> <a href="#x" class="ixf-button secondary text-sm">Search</a>
+</div>
+	

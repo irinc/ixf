@@ -1,0 +1,27 @@
+<script type="text/javascript">
+	$(function(){
+		$(".dangGina").click(function(){
+			$("#modal").dialog({ modal: true, zIndex: 15000 });
+		});			
+	});
+</script>
+<h1>Modals</h1>
+
+<p>Go ahead, <a href="#example1" title="Basic Example" class="dangGina" onclick="return false;">fire the modal</a>.</p>
+	
+
+<div class="ixf-tabs-wrapper" id="docs">
+	<ul class="ixf-tabs">
+		<li><a href="#overview"><span>Overview</span></a></li>
+		<li><a href="#documentation"><span>Documentation</span></a></li>
+		<li><a href="#ixfapi"><span>Ixf API</span></a></li>
+	</ul>
+	<div id="overview" class="padding-md"><p>Modals should only be used if you need to stop the user in whatever they're doing. Otherwise, <a href="#detail=popups">use a popup</a>. Modals can also be used if you need to venture off to retrieve some data for a portion of your page and you need more real estate than a popup provides.</p></div>
+	<div id="documentation" class="padding-md"><p>This uses the jQuery UI plugin straight out of the box.  See the <a href="http://jqueryui.com/demos/dialog/">jQuery UI site</a> for documentation.</p></div>
+	<div id="ixfapi" class="padding-md"><p>There is no currently exposed API via the IxF.</p></div>
+</div><!-- /ixf-tabs-wrapper -->
+<!-- Here is some content to show in the modals examples above -->
+
+<div id="modal" title="Title Goes Here" class="padding-sm gone">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
+</div>

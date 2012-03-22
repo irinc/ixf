@@ -1,0 +1,51 @@
+<?
+$path = "../";
+include($path."ixf/includes/init.php");
+$pageID = "3.7";
+$title = "Hover Popup Instructions";
+
+if( isAjax() ){
+	sleep(1);
+?>
+<div class="padding-sm">
+	<p>Testing ajax loaded content...</p>
+	<p>Loaded at <?=date("h:i:s",time())?></p>
+</div>
+<?
+} else {
+?>
+<?=$doctype;?>
+<html>
+	<head>
+<?
+include($brainsPath);
+?>
+	</head>
+	<body>
+<?
+include($headerPath);
+?>
+<div class="ixf-panel ui-layout-center padding-md">
+	<h1><?=$title;?></h1>
+	
+	<p>The hover popup is a little different, and requires some trickery.  It uses the same URL for both the content in the popup and the link that you click. This keeps things easy from the JS standpoint, but a bit more difficult on the backend.</p>
+
+	<p>jQuery is kind enough to send a little extra information along when it is making an AJAX request. We can use this information to serve up different versions of the page.</p>
+	
+	<p><a href="http://www.learningjquery.com/2010/03/detecting-ajax-events-on-the-server" title="Detecting Ajax Events on the Server &raquo; Learning jQuery - Tips, Techniques, Tutorials">Here is a tutorial</a> on how the extra information can be used. For those using the PHP side of the IxF framework, you are provided an <code>isAjax()</code> function that will return true if it is ajax.  So you can do the following for a page that you want to serve up two different things based on if it's an ajax request or not.</p>
+
+<pre>&lt;? if( isAjax() ){ ?&gt;
+	&lt;p&gt;Content for ajax here.&lt;/p&gt;
+&lt;? } else { ?&gt;
+	&lt;p&gt;Normal content here.&lt;/p&gt;
+&lt;? } ?&gt;</pre>
+</div>
+<?
+include($footerPath);
+?>
+	</body>
+</html>
+
+<?
+}
+?>

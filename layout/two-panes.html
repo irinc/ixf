@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> <!-- Make IE play nice (needs to be first thing inside of head for IE apparently), use chrome frame if available -->
+	<title>Layouts - Interaction Framework</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!-- BEGIN IXF ASSETS -->
+	<link rel="stylesheet" type="text/css" media="all" href="../ixf/styles/screen.css" />
+	<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="../ixf/styles/screen-ie.css" /><![endif]-->
+	<script type="text/javascript" src="../ixf/scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="../ixf/scripts/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../ixf/scripts/ixf-plugins.js"></script>
+	<script type="text/javascript" src="../ixf/scripts/ixf-utilities.js"></script>
+	<!-- END IXF ASSETS -->
+
+	<link rel="stylesheet" type="text/css" media="all" href="../css/project.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="../css/syntaxHighlighter.css" />
+	<script type="text/javascript" src="../js/project.js" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/lib/syntaxHighlighter.js" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/lib/require.js" charset="utf-8"></script>
+</head>
+
+<body class="master-detail">
+<a href="#body" class="invisible">Skip to content</a>
+<div class="ixf-header" role="navigation">
+	<div class="ixf-appname">
+		<a href="#appmenu" class="ixf-appname-link ixf-popup" data-pop-direction="left" title="IxF Layouts">Interaction Framework</a>
+	</div>
+	<!-- END ixf-appname -->
+
+	<div class="ixf-tools">
+		<a href="#x" class="ixf-tools-link">No Arrow</a>
+		<a href="#messages-menu" class="ixf-tools-link menu-arrow ixf-popup ixf-tools-link" data-pop-direction="right" title="6 Messages"><span class="messagecount">6</span> Messages</a>
+		<a href="#myoptions-menu" class="ixf-tools-link ixf-popup ixf-tools-link menu-arrow" data-pop-direction="right" title="Johanssen Lippincottlestein">Options</a>
+	</div>
+	<!-- END ixf-tools -->
+
+	<ul class="ixf-nav">
+		<li class="first"><a href="../index.html"><span>Introduction</span></a></li>
+		<li><a href="../demo/list.html#detail=intro"><span>Demos &amp; Examples</span></a></li>
+		<li class="selected"><a href="../layout/index.html"><span>Layouts</span></a></li>
+		<li class="last"><a href="../documentation/index.html"><span>Documentation</span></a></li>
+	</ul>
+	<!-- END ixf-nav -->
+
+</div>
+<!-- END ixf-header -->
+
+<div class="ixf-subheader" role="navigation">
+	<ul class="ixf-subnav">
+		<li class="first"><a href="../layout/index.html"><span>Standard Panels</span></a></li>
+		<li class="selected"><a href="../layout/two-panes.html"><span>Master/Detail</span></a></li>
+		<li><a href="../layout/toolbox.html"><span>Toolbox</span></a></li>
+		<li><a href="../layout/finder.html"><span>Finder (Alt)</span></a></li>
+		<li><a href="../layout/three-panes.html"><span>Master/Detail (3 Panes)</span></a></li>
+		<li class="last"><a href="../layout/accordion-pane.html"><span>Master/Detail (Accordion)</span></a></li>
+	</ul>
+	<!-- END ixf-subnav -->
+</div>
+<!-- END ixf-subheader -->
+
+<div class="ixf-panels">
+
+<div class="ixf-panel ui-layout-west">
+	<script>
+		(function() {
+			require(["../js/lib/handlebars","../js/dummyData"],function(Handlebars,dummyData) {
+				var rowTemplate = Handlebars.compile('{{#rows}}<tr id="row{{id}}"><td><a href="../demo/ajax-person-detail.html?id={{id}}&amp;title={{name}}">{{name}}</a></td><td>{{location}}</td></tr>{{/rows}}');
+
+				var locations = [
+					"Bluffdale, UT",
+					"Moab, UT",
+					"Provo, UT",
+					"Springdale, UT",
+					"Laverkin, UT",
+					"Levan, UT",
+					"Hurricane, UT"],
+					data = dummyData.getNames(100),
+					len = data ? data.length : 0, i, rows = [], locLen = locations.length;
+
+				for(i=0; i<len; i++) {
+					rows.push({id:i,name:data[i],location:locations[Math.floor(Math.random()*locLen)]});
+				}
+				$("#leftdemo tbody").append(rowTemplate({rows:rows}));
+				var table = $("#leftdemo");
+				table.addClass("ixf-table ixf-fixed ixf-table-default");
+				ixf.setup();
+
+				// setup the master/detail functionality. this makes the content from the rows clicked in the west pane load in the center pane
+				$('.ui-layout-west .ixf-table').masterDetail({
+					filter:"#leftdemo-filter", // selector of where the filter is
+					more:"#leftdemo-more", // so the script can accurately show the more button
+					cacheResults:true, // cache things so they don't load multiple times
+					loadFirst:false // should we load the first row if there isn't one defined by the url or "slected" class
+				});
+			});
+		}());
+	</script>
+	<table id="leftdemo" data-dt-rows="20">
+		<thead>
+			<tr>
+				<td colspan="2"><input type="text" name="filter" value="" id="leftdemo-filter" class="ixf-fill-width"></td>
+			</tr>
+			<tr>
+				<th><a href="#x">Name</a></th>
+				<th><a href="#x">Location</a></th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table><!-- /ixf-table -->
+
+	<div class="ixf-toolbar padding-left-xs padding-right-xs">
+		<span class="info" id="leftdemo-info">Showing <span class="dt-showing"></span> of <span class="dt-results"></span> Results</span>
+		<span class="tool"><a href="#x" class="sprite refresh prefix" id="leftdemo-more">More</a></span>
+	</div><!-- /ixf-toolbar -->
+</div><!-- /ixf-panel -->
+
+
+<div class="ixf-panel ui-layout-center sunken" id="detail">
+	
+	<div class="padding-md">
+		<h1>Master/Detail</h1>
+		
+		<p>The master detail concept is that you have a master list in one panel, and the details of items in the list in another panel. This prevents the back and forth of stepping in and out of multiple records to find thing you want. Many users are familiar with this model from applications like Outlook or other email programs.</p>
+		
+		<h2>Documentation</h2>
+		<p>This is a quick stab at some rough documentation.  Ask about what you don't know so we can know how to expand it. Below is a list of accepted options and a few of the methods you are likely to care about.</p>
+		
+		<h3>Options/Methods</h3>
+		<table class="ixf-table ixf-table-default">
+			<thead>
+			<tr>
+				<th><a href="#d">Name</a></th>
+				<th><a href="#d">Type</a></th>
+				<th><a href="#d">Default</a></th>
+				<th><a href="#d">Options</a></th>
+				<th><a href="#d">Description</a></th>
+			</tr>
+			</thead>
+			<tr>
+				<td><nobr>detailLink</nobr></td>
+				<td>string</td>
+				<td>a</td>
+				<td></td>
+				<td>selector for where the link to the detail is</td>
+			</tr>
+			<tr>
+				<td><nobr>focusKeyboard</nobr></td>
+				<td>boolean</td>
+				<td>true</td>
+				<td></td>
+				<td>should we trap the keyboard right off the bat for navigating the master list</td>
+			</tr>
+			<tr>
+				<td><nobr>filter</nobr></td>
+				<td>string</td>
+				<td></td>
+				<td></td>
+				<td>selector of where the optional filter field is</td>
+			</tr>
+			<tr>
+				<td><nobr>loaderID</nobr></td>
+				<td>string</td>
+				<td>md-loading</td>
+				<td></td>
+				<td>id of the element used to show the loading indicator (created by script)</td>
+			</tr>
+			<tr>
+				<td><nobr>loaderText</nobr></td>
+				<td>string</td>
+				<td>Loading</td>
+				<td></td>
+				<td>text used to display in the loading indicator</td>
+			</tr>
+			<tr>
+				<td><nobr>hashLabel</nobr></td>
+				<td>string</td>
+				<td>detail</td>
+				<td></td>
+				<td>ID of the element where the detail should be loaded into. also used to create the hash in the URL for history tracking.</td>
+			</tr>
+			<tr>
+				<td><nobr>casheResults</nobr></td>
+				<td>boolean</td>
+				<td>true</td>
+				<td></td>
+				<td>should the script cache the results of ajax requests for details</td>
+			</tr>
+			<tr>
+				<td><nobr>hashLabel2</nobr></td>
+				<td>string</td>
+				<td></td>
+				<td></td>
+				<td>optional hashLabel for a sub-master so we can set it to 0 on it's initial load</td>
+			</tr>
+			<tr>
+				<td><nobr>masterParent</nobr></td>
+				<td>string</td>
+				<td></td>
+				<td></td>
+				<td>optional hashLabel/ID for a parent detail</td>
+			</tr>
+			<tr>
+				<td><nobr>masterChild</nobr></td>
+				<td>string</td>
+				<td></td>
+				<td></td>
+				<td>optional hashLabel/ID for a child detail</td>
+			</tr>
+			<tr>
+				<td><nobr>loadFirst</nobr></td>
+				<td>boolean</td>
+				<td>true</td>
+				<td></td>
+				<td>should the script load the first row of the master list if none are marked as selected or defined in the URL</td>
+			</tr>
+			<tr>
+				<td><nobr>selectedClass</nobr></td>
+				<td>string</td>
+				<td>selected</td>
+				<td></td>
+				<td>class to use on selected rows</td>
+			</tr>
+			<tr>
+				<td><nobr>onloaddetail</nobr></td>
+				<td>function</td>
+				<td></td>
+				<td></td>
+				<td>callback that fires when the detail is loaded</td>
+			</tr>
+			<tr>
+				<td><nobr>getSelectedRow</nobr></td>
+				<td>method</td>
+				<td></td>
+				<td></td>
+				<td>returns the row (object) that is currently selected</td>
+			</tr>
+			<tr>
+				<td><nobr>getSelectdRowID</nobr></td>
+				<td>method</td>
+				<td></td>
+				<td></td>
+				<td>returns the ID of the row that is currently selected</td>
+			</tr>
+			<tr>
+				<td><nobr>clearCache</nobr></td>
+				<td>method</td>
+				<td></td>
+				<td></td>
+				<td>clears the cache. if an ID is provided it clears only the cache for that ID</td>
+			</tr>
+			<tr>
+				<td><nobr>rowCreate</nobr></td>
+				<td>method</td>
+				<td></td>
+				<td></td>
+				<td>expects rowID, data, dontFollow(optional). rowID = the ID the row should be given. data = a JSON object as shown here http://datatables.net/api for fnAddData, dontFollow = only add the row don't click it</td>
+			</tr>
+			<tr>
+				<td><nobr>rowDestroy</nobr></td>
+				<td>method</td>
+				<td></td>
+				<td></td>
+				<td>expects rowID, gotoID(optional) rowID = id of row we are destroying, gotoID = id on the page we should then fire a click event on (to load another page, etc)</td>
+			</tr>
+		</table>
+		<p class="text-sm">Options Column = The script only recognizes these values</p>
+	</div><!-- /padding-md -->
+</div>
+<!-- /ixf-panel -->
+
+</div>
+<!-- END ixf-panels -->
+
+
+<!-- These menu lists do not need to show state, so they do not need to be in the menu system -->
+<div id="myoptions-menu">
+	<dl class="ixf-form form-h1 smtext margin-sm float-left">
+		<dt>Text Size</dt>
+		<dd class="options-vertical">
+			<fieldset>
+				<legend class="invisible">Contact Type</legend>
+				<span class="ixf-option"><input type="radio" value="option1" id="option1" name="font" /> <label for="option1">Small</label></span>
+				<span class="ixf-option"><input type="radio" value="option2" id="option2" name="font" checked="checked" /> <label for="option2">Medium</label></span>
+				<span class="ixf-option"><input type="radio" value="option3" id="option3" name="font" /> <label for="option3">Large</label></span>
+			</fieldset>
+		</dd>
+	</dl>
+
+	<dl class="ixf-form form-h1 smtext margin-sm float-left">
+		<dt>Screen</dt>
+		<dd class="options-vertical">
+			<fieldset>
+				<legend class="invisible">Contact Type</legend>
+				<span class="ixf-option"><input type="radio" value="option4" id="option4" name="screen" checked="checked" /> <label for="option4">Normal</label></span>
+				<span class="ixf-option"><input type="radio" value="option5" id="option5" name="screen" /> <label for="option5">High Contrast</label></span>
+				<span class="ixf-option"><input type="radio" value="option6" id="option6" name="screen" /> <label for="option6">Projector</label></span>
+			</fieldset>
+		</dd>
+	</dl>
+
+	<hr class="margin-sm" />
+	<div class="ixf-popup-actions margin-sm">
+		<a href="#x" class="sprite person prefix right">My Account</a>
+		<a href="#x" class="sprite locked prefix left">Sign Out</a>
+	</div>
+</div>
+
+
+
+<div id="appmenu">
+	<ul class="ixf-list nolinks">
+		<li class="selected"><a href="../index.html">IxF - Main/Intro</a></li>
+		<li><a href="../demo/list.html#detail=widgets">IxF - Widgets Page</a></li>
+		<li><a href="../layout/signin.html">Sign In Layout</a></li>
+		<li><a href="../layout/small.html">Small App Layout 1</a></li>
+		<li><a href="../layout/small2.html">Small App Layout 2</a></li>
+	</ul>
+</div>
+
+<div id="messages-menu" class="padding-sm">
+	<ul>
+		<li><a href="#d">3 Reconciliation Reports Due</a></li>
+		<li><a href="#d">2 Minutes Require Approval</a></li>
+		<li><a href="#d">2 Overdue Expense Report</a></li>
+	</ul>
+</div>
+</body>
+</html>

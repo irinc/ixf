@@ -1,0 +1,125 @@
+<h1>Tabs</h1>
+<div id="examples">
+	<div class="example" id="basic">
+		<h2>Basic</h2>
+		<div class="source">
+			<div class="ixf-tabs-wrapper">
+				<ul class="ixf-tabs">
+					<li><a href="#tab-1a"><span>Tab 1</span></a></li>
+					<li><a href="#tab-2a"><span>Tab 2</span></a></li>
+					<li><a href="#tab-3a"><span>Tab 3</span></a></li>
+				</ul>
+
+				<div id="tab-1a" class="padding-md">
+					<p>A simple sentence to give us some content.</p>
+				</div><!-- /tab -->
+				<div id="tab-2a" class="padding-md">
+					<p>Another simple sentence to give us some content.</p>
+				</div><!-- /tab -->
+				<div id="tab-3a" class="padding-md">
+					<p>Yet another simple sentence to give us some content.</p>
+				</div><!-- /tab -->
+			</div><!-- /ixf-tabs-wrapper -->
+		</div>
+	</div>
+	<div class="example" id="ajax">
+		<h2>Load Local and Ajax Content</h2>
+		<div class="source">
+			<div class="ixf-tabs-wrapper">
+				<ul class="ixf-tabs">
+					<li><a href="#tab-1b"><span>Local 1</span></a></li>
+					<li><a href="ajax-person-detail.html?title=George Washington"><span>Ajax 1</span></a></li>
+					<li><a href="ajax-person-detail.html?title=Walt Disney"><span>Ajax 2</span></a></li>
+					<li><a href="ajax-person-detail.html?title=Isaiah Mustafa"><span>Ajax 3</span></a></li>
+				</ul>
+				<div id="tab-1b" class="padding-md">
+					<p>This is local content. You have to provide the wrapper with correct ID. For the ajax stuff, these will be built out by the plugin.</p>
+					<p>Just link to the ajax that should load inside the <code>&lt;a&gt;</code> and it will automatically get the correct wrapper and the content will be placed here like a normal tab.</p>
+				</div><!-- /tab -->
+			</div><!-- /ixf-tabs-wrapper -->
+		</div>
+	</div>
+	<div class="example" id="track">
+		<h2>Track in the URL</h2>
+		<p>To track which tab is selected in the URL (which inherently makes it bookmarkable, shareable, etc) simply add an ID to the ixf-tabs-wrapper element.</p>
+		<div class="ixf-tabs-wrapper" id="trackthis">
+			<ul class="ixf-tabs">
+				<li><a href="#tab-1c"><span>Tab 1</span></a></li>
+				<li><a href="#tab-2c"><span>Tab 2</span></a></li>
+				<li><a href="#tab-3c"><span>Tab 3</span></a></li>
+			</ul>
+
+			<div id="tab-1c" class="padding-md">
+				<p>A simple sentence to give us some content.</p>
+			</div><!-- /tab -->
+			<div id="tab-2c" class="padding-md">
+				<p>Another simple sentence to give us some content.</p>
+			</div><!-- /tab -->
+			<div id="tab-3c" class="padding-md">
+				<p>Yet another simple sentence to give us some content.</p>
+			</div><!-- /tab -->
+		</div><!-- /ixf-tabs-wrapper -->
+	</div>
+</div>
+
+<div class="ixf-tabs-wrapper" id="docs">
+	<ul class="ixf-tabs">
+		<li><a href="#overview"><span>Overview</span></a></li>
+		<li><a href="#documentation"><span>Documentation</span></a></li>
+		<li><a href="#ixfapi"><span>Ixf API</span></a></li>
+	</ul>
+	<div id="overview" class="padding-md"><p>This uses the jQuery UI plugin straight out of the box.  See the <a href="http://jqueryui.com/demos/tabs/">jQuery UI site</a> for documentation.</p></div>
+	<div id="documentation" class="padding-md">	<p>This uses the jQuery UI plugin straight out of the box.  See the <a href="http://jqueryui.com/demos/tabs/">jQuery UI site</a> for documentation.</p>
+	<h3>Styles</h3>
+	<p>Styles are applied using the standard jQuery UI classes for the accordion plugin. So if you call the accordion script without using the ixf, the correct look and feel will still be applied</p>
+	
+	<h3>General Instructions</h3>
+
+	<p>You can load content that is already located on the page, or have tabs be AJAX calls.</p>
+	
+	<p>Just point to the content as appropriate (#local for local and content.html for AJAX) and the script takes care of the rest.</p>
+	
+	<h3>AJAX</h3>
+	<p>AJAX content will be cached until the page is refreshed, so additional requests will not show the loading indicator and will load immediatly. If you would like to update the content of a given tab due to the content being updated since the current view, do the following.</p>
+	<p><code>$("selector").tabs( "load" , index );<br />
+		// index is 0 based so "Ajax Content 1" (in the above tabs) would be index 2</code></p>
+	
+	<p>Running the code above (updated to the correct selector and index) will immediately update the content of that tab, even if it is not currently focused. It does not wait until the next time you visit the tab.</p>
+	
+	<h3>URL Tracking</h3>
+	<p>If you would like to have the tabs that users visit tracked in the history and updated in the URL, simply give the .ixf-tabs-wrapper element an ID. Any ID will do, as long as it isn't used elsewhere on the page (or other content that may be included in the current view). The IxF takes care of the rest. If you do not provide an ID, changing tabs will not be added to the browser history or update the URL.</p>
+	
+	<h3>Fill Available Height</h3>
+	<p>If you would like to have the tabs fill the available height, set a class of "ixf-set-minheight" on the ixf-tabs-wrapper element. This will set a min-height that will make the tabs take up as much height as they can without causing a scrollbar.  If individual tab panels have content that push them beyond that boundry, they will take up as much height as they need.</p>
+	
+	<h3>Full Documentation</h3>
+	<p>The tabs are just the default jQuery UI tabs with a few things setup by default (loading indicators, accessibility tweaks, etc). You can view the <a href="http://jqueryui.com/demos/tabs/" title="jQuery UI - Tabs Demos &amp; Documentation">full documentation</a> to configure your own version of the tabs.</p></div>
+	<div id="ixfapi" class="padding-md">	<p>The following <a href="../documentation/data-attributes.html">data- attributes</a> can be used to quickly setup timepicker fields.</p>
+
+<table class="ixf-table ixf-table-default">
+	<thead>
+		<tr>
+			<th><a href="#d">Name</a></th>
+			<th><a href="#d">Type</a></th>
+			<th><a href="#d">Default</a></th>
+			<th><a href="#d">Options</a></th>
+			<th><a href="#d">Description</a></th>
+		</tr>
+	</thead>
+	<tr>
+		<td><nobr>data-tabs-disabled</nobr></td>
+		<td>boolean</td>
+		<td></td>
+		<td></td>
+		<td>(.ixf-tabs li) Should the tab be disabled. Added 1.0.1</td>
+	</tr>
+	<tr>
+		<td><nobr>data-tabs-options</nobr></td>
+		<td>string</td>
+		<td></td>
+		<td></td>
+		<td>(.ixf-tabs-wrapper) You can pass any <a href="http://jqueryui.com/demos/tabs/#options">additional options</a> you want to set custom for this instance. Must be formated with single quotes wrapping the value and double quotes used inside (ex: data-tabs-options='{"event":"click"}')</td>
+	</tr>
+</table>
+<p class="text-sm">Options Column = The script only recognizes these values</p></div>
+</div><!-- /ixf-tabs-wrapper -->
