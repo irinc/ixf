@@ -14,18 +14,17 @@ Start using IxF in a project by downloading the [KickStart] (http://irinc.github
 
 ## Sample Code
 
-```html
-<!-- BEGIN IXF ASSETS -->
-<link rel="stylesheet" type="text/css" media="all" href="ixf/styles/screen.css" />
-<!--[if lte IE 7]>
-<link rel="stylesheet" type="text/css" media="all" href="ixf/styles/screen-ie.css"/>
-<![endif]-->
-<script type="text/javascript" src="ixf/scripts/jquery.min.js"></script>
-<script type="text/javascript" src="ixf/scripts/jquery-ui.min.js"></script>
-<script type="text/javascript" src="ixf/scripts/ixf-plugins.min.js"></script>
-<script type="text/javascript" src="ixf/scripts/ixf-utilities.min.js"></script>
-<!-- END IXF ASSETS -->
-```
+	&lt;!-- BEGIN IXF ASSETS --&gt;
+  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;all&quot; href=&quot;ixf/styles/screen.css&quot; /&gt;
+  &lt;!--[if lte IE 7]&gt;
+  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;all&quot; href=&quot;ixf/styles/screen-ie.css&quot;/&gt;
+  &lt;![endif]--&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;ixf/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;ixf/scripts/jquery-ui.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;ixf/scripts/ixf-plugins.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;ixf/scripts/ixf-utilities.min.js&quot;&gt;&lt;/script&gt;
+  &lt;!-- END IXF ASSETS --&gt;
+
 ## Building IxF
 
 * Install [Node.js] (http://nodejs.org/ Node.js)
