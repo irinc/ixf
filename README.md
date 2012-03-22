@@ -14,16 +14,18 @@ Start using IxF in a project by downloading the [KickStart] (http://irinc.github
 
 ## Sample Code
 
-	&lt;!-- BEGIN IXF ASSETS --&gt;
-  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;all&quot; href=&quot;ixf/styles/screen.css&quot; /&gt;
-  &lt;!--[if lte IE 7]&gt;
-  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;all&quot; href=&quot;ixf/styles/screen-ie.css&quot;/&gt;
-  &lt;![endif]--&gt;
-  &lt;script type=&quot;text/javascript&quot; src=&quot;ixf/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
-  &lt;script type=&quot;text/javascript&quot; src=&quot;ixf/scripts/jquery-ui.min.js&quot;&gt;&lt;/script&gt;
-  &lt;script type=&quot;text/javascript&quot; src=&quot;ixf/scripts/ixf-plugins.min.js&quot;&gt;&lt;/script&gt;
-  &lt;script type=&quot;text/javascript&quot; src=&quot;ixf/scripts/ixf-utilities.min.js&quot;&gt;&lt;/script&gt;
-  &lt;!-- END IXF ASSETS --&gt;
+```
+&lt;!-- BEGIN IXF ASSETS --&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;all&quot; href=&quot;ixf/styles/screen.css&quot; /&gt;
+&lt;!--[if lte IE 7]&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;all&quot; href=&quot;ixf/styles/screen-ie.css&quot;/&gt;
+&lt;![endif]--&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;ixf/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;ixf/scripts/jquery-ui.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;ixf/scripts/ixf-plugins.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;ixf/scripts/ixf-utilities.min.js&quot;&gt;&lt;/script&gt;
+&lt;!-- END IXF ASSETS --&gt;
+```
 
 ## Building IxF
 
