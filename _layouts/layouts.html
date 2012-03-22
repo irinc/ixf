@@ -3,7 +3,7 @@
 <head>
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> <!-- Make IE play nice (needs to be first thing inside of head for IE apparently), use chrome frame if available -->
-	<title>Layouts - Interaction Framework</title>
+	<title>{{page.title}} - Interaction Framework</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<!-- BEGIN IXF ASSETS -->
 	<link rel="stylesheet" type="text/css" media="all" href="../ixf/styles/screen.css" />
@@ -20,7 +20,7 @@
 	<script type="text/javascript" src="../js/lib/syntaxHighlighter.js" charset="utf-8"></script>
 </head>
 
-<body>
+<body class="{{page.body-class}}">
 <a href="#body" class="invisible">Skip to content</a>
 <div class="ixf-header" role="navigation">
 	<div class="ixf-appname">
@@ -48,148 +48,19 @@
 
 <div class="ixf-subheader" role="navigation">
 	<ul class="ixf-subnav">
-		<li class="first selected"><a href="../layout/index.html"><span>Standard Panels</span></a></li>
-		<li><a href="../layout/two-panes.html"><span>Master/Detail</span></a></li>
-		<li><a href="../layout/toolbox.html"><span>Toolbox</span></a></li>
-		<li><a href="../layout/finder.html"><span>Finder (Alt)</span></a></li>
-		<li><a href="../layout/three-panes.html"><span>Master/Detail (3 Panes)</span></a></li>
-		<li class="last"><a href="../layout/accordion-pane.html"><span>Master/Detail (Accordion)</span></a></li>
+		<li class="first {{page.layouts-menu-standard-panels}}"><a href="../layout/index.html"><span>Standard Panels</span></a></li>
+		<li class="{{page.layouts-menu-two-panes}}"><a href="../layout/two-panes.html"><span>Master/Detail</span></a></li>
+		<li class="{{page.layouts-menu-toolbox}}"><a href="../layout/toolbox.html"><span>Toolbox</span></a></li>
+		<li class="{{page.layouts-menu-finder}}"><a href="../layout/finder.html"><span>Finder (Alt)</span></a></li>
+		<li class="{{page.layouts-menu-three-panes}}"><a href="../layout/three-panes.html"><span>Master/Detail (3 Panes)</span></a></li>
+		<li class="last {{page.layouts-menu-accordion-pane}}"><a href="../layout/accordion-pane.html"><span>Master/Detail (Accordion)</span></a></li>
 	</ul>
 	<!-- END ixf-subnav -->
 </div>
 <!-- END ixf-subheader -->
 
 <div class="ixf-panels">
-
-<div class="ixf-panel ui-layout-center">
-	<div class="ixf-panel ui-layout-north padding-sm">
-		<h2>Mid-north Center Panel With "padding-sm" around it.</h2>
-		<p>To create a split center panel like this with a sidebar, the north and "south" panel need to be nested inside an outside center panel. View source to see how it all comes together.</p>
-		
-		
-	</div><!-- /ixf-panel -->
-
-	<div class="ixf-panel ui-layout-center">
-		<div class="ixf-container padding-md margin-md">
-			<p>Center Panel With "ixf-container", "margin-md" and "padding-md" around it.</p>
-			<h1>Custom Configuration</h1>
-			<p>The system we are using for the panels is extremely robust. Likewise it can be quite daunting to configure deeper then what we provide out of the box.  If you want to take it to the next level, this will help you do that.</p>
-
-			<p>To configure the layout script insert the following either in your project.js if you want it to be a global customization, or on the specific page where you want it to occur.  The following MUST NOT BE in an onload (ie: $(function(){STUFF HERE})). Just put it on the page so it runs as it is loaded.  If this doesn't make sense, maybe you shouldn't be trying this out ;)</p>
-
-		<pre><code>ixf.layoutDefaults = {
-	west:{
-		size: 500
-	},
-	defaults:{
-		size:400
-	}
-}</code></pre>
-
-			<p>In the above, set anything you want to be applied to ALL PANES in the <code>defaults</code> section.  If you want it to be applied only to a specific pane use the <code>west</code> section (changing west to the direction you want to apply to).</p>
-			<p>You can also set options directly on a given pane using <a href="../documentation/data-attributes.html">data- attributes</a>. Set it on the wrapping elements for defaults for all sub-panes, or on the individual panes to target that pane specifically.</p>
-
-			<table class="ixf-table ixf-table-default">
-				<thead>
-				<tr>
-					<th><a href="#d">Name</a></th>
-					<th><a href="#d">Type</a></th>
-					<th><a href="#d">Default</a></th>
-					<th><a href="#d">Options</a></th>
-					<th><a href="#d">Description</a></th>
-				</tr>
-				</thead>
-				<tr>
-					<td><nobr>layout-closable</nobr></td>
-					<td>boolean</td>
-					<td>true</td>
-					<td></td>
-					<td>Can the user close the pane</td>
-				</tr>
-				<tr>
-					<td><nobr>layout-resizable</nobr></td>
-					<td>boolean</td>
-					<td>true</td>
-					<td></td>
-					<td>Can the user resize the pane</td>
-				</tr>
-				<tr>
-					<td><nobr>layout-minsize</nobr></td>
-					<td>number</td>
-					<td></td>
-					<td></td>
-					<td>Minimimum size the pane can be resized to</td>
-				</tr>
-				<tr>
-					<td><nobr>layout-maxsize</nobr></td>
-					<td>number</td>
-					<td></td>
-					<td></td>
-					<td>Maximum size the pane can be resized to</td>
-				</tr>
-				<tr>
-					<td><nobr>layout-size</nobr></td>
-					<td>number</td>
-					<td></td>
-					<td></td>
-					<td>Size the pane starts out at</td>
-				</tr>
-				<tr>
-					<td><nobr>layout-initclosed</nobr></td>
-					<td>boolean</td>
-					<td></td>
-					<td></td>
-					<td>Should the pane start closed</td>
-				</tr>
-				<tr>
-					<td><nobr>layout-options</nobr></td>
-					<td>string</td>
-					<td></td>
-					<td></td>
-					<td>You can pass any <a href="http://layout.jquery-dev.net/documentation.cfm">additional options</a> you want to set custom for the panels via this. Must be formated with single quotes wrapping the value and double quotes used inside (ex: data-layout-options='{"size":"150"}')</td>
-				</tr>
-			</table>
-			<p class="text-sm">Options Column = The script only recognizes these values</p>
-			<p>To see what all you can configure see the <a href="http://layout.jquery-dev.net/documentation.cfm" title="UI.Layout Plug-in - Documentation">plugin documentation page</a>. Good luck, it's pretty crazy in there.</p>
-		</div><!-- /ixf-container -->
-	</div><!-- /ixf-panel -->
-</div><!-- /ixf-panel -->
-
-
-<div class="ixf-panel ui-layout-west">
-		<div class="padding-sm">
-			<h2>West panel containing a div with <span class="nowrap">"padding-sm"</span></h2>
-
-			<p>The <a href="http://layout.jquery-dev.net/">panel system </a>will automatically detect what panels you have on your page.  The classes you give each pane are as follows, hopefully their relative location on the page is obvious:</p>
-			<ul>
-				<li>ui-layout-east</li>
-				<li>ui-layout-west</li>
-				<li>ui-layout-north</li>
-				<li>ui-layout-south</li>
-				<li>ui-layout-center (the main content area)</li>
-			</ul>
-		
-			<p>Pages are not required to have a ui-layout-center for their content if they aren't using multiple panels.</p>
-		
-			<p>The panel system doesn't care about what content is in each panel.  So you can make it have padding or be all the way out to the edge (full bleed). If the content is taller then the available space it will automatically get a scrollbar for that pane.</p>
-		
-			<h2>Features</h2>
-			<ul>
-				<li>Each pane (nsew) can be resized using the resizing bar between two panes.</li>
-				<li>You can click the 3 dot handle graphic to close the pane. You can click the dots to fully reopen again, or click elsewhere on the resizing bar to open temporarily. It will close after your mouse leaves the pane.</li>
-				<li>Each pane (nsew) has a default starting size and an optional min/max size.</li>
-				<li>Each pane (nsew) can be closed by default</li>
-				<li>The class names dictate location, not source order. Center can come before east (in the source) if you want that to be first in the tab-order, for accessibility, etc. </li>
-				<li>You can embed panels within panels. But you always need a center pane.</li>
-			</ul>
-		</div><!-- /padding-sm -->
-</div><!-- /ixf-panel -->
-
-<div class="ixf-panel ui-layout-east sunken">
-	<div class="padding-md">
-		<h2>East Panel with a class of "sunken" and a div with "padding-md" set on it.</h2>
-	</div><!-- /padding-md -->
-</div><!-- /ixf-panel -->
+{{content}}
 </div>
 <!-- END ixf-panels -->
 
