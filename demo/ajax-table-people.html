@@ -1,0 +1,69 @@
+<div class="padding-md">
+	<h1 id="title"></h1>
+	<p>Loaded at <span id="time"></span></p>
+</div>
+
+<div class="ixf-toolbar">
+	<span class="tool"><a href="#X" class="sprite delete prefix">Delete Checked</a></span>
+	<span class="tool"><a href="#d" class="sprite add prefix" id="addItem">Add Item</a></span>
+	<input type="text" name="some_name" value="" id="demo-filter" class="ixf-filter float-right" />
+</div><!-- /ixf-toolbar -->
+<table class="ixf-table ixf-fixed" id="demo">
+	<thead>
+	<tr>
+		<th><a href="#d" title="Sort Ascending by &quot;Household&quot;"  class="order-desc">Household</a></th>
+		<th><a href="#d" title="Sort Ascending by &quot;Address&quot;">Address</a></th>
+		<th><a href="#d" title="Sort Ascending by &quot;City/Locale&quot;">City/Locale</a></th>
+		<th><a href="#d" title="Sort Ascending by &quot;State/Province&quot;">State/Province</a></th>
+	</tr>
+	</thead>
+	<tbody>
+<?
+/*
+The following is an example of how to very easily make a complex looking table of data.  This makes it extremely easy to modify order, add/remove links, etc. to multiple rows of data.
+
+Issues to consider:
+- Every time you load the page the data will be different due to the randomization.
+- Sorting does not work. Along those lines, due to the randomization the column that is marked as sorted will not actually be
+
+*/
+// set up some data for us to randomize.  These lists can be as long or as short as you like.
+
+
+for($x=0; $x<100; $x++){
+	// pick some random values for this time through the loop
+	$city = $cities[rand(0,count($cities)-1)];
+	$dir = $dirs[rand(0,count($dirs)-1)];
+	$street = $streets[rand(0,count($streets)-1)];
+	$state = $states[rand(0,count($states)-1)];
+	$name = getRand($lastNames).", ".getRand($firstNames);
+	// now put the above variables wherever you need them in some HTML
+?>
+						<tr<?if(($x-1)%2){ echo ' class="even"';} else { echo ' class="odd"'; }?> id="family<?=$x;?>">
+							<td><a href="../demo/finder-ajax.html?grab=family&amp;name=<?=$name;?>&amp;rowID=family<?=$x;?>"><?=$name;?></a></td>
+							<td><?=rand(0,9999)?> <?=$dir;?> <?=$street;?> St</td>
+							<td><?=$city;?></td>
+							<td><?=$state;?></td>
+						</tr>
+<?
+}
+?>
+
+					</tbody>
+				</table>
+				<script type="text/javascript">
+					$(function(){
+						
+						// When the document first "loads" it is hidden and then faded in. So we need to wait a but for it to be visible
+						setTimeout(function(){
+							ixf.setup();
+							// masterDetail needs it to be shown too
+							$('#demo').masterDetail({
+								focusKeyboard:false,
+								hashLabel:"family",
+								masterParent:"ward",
+								cacheResults:true
+							});
+						},100)
+					});
+				</script>

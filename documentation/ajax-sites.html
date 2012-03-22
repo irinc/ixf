@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> <!-- Make IE play nice (needs to be first thing inside of head for IE apparently), use chrome frame if available -->
+	<title>Documentation - Interaction Framework</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!-- BEGIN IXF ASSETS -->
+	<link rel="stylesheet" type="text/css" media="all" href="../ixf/styles/screen.css" />
+	<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="../ixf/styles/screen-ie.css" /><![endif]-->
+	<script type="text/javascript" src="../ixf/scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="../ixf/scripts/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../ixf/scripts/ixf-plugins.js"></script>
+	<script type="text/javascript" src="../ixf/scripts/ixf-utilities.js"></script>
+	<!-- END IXF ASSETS -->
+
+	<link rel="stylesheet" type="text/css" media="all" href="../css/project.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="../css/syntaxHighlighter.css" />
+	<script type="text/javascript" src="../js/project.js" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/lib/syntaxHighlighter.js" charset="utf-8"></script>
+</head>
+
+<body>
+<a href="#body" class="invisible">Skip to content</a>
+<div class="ixf-header" role="navigation">
+	<div class="ixf-appname">
+		<a href="#appmenu" class="ixf-appname-link ixf-popup" data-pop-direction="left" title="IxF Layouts">Interaction Framework</a>
+	</div>
+	<!-- END ixf-appname -->
+
+	<div class="ixf-tools">
+		<a href="#x" class="ixf-tools-link">No Arrow</a>
+		<a href="#messages-menu" class="ixf-tools-link menu-arrow ixf-popup ixf-tools-link" data-pop-direction="right" title="6 Messages"><span class="messagecount">6</span> Messages</a>
+		<a href="#myoptions-menu" class="ixf-tools-link ixf-popup ixf-tools-link menu-arrow" data-pop-direction="right" title="Johanssen Lippincottlestein">Options</a>
+	</div>
+	<!-- END ixf-tools -->
+
+	<ul class="ixf-nav">
+		<li class="first"><a href="../index.html"><span>Introduction</span></a></li>
+		<li><a href="../demo/list.html#detail=intro"><span>Demos &amp; Examples</span></a></li>
+		<li><a href="../layout/index.html"><span>Layouts</span></a></li>
+		<li class="last selected"><a href="../documentation/index.html"><span>Documentation</span></a></li>
+	</ul>
+	<!-- END ixf-nav -->
+
+</div>
+<!-- END ixf-header -->
+
+<div class="ixf-subheader" role="navigation">
+	<ul class="ixf-subnav">
+		<li class="first"><a href="../documentation/index.html"><span>Introduction</span></a></li>
+		<li><a href="../documentation/general.html"><span>General Tips &amp; Tricks</span></a></li>
+		<li class="selected"><a href="../documentation/ajax-sites.html"><span>Ajax Sites</span></a></li>
+		<li><a href="../documentation/data-attributes.html"><span>Data- Attributes</span></a></li>
+		<li class="last"><a href="../documentation/themeroller.html"><span>Themeroller</span></a></li>
+	</ul>
+	<!-- END ixf-subnav -->
+</div>
+<!-- END ixf-subheader -->
+
+<div class="ixf-panels">
+
+<div class="ixf-panel ui-layout-center padding-md">
+
+	<h1>Ajax Sites</h1>
+	<p>If you are creating an ajax driven site (meaning you are loading content via ajax requests and updating existing pages) there are a few things you should be aware of.</p>
+	
+	<p>First and foremost, is that there is a lot going on under the hood of the IxF, as you can well imagine.  We parse the page for specific classes and structure to do a lot of our default functionality. To do this we run a function called <code>ixf.setup()</code> when the page is done loading.  This function in turn calls 4 additional setup functions who's names are hopefully fairly obvious: <code>setupPanels()</code>, <code>setupGeneral()</code>, <code>setupPopups()</code>, <code>setupDataTables()</code>.</p>
+	
+	<p>One thing to keep in mind is that <code>ixf.setup()</code> only runs once after the page is done loading. If you bring in any additional content via ajax to insert into the page, the logic that <code>ixf.setup()</code> has in it has not been run on that new content. You need to make sure to run <code>ixf.setup()</code> again after any ajax content has been added to the page that has need of it's services.</p>
+	
+	<p>If you put in a paragraph of text, you likely don't need to run it again as there is nothing to parse and act upon. But if your content has datepickers, tables, selectboxes, popups, etc. (anything you haven't specifically written the code to setup) then make sure to run <code>ixf.setup()</code> again to give them the love they so richly deserve.</p>
+	
+	<h2>Using only parts of ixf.setup()</h2>
+	<p>We have seen some projects try to be extra efficient and just run the part of the <code>ixf.setup()</code> that they feel they need. Maybe they just run the fixSelect script that they copied from within the <code>setupGeneral()</code>. It is understandable that they are wanting to be efficient by only running what is necessary. Currently the <code>ixf.setup()</code> takes between 50-250ms to run on a fairly complex <a href="../layout/three-panes.html">3 panel page</a>. Which isn't that bad, and we will continue to strive to make that faster.</p>
+	
+	<p>Every part of the <code>ixf.setup()</code> checks to see if things have already been run on a given match. So no code is run that isn't needed. If all you have is a select box that needs the fixSelect on it, that is all that is run.</p>
+	
+	<p>Some issue we see by copying the content out of the setup functions are:</p>
+	<ol>
+		<li>The copied code can get outdated. Especially in the early releases of the IxF we are changing things regularly. By getting the newest ixf-utilities file you get the latest enhancements, bug fixes and optimizations. If you have copied chunks out, your copies may break or will not get updated.</li>
+		<li>Your content gets additional stuff. The first time you only needed the fixSelect, but maybe now you need the datepicker. So you have to go back and copy stuff out again. Not to mention you now have custom code per ajax request. Maybe you have copied that fixSelect 10 times.  This isn't very efficient.</li>
+		<li>Wasted time. As hinted at above, this is a lot of effort for very little payoff. Save yourself the headache and just use the tools we have provided.</li>
+	</ol>
+	
+	<p>If you are really worried about the extra 200ms of time and you KNOW that your ajax will not have popups, tables or panels then you can call the <code>setupGeneral()</code> which takes care of most of the fixSelect, datepicker, etc type stuff. This way you get the benefit of our latest and greatest, but are able to cut out a few thing you know you won't use.</p>
+</div>
+</div>
+<!-- END ixf-panels -->
+
+
+<!-- These menu lists do not need to show state, so they do not need to be in the menu system -->
+<div id="myoptions-menu">
+	<dl class="ixf-form form-h1 smtext margin-sm float-left">
+		<dt>Text Size</dt>
+		<dd class="options-vertical">
+			<fieldset>
+				<legend class="invisible">Contact Type</legend>
+				<span class="ixf-option"><input type="radio" value="option1" id="option1" name="font" /> <label for="option1">Small</label></span>
+				<span class="ixf-option"><input type="radio" value="option2" id="option2" name="font" checked="checked" /> <label for="option2">Medium</label></span>
+				<span class="ixf-option"><input type="radio" value="option3" id="option3" name="font" /> <label for="option3">Large</label></span>
+			</fieldset>
+		</dd>
+	</dl>
+
+	<dl class="ixf-form form-h1 smtext margin-sm float-left">
+		<dt>Screen</dt>
+		<dd class="options-vertical">
+			<fieldset>
+				<legend class="invisible">Contact Type</legend>
+				<span class="ixf-option"><input type="radio" value="option4" id="option4" name="screen" checked="checked" /> <label for="option4">Normal</label></span>
+				<span class="ixf-option"><input type="radio" value="option5" id="option5" name="screen" /> <label for="option5">High Contrast</label></span>
+				<span class="ixf-option"><input type="radio" value="option6" id="option6" name="screen" /> <label for="option6">Projector</label></span>
+			</fieldset>
+		</dd>
+	</dl>
+
+	<hr class="margin-sm" />
+	<div class="ixf-popup-actions margin-sm">
+		<a href="#x" class="sprite person prefix right">My Account</a>
+		<a href="signin.html" class="sprite locked prefix left">Sign Out</a>
+	</div>
+</div>
+
+
+
+<div id="appmenu">
+	<ul class="ixf-list nolinks">
+		<li class="selected"><a href="../index.html">IxF - Main/Intro</a></li>
+		<li><a href="../demo/list.html#detail=widgets">IxF - Widgets Page</a></li>
+		<li><a href="../layout/signin.html">Sign In Layout</a></li>
+		<li><a href="../layout/small.html">Small App Layout 1</a></li>
+		<li><a href="../layout/small2.html">Small App Layout 2</a></li>
+	</ul>
+</div>
+
+<div id="messages-menu" class="padding-sm">
+	<ul>
+		<li><a href="#d">3 Reconciliation Reports Due</a></li>
+		<li><a href="#d">2 Minutes Require Approval</a></li>
+		<li><a href="#d">2 Overdue Expense Report</a></li>
+	</ul>
+</div>
+
+<div id="search-menu" class="ixf-form text-sm padding-xs">
+	<input type="text" name="field-name" value="" id="field-name" /> <a href="#x" class="ixf-button secondary text-sm">Search</a>
+</div>
+
+</body>
+</html>

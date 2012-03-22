@@ -1,0 +1,68 @@
+<script type="text/javascript">
+	//autocomplete
+	var availableTags = ["c++", "java", "php", "coldfusion", "javascript", "asp", "ruby", "python", "c", "scala", "groovy", "haskell", "perl"];
+</script>
+<h1>Autocomplete</h1>
+<div id="examples">
+	<div class="example" id="default">
+		<h2>Default</h2>
+		<div class="source">
+			<input type="text" name="autocomplete" value="" id="autocomplete" class="ixf-autocomplete" data-ac-source="availableTags" />
+		</div>
+	</div>
+	<div class="example" id="secondfield">
+		<h2>Save different value to second field</h2>
+		<div class="source">
+			Main field: <input type="text" name="autocomplete" value="" id="autocomplete" class="autocomplete xl ixf-autocomplete" data-ac-source="ajax-people.html" data-ac-alternate-id="alt" /><br />
+			Alternate (usually hidden): <input type="text" name="alt" readonly value="" id="alt"><br />
+			<span class="text-sm">Make sure to view ajax response for proper strucutre</span>
+		</div>
+	</div>
+</div>
+
+
+<div class="ixf-tabs-wrapper" id="docs">
+	<ul class="ixf-tabs">
+		<li><a href="#overview"><span>Overview</span></a></li>
+		<li><a href="#documentation"><span>Documentation</span></a></li>
+		<li><a href="#ixfapi"><span>Ixf API</span></a></li>
+	</ul>
+	<div id="overview" class="padding-md"><p>Takes any provided <code>&lt;input type="text"&gt;</code> or <code>&lt;textarea&gt;</code> field that has a <code>placeholder</code> attribute and uses the value of the placeholder attribute to make a placeholder or hint for that field.  The placeholder will disappear when the user focuses on the field and return if the user leaves the field and there is no text entered by the user.</p></div>
+	<div id="documentation" class="padding-md"><p>Start with an &lt;input&gt; that has a class of <code>ixf-autocomplete</code> then see the following table for other configuration options</p>
+		<p>This uses the jQuery UI plugin straight out of the box.  See the <a href="http://jqueryui.com/demos/autocomplete/">jQuery UI site</a> for documentation.</p></div>
+	<div id="ixfapi" class="padding-md">	<p>The following <a href="../documentation/data-attributes.html">data- attributes</a> can be used to quickly setup timepicker fields.</p>
+
+		<table class="ixf-table ixf-table-default">
+			<thead>
+			<tr>
+				<th><a href="#d">Name</a></th>
+				<th><a href="#d">Type</a></th>
+				<th><a href="#d">Default</a></th>
+				<th><a href="#d">Options</a></th>
+				<th><a href="#d">Description</a></th>
+			</tr>
+			</thead>
+			<tr>
+				<td><nobr>data-ac-source</nobr></td>
+				<td>string</td>
+				<td></td>
+				<td></td>
+				<td>Can either be a url (for ajax), or the name of an array or function.</td>
+			</tr>
+			<tr>
+				<td><nobr>data-ac-alternate-id</nobr></td>
+				<td>string</td>
+				<td></td>
+				<td></td>
+				<td>id of a second input where you want alternate data to be placed.</td>
+			</tr>
+			<tr>
+				<td><nobr>data-ac-options</nobr></td>
+				<td>string</td>
+				<td></td>
+				<td></td>
+				<td>You can pass any <a href="http://jqueryui.com/demos/autocomplete/#options">additional options</a> you want to set custom for this instance. Must be formated with single quotes wrapping the value and double quotes used inside (ex: data-ac-options='{"minLength":"2"}')</td>
+			</tr>
+		</table>
+		<p class="text-sm">Options Column = The script only recognizes these values</p></div>
+</div><!-- /ixf-tabs-wrapper -->

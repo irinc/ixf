@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> <!-- Make IE play nice (needs to be first thing inside of head for IE apparently), use chrome frame if available -->
+	<title>Introduction - Interaction Framework</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!-- BEGIN IXF ASSETS -->
+	<link rel="stylesheet" type="text/css" media="all" href="../ixf/styles/screen.css" />
+	<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="../ixf/styles/screen-ie.css" /><![endif]-->
+	<script type="text/javascript" src="../ixf/scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="../ixf/scripts/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../ixf/scripts/ixf-plugins.js"></script>
+	<script type="text/javascript" src="../ixf/scripts/ixf-utilities.js"></script>
+	<!-- END IXF ASSETS -->
+
+	<link rel="stylesheet" type="text/css" media="all" href="../css/project.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="../css/syntaxHighlighter.css" />
+	<script type="text/javascript" src="../js/project.js" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/lib/syntaxHighlighter.js" charset="utf-8"></script>
+</head>
+
+<body>
+<a href="#body" class="invisible">Skip to content</a>
+<div class="ixf-header" role="navigation">
+	<div class="ixf-appname">
+		<a href="#appmenu" class="ixf-appname-link ixf-popup" data-pop-direction="left" title="IxF Layouts">Interaction Framework</a>
+	</div>
+	<!-- END ixf-appname -->
+
+	<div class="ixf-tools">
+		<a href="#x" class="ixf-tools-link">No Arrow</a>
+		<a href="#messages-menu" class="ixf-tools-link menu-arrow ixf-popup ixf-tools-link" data-pop-direction="right" title="6 Messages"><span class="messagecount">6</span> Messages</a>
+		<a href="#myoptions-menu" class="ixf-tools-link ixf-popup ixf-tools-link menu-arrow" data-pop-direction="right" title="Johanssen Lippincottlestein">Options</a>
+	</div>
+	<!-- END ixf-tools -->
+
+	<ul class="ixf-nav">
+		<li class="first"><a href="../index.html"><span>Introduction</span></a></li>
+		<li><a href="../demo/list.html#detail=intro"><span>Demos &amp; Examples</span></a></li>
+		<li><a href="../layout/index.html"><span>Layouts</span></a></li>
+		<li class="last selected"><a href="../documentation/index.html"><span>Documentation</span></a></li>
+	</ul>
+	<!-- END ixf-nav -->
+
+</div>
+<!-- END ixf-header -->
+
+<div class="ixf-subheader" role="navigation">
+	<ul class="ixf-subnav">
+		<li class="first"><a href="../index.html"><span>Main</span></a></li>
+		<li class="selected"><a href="../intro/philosophy.html"><span>Philosophy</span></a></li>
+		<li><a href="../intro/features.html"><span>Basic Features</span></a></li>
+		<li><a href="../intro/changelog.html"><span>Changelog</span></a></li>
+		<li><a href="../intro/kickstart.html"><span>KickStart</span></a></li>
+		<li><a href="../intro/feedback.html"><span>Feedback</span></a></li>
+		<li><a href="../intro/goodies.html"><span>Goodies</span></a></li>
+		<li><a href="../intro/browsers.html"><span>Browser Support</span></a></li>
+		<li class="last"><a href="../intro/faq.html"><span>FAQ</span></a></li>
+	</ul>
+	<!-- END ixf-subnav -->
+</div>
+<!-- END ixf-subheader -->
+
+<div class="ixf-panels">
+	<div class="ixf-panel ui-layout-center padding-lg">
+		<div class="grid-7">
+			<h1>Philosophy? You&rsquo;re kidding, right?</h1>
+
+			<p>Nope, we&rsquo;re serious as a <a href="#bang" title="Bang." class="ixf-popup">mustache cop</a>. When we set out to build this thing, there were four underlying ideals behind everything we did.</p>
+
+			<h2>Simpler Interfaces, Smaller Scope</h2>
+			<p>We intentionally left out some of the kinds of interactions that encourage apps to grow too big. Conventions like modals, dropdown menus and others often lead to intractably large and complex apps. Apps that would be better if they were smaller, and more manageable from a development perspective. To see more on this, check out the app menu concept on the <a href="../intro/features.html">Features</a> page. Of course, this point leads us to our second ideal...</p>
+
+			<h2>Best UI Practices</h2>
+			<p>This seems obvious, but in reality, it takes a lot more determination than you might think. We simply won&rsquo;t support every interaction out there. We pick the best way we know of to do something and forget the rest. Later, if we find a new interaction that&rsquo;s better, we&rsquo;ll flush the old one with antipathy and move forward.</p>
+
+			<h2>Performance</h2>
+			<p>Let&rsquo;s be honest. As technologists, we&rsquo;re pretty spoiled when it comes to bandwidth. We&rsquo;ve probably blocked from our minds the painful memories of a 14.4 modem. The problem is that even on high bandwidth connections, slow application performance can kill the user experience, no matter how pretty it is. We have and will continue to make speed a top priority in the IxF.</p>
+
+			<h2>Forward Thinking</h2>
+			<p>We&rsquo;re looking to the future by supporting emerging standards like mobile/touch access and ARIA for accessibility, etc. We&rsquo;re also heavily leaning on the latest advances in CSS3 and HTML5 as it makes sense to do so.</p>
+		</div>
+		<div class="grid-5 last">
+			<div class="ixf-tabs-wrapper float-right padding-md">
+				<ul class="ixf-tabs">
+					<li><a href="#tab-1"><span>App Styles</span></a></li>
+					<li><a href="#tab-2"><span>Master/Detail</span></a></li>
+				</ul>
+
+				<div id="tab-1" class="padding-md">
+					<h2>Two Styles, A Thousand Flavors</h2>
+					<p>Naturally, you can bend this framework do to whatever you need for your project, but out of the box, we support two fundamental approaches to UI design. We call them "Web Style" and "Desktop Style"</p>
+
+					<h3>Web Style</h3>
+					<img src="../images/webstyle.png" width="151" height="125" alt="Webstyle" class="float-right margin-left-sm">
+					<p>Web style is what we&rsquo;re used to for most apps and makes an appearance in mobile devices like the iPhone. It often means drilling into a page, accomplishing some action and then going back out again. It&rsquo;s more hierarchical and simplifies apps by giving you only one thing on a screen at a time. It&rsquo;s a great approach if your app is small or if it will be used by many people who are continuously new to the app.</p>
+
+					<h3>Desktop Style</h3>
+					<img src="../images/appstyle.png" width="147" height="99" alt="Appstyle" class="float-right margin-left-sm">
+					<p>Desktop Style allows for a lot more on a page at a time, while keeping it organized and clear. Outlook is an example of this. It uses multiple panes/panels and can show a lot of data at a time.</p>
+					<p>Desktop style is great for users who don&rsquo;t mind a little more complexity in return for speed. It also helps maintain context by keeping the user on one screen as much as possible. That said, it also works great for some simple apps as well, like a calendar or address book.</p>
+				</div><!-- /ixf-tab -->
+
+				<div id="tab-2" class="padding-md">
+					<h2>Master/Detail is your Friend</h2>
+					<p>So one of the most helpful things you can provide to a user is context. Master/Detail is a handy pattern for providing this because it’s an “instructive” interface. It allows the user to see a set of data, click on one and see its details while keeping the dataset on the screen. It helps keep the user from being disoriented in any way.</p>
+
+					<p>We like this pattern so much, we’ve added significant support for it in the IxF with three patterns we support for data sets: <a href="../demo/list.html#detail=tables">Tables</a>, <a href="../demo/list.html#detail=lists">Lists</a> and the <a href="../demo/list.html#detail=finder">Finder</a> component. All three of these provide hooks for working within the <a href="../demo/list.html#detail=masterdetail">Panel</a> component.</p>
+
+					<p>Some of the hooks we added are keyboard (arrow) navigation and built in fetching of data via AJAX to the detail panel of a layout. See the documentation for more about this.</p>
+
+					<p>Master/Detail. Use it. Love it.</p>
+				</div><!-- /ixf-tab -->
+			</div><!-- /ixf-tabs-wrapper -->
+		</div>
+	</div><!-- /ixf-panel -->
+
+
+<!-- These menu lists do not need to show state, so they do not need to be in the menu system -->
+<div id="myoptions-menu">
+	<dl class="ixf-form form-h1 smtext margin-sm float-left">
+		<dt>Text Size</dt>
+		<dd class="options-vertical">
+			<fieldset>
+				<legend class="invisible">Contact Type</legend>
+				<span class="ixf-option"><input type="radio" value="option1" id="option1" name="font" /> <label for="option1">Small</label></span>
+				<span class="ixf-option"><input type="radio" value="option2" id="option2" name="font" checked="checked" /> <label for="option2">Medium</label></span>
+				<span class="ixf-option"><input type="radio" value="option3" id="option3" name="font" /> <label for="option3">Large</label></span>
+			</fieldset>
+		</dd>
+	</dl>
+
+	<dl class="ixf-form form-h1 smtext margin-sm float-left">
+		<dt>Screen</dt>
+		<dd class="options-vertical">
+			<fieldset>
+				<legend class="invisible">Contact Type</legend>
+				<span class="ixf-option"><input type="radio" value="option4" id="option4" name="screen" checked="checked" /> <label for="option4">Normal</label></span>
+				<span class="ixf-option"><input type="radio" value="option5" id="option5" name="screen" /> <label for="option5">High Contrast</label></span>
+				<span class="ixf-option"><input type="radio" value="option6" id="option6" name="screen" /> <label for="option6">Projector</label></span>
+			</fieldset>
+		</dd>
+	</dl>
+
+	<hr class="margin-sm" />
+	<div class="ixf-popup-actions margin-sm">
+		<a href="#x" class="sprite person prefix right">My Account</a>
+		<a href="signin.html" class="sprite locked prefix left">Sign Out</a>
+	</div>
+</div>
+
+
+
+<div id="appmenu">
+	<ul class="ixf-list nolinks">
+		<li class="selected"><a href="../index.html">IxF - Main/Intro</a></li>
+		<li><a href="../demo/list.html#detail=widgets">IxF - Widgets Page</a></li>
+		<li><a href="../layout/signin.html">Sign In Layout</a></li>
+		<li><a href="../layout/small.html">Small App Layout 1</a></li>
+		<li><a href="../layout/small2.html">Small App Layout 2</a></li>
+	</ul>
+</div>
+
+<div id="messages-menu" class="padding-sm">
+	<ul>
+		<li><a href="#d">3 Reconciliation Reports Due</a></li>
+		<li><a href="#d">2 Minutes Require Approval</a></li>
+		<li><a href="#d">2 Overdue Expense Report</a></li>
+	</ul>
+</div>
+
+</body>
+</html>

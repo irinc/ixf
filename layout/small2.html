@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> <!-- Make IE play nice (needs to be first thing inside of head for IE apparently), use chrome frame if available -->
+	<title>Small 2 - Interaction Framework</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!-- BEGIN IXF ASSETS -->
+	<link rel="stylesheet" type="text/css" media="all" href="../ixf/styles/screen.css" />
+	<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="../ixf/styles/screen-ie.css" /><![endif]-->
+	<script type="text/javascript" src="../ixf/scripts/jquery.min.js"></script> <!-- Will pull from CDN -->
+	<script type="text/javascript" src="../ixf/scripts/jquery-ui.min.js"></script> <!-- Will pull from CDN -->
+	<script type="text/javascript" src="../ixf/scripts/ixf-plugins.js"></script> <!-- MIGHT pull from CDN -->
+	<script type="text/javascript" src="../ixf/scripts/ixf-utilities.js"></script>
+
+	<!-- END IXF ASSETS -->
+
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../css/project.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../css/syntaxHighlighter.css" />
+	<script type="text/javascript" src="../js/project.js" charset="utf-8"></script>	</head>
+<script type="text/javascript" src="../js/lib/syntaxHighlighter.js" charset="utf-8"></script>	</head>
+
+<body class="ixf-smallapp ixf-smallapp2">
+
+<div class="ixf-smallapp-header">
+	<a href="http://www.mywebsite.org" class="logo">Logo</a>
+	<div class="tools">
+		Welcome John Jonstensten &nbsp;&middot;&nbsp; <a href="#x">Sign Out</a>
+	</div>
+</div>
+
+<div class="ixf-smallapp-wrapper">
+
+<a href="#body" class="invisible">Skip to content</a>
+
+
+
+
+<div class="ixf-panels">
+
+<div class="ixf-panel ui-layout-west padding-md" id="sidebar">
+	<h2>Small App Side Panel</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+
+<div class="ixf-panel ui-layout-center" id="right">
+
+<h1 class="margin-bottom-sm margin-md">System Feedback</h1>
+
+<div class="ixf-tabs-wrapper margin-md ixf-set-minheight ui-corner-bottom">
+
+<ul class="ixf-tabs">
+	<li><a href="#tab-1"><span>Alerts</span></a></li>
+	<li><a href="#tab-2" class="inline-error-demo"><span>Inline Errors</span></a></li>
+	<li><a href="#tab-3"><span>Banner Errors</span></a></li>
+</ul>
+
+
+
+<div id="tab-1" class="padding-md">
+	<div class="ixf-alert">
+		<p><strong>Success!</strong> Your record has been saved.</p>
+		<a href="#x" class="close">Close</a>
+	</div>
+
+	<div class="ixf-alert error">
+		<p><strong>Oops!</strong> Please correct the following issues:</p>
+		<ul>
+			<li>Email address is required.</li>
+			<li>Date format is invalid.</li>
+			<li>Unit name is mispelled.</li>
+		</ul>
+		<a href="#x" class="close">Close</a>
+	</div>
+
+	<div class="ixf-alert notice">
+		<p><strong>Note:</strong> Don't forget <a href="#d">the</a> following due dates:</p>
+		<ul>
+			<li>Annual History is due <strong>07 June 2010</strong>,</li>
+			<li>Unit Progress Report is due <strong>14 Jul 2010</strong>.</li>
+		</ul>
+		<a href="#x" class="close">Close</a>
+	</div>
+
+	<div class="ixf-alert critical">
+		<p><strong>Error!</strong> The application has lost contact with the server. Please try again later.</p>
+		<a href="#x" class="close">Close</a>
+	</div>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+</div><!-- /tab-1 -->
+<div id="tab-2" class="padding-md">
+
+	<!-- Sample Error Message -->
+	<div class="ixf-alert error" style="display:none;" id="ixf-alert-demo">
+		<p><strong>Oops!</strong> Please correct the following issues:</p>
+		<ul>
+			<li>Required Text is required.</li>
+			<li>Error Select is required.</li>
+			<li>Checkboxes is required.</li>
+		</ul>
+		<a href="#x" class="close">Close</a>
+	</div><!-- /error message -->
+
+	<form action="" method="get" class="ixf-form">
+		<input type="hidden" name="showErrors" value="true" id="showErrors" />
+
+		<dl class="error required">
+			<dt><span title="required" class="required-indicator">*</span> <span title="error" class="error-indicator" style="display:none;">!</span> <label for="product-name">Required Text</label></dt>
+			<dd><input type="text" name="product-name" id="product-name" size="30" maxlength="50" />
+				<span class="inline-error"><strong>Required Even if You Have a Lot of Text</strong></span>
+			</dd>
+
+		</dl>
+
+
+		<dl class="error">
+			<dt><label for="product-name">Date Picker</label></dt>
+			<dd><input type="text" name="product-name" class="datepicker" id="date" size="30" maxlength="50" />
+				<span class="inline-error"><em></em><strong>Date Cannot Be before Today</strong></span>
+			</dd>
+		</dl>
+
+		<dl class="error">
+			<dt><span title="error" class="error-indicator" style="display:none;">!</span> <span title="required" class="required-indicator">*</span> <label for="product-category">Error Select</label></dt>
+			<dd>
+				<select name="product-category" id="product-category">
+					<option></option>
+					<option>Audio &amp; Video Software</option>
+					<option>Security &amp; Spyware</option>
+					<option>Utilities &amp; Drivers</option>
+					<option>Design Tools</option>
+					<option>Desktop Enhancements</option>
+					<option>Business &amp; Productivity</option>
+					<option>Developer Tools</option>
+					<option>Home &amp; Education</option>
+					<option>PC Starter Kit</option>
+					<option>Digital Photography</option>
+					<option>Browsers</option>
+					<option>Networking</option>
+					<option>Chat &amp; E-mail</option>
+				</select>
+				<span class="inline-error"><em></em><strong>Required</strong></span>
+			</dd>
+		</dl>
+		<dl class="error">
+			<dt><label for="product-serial-part1">Multiple text fields</label></dt>
+			<dd>
+				<input type="text" class="sm" name="product-serial-part1" id="product-serial-part1" size="4" maxlength="4" /> -
+				<label for="product-serial-part2" class="invisible">Serial Number part 2</label>
+				<input type="text" class="md" name="product-serial-part2" id="product-serial-part2" size="8" maxlength="8" />
+				<span class="inline-error"><em></em><strong>Invalid Format</strong></span>
+				<br />
+				<samp>e.g. WMEV-86331212</samp>
+
+			</dd>
+		</dl>
+		<dl class="error">
+			<dt><span title="error" class="error-indicator" style="display:none;">!</span> <span title="required" class="required-indicator">*</span> Checkboxes
+				<span class="inline-error"><em></em><strong>Required</strong></span>
+			</dt>
+
+			<dd class="options-vertical">
+
+				<fieldset>
+					<legend class="invisible">Platform</legend>
+					<span class="ixf-option"><input type="checkbox" value="check" id="check2" checked /> <label for="check2" class="notred">This is checked</label></span>
+					<span class="ixf-option"><input type="checkbox" value="Other" id="other2" /> <label for="other2" class="notred">This is not checked</label></span>
+					<span class="ixf-option"><input type="checkbox" value="disabled" id="disabled2" disabled /> <label for="disabled2"  class="notred">This is disabled</label></span>
+					<span class="ixf-option"><input type="checkbox" value="Stop" id="disablecheck" disabled checked /> <label for="disablecheck" class="notred">This is checked and disabled</label></span>
+				</fieldset>
+
+			</dd>
+		</dl>
+		<dl class="required error">
+			<dt>Radio Buttons
+				<span class="inline-error"><em></em><strong>That's an odd choice.</strong></span>
+			</dt>
+
+			<dd class="options-vertical">
+				<fieldset>
+					<legend class="invisible">Contact Type</legend>
+					<span class="ixf-option"><input type="radio" value="1" id="1" name="normal" checked /> <label for="1" class="notred">This is normal</label></span>
+					<span class="ixf-option"><input type="radio" value="2" id="2" name="normal" /> <label for="2" class="notred">This is normal</label></span>
+					<span class="ixf-option"><input type="radio" value="disabled" id="disabled" name="disabled" disabled /> <label for="disabled" class="notred">This is disabled</label></span>
+					<span class="ixf-option"><input type="radio" value="check" id="check" name="check" disabled checked /> <label for="check" class="notred">This is checked and disabled</label></span>
+				</fieldset>
+			</dd>
+
+		</dl>
+		<dl class="error">
+			<dt><label for="textarea">Textarea</label></dt>
+			<dd><textarea name="textarea" id="textarea"></textarea>
+				<span class="inline-error"><em></em><strong>140 Character Maximum</strong></span>
+			</dd>
+		</dl>
+
+	</form><!-- /ixf-form -->
+
+</div><!-- /tab-2 -->
+<div id="tab-3" class="padding-md">
+
+	<!-- Sample Error Message -->
+	<div class="ixf-alert error">
+		<p><strong>Oops!</strong> Please correct the following issues:</p>
+		<ul>
+			<li>Required Text is required.</li>
+			<li>Error Select is required.</li>
+			<li>Checkboxes is required.</li>
+			<li>etc.</li>
+		</ul>
+		<a href="#x" class="close">Close</a>
+	</div><!-- /error message -->
+
+	<form action="" method="get" class="ixf-form">
+		<input type="hidden" name="showErrors" value="true" id="showErrors" />
+
+		<dl class="error required">
+			<dt><span title="required" class="required-indicator">*</span> <span title="error" class="error-indicator">!</span> <label for="product-name">Required Text</label></dt>
+			<dd><input type="text" name="product-name" id="product-name" size="30" maxlength="50" /></dd>
+		</dl>
+
+
+		<dl class="error">
+			<dt><label for="product-name">Date Picker</label><span title="error" class="error-indicator">!</span></dt>
+			<dd><input type="text" name="product-name" class="datepicker" id="date" size="30" maxlength="50" /></dd>
+		</dl>
+
+		<dl class="error">
+			<dt><span title="error" class="error-indicator">!</span> <span title="required" class="required-indicator">*</span> <label for="product-category">Error Select</label></dt>
+			<dd>
+				<select name="product-category" id="product-category">
+					<option></option>
+					<option>Audio &amp; Video Software</option>
+					<option>Security &amp; Spyware</option>
+					<option>Utilities &amp; Drivers</option>
+					<option>Design Tools</option>
+					<option>Desktop Enhancements</option>
+					<option>Business &amp; Productivity</option>
+					<option>Developer Tools</option>
+					<option>Home &amp; Education</option>
+					<option>PC Starter Kit</option>
+					<option>Digital Photography</option>
+					<option>Browsers</option>
+					<option>Networking</option>
+					<option>Chat &amp; E-mail</option>
+				</select>
+			</dd>
+		</dl>
+		<dl class="error">
+			<dt><span title="error" class="error-indicator">!</span><label for="product-serial-part1">Multiple Text Fields</label></dt>
+			<dd>
+				<input type="text" class="sm" name="product-serial-part1" id="product-serial-part1" size="4" maxlength="4" /> -
+				<label for="product-serial-part2" class="invisible">Serial Number part 2</label>
+				<input type="text" class="md" name="product-serial-part2" id="product-serial-part2" size="8" maxlength="8" />
+				<br />
+				<samp>e.g. WMEV-86331212</samp>
+			</dd>
+		</dl>
+		<dl class="error">
+			<dt><span title="error" class="error-indicator">!</span> <span title="required" class="required-indicator">*</span> Checkboxes</dt>
+			<dd class="options-vertical">
+
+				<fieldset>
+					<legend class="invisible">Platform</legend>
+					<span class="ixf-option"><input type="checkbox" value="check" id="check2" checked /> <label for="check2" class="notred">This is checked</label></span>
+					<span class="ixf-option"><input type="checkbox" value="Other" id="other2" /> <label for="other2" class="notred">This is not checked</label></span>
+					<span class="ixf-option"><input type="checkbox" value="disabled" id="disabled2" disabled /> <label for="disabled2"  class="notred">This is disabled</label></span>
+					<span class="ixf-option"><input type="checkbox" value="Stop" id="disablecheck" disabled checked /> <label for="disablecheck" class="notred">This is checked and disabled</label></span>
+				</fieldset>
+			</dd>
+		</dl>
+		<dl class="required error">
+			<dt><span title="error" class="error-indicator">!</span> Radio Buttons</dt>
+
+			<dd class="options-vertical">
+				<fieldset>
+					<legend class="invisible">Contact Type</legend>
+					<span class="ixf-option"><input type="radio" value="1" id="1" name="normal" checked /> <label for="1" class="notred">This is normal</label></span>
+					<span class="ixf-option"><input type="radio" value="2" id="2" name="normal" /> <label for="2" class="notred">This is normal</label></span>
+					<span class="ixf-option"><input type="radio" value="disabled" id="disabled" name="disabled" disabled /> <label for="disabled" class="notred">This is disabled</label></span>
+					<span class="ixf-option"><input type="radio" value="check" id="check" name="check" disabled checked /> <label for="check" class="notred">This is checked and disabled</label></span>
+				</fieldset>
+			</dd>
+
+		</dl>
+		<dl class="error">
+			<dt><span title="error" class="error-indicator">!</span><label for="textarea">Textarea</label></dt>
+			<dd><textarea name="textarea" id="textarea"></textarea></dd>
+		</dl>
+
+	</form><!-- /ixf-form -->
+
+</div><!-- /tab-3 -->
+
+
+</div><!-- /ixf-tabs-wrapper -->
+
+
+</div>
+</div>
+
+
+
+</div>
+<!-- END .ixf-smallapp -->
+
+
+
+</body>
+</html>

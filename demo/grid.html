@@ -1,0 +1,309 @@
+
+<style type="text/css" media="screen">
+	.box {
+		background:#fff;
+	}
+	.box p { padding:3px; }
+</style>
+<div class="padding-md" id="grid-wrapper">
+	<h1>Grid</h1>
+	
+	<p>The grid uses a <code>margin-right:2%</code> on each grid element to provide spacing. This allows the left side to line up with other content.  You will need to put a class of <code>last</code> on the last grid item of a row to prevent the last item from wrapping.</p>
+	
+	<p>Due to percentages not being easily embedded within each other (grid-3 = 25%, but inside of a grid-6 it would need to be 50%) this only supports a top level grid.  The 25/33/50 can relatively easily be embedded within each other, but is <a href="#embeddedgrid" class="ixf-popup" title="Multiple Level Grids">not supported</a>.</p>
+	
+	<h2>Fixed Width Grid</h2>
+	
+	<p>We provide you with a set of classes that will give you a fixed width grid that will fit in a 1024 width screen.  These are used in association with the <code>padding/margin-sm/md/lg</code> classes to provide spacing on the edges, and also account for edge chrome of the design.</p>
+	
+	<p>All you need to do is apply <code>.grid-fixed</code> to the same wrapper that has your <code>padding/margin-sm/md/lg</code>. <a href="#d" onclick="$('#grid-wrapper').toggleClass('grid-fixed'); return false;">Toggle fixed grid on this page</a></p>
+	
+	<p>After that, the grid works the same.  It technically still uses percentages but 1/2 of 1000px is 500px wether it's written 50% or 500px. So sticking with the percentages allows us to use the same code for 100% or fixed width content areas. It also allows you to define any other fixed width you want and the grid will work the same way.</p>
+	
+	<p>If you are using the <a href="../layout/">panels</a>, keep in mind that a grid-3 inside of a narrow panel is not the same as a grid-3 inside of a wide panel. This is likely where you'll want to use the grid-25/33/50 options.</p>
+	
+	<h2>Big Grid</h2>
+	<p>These are for larger grids of 25%/33%/50%/66%/75%</p>
+	
+	<div class="grid-25">
+		<div class="box">
+			<p>.grid-25</p>
+		</div>
+	</div>
+	<div class="grid-75 last">
+		<div class="box">
+			<p>.grid-75</p>
+		</div>
+	</div>
+	
+	<div class="grid-33">
+		<div class="box">
+			<p>.grid-33</p>
+		</div>
+	</div>
+	<div class="grid-66 last">
+		<div class="box">
+			<p>.grid-66</p>
+		</div>
+	</div>
+	
+	<div class="grid-50">
+		<div class="box">
+			<p>.grid-50</p>
+		</div>
+	</div>
+	<div class="grid-50 last">
+		<div class="box">
+			<p>.grid-50</p>
+		</div>
+	</div>
+	<div class="clear"></div>
+	
+	<h2>Small Grid</h2>
+	<p>These are based off of a 12 column grid.  This allows for 1 grid increments and is divisible by 1, 2, 3, 4, 6, 12</p>
+	
+	<div class="grid-1">
+		<div class="box">
+			<p>.grid-1</p>
+		</div>
+	</div>
+	<div class="grid-1">
+		<div class="box">
+			<p>.grid-1</p>
+		</div>
+	</div>
+	<div class="grid-1">
+		<div class="box">
+			<p>.grid-1</p>
+		</div>
+	</div>
+	<div class="grid-1">
+		<div class="box">
+			<p>.grid-1</p>
+		</div>
+	</div>
+	<div class="grid-1">
+		<div class="box">
+			<p>.grid-1</p>
+		</div>
+	</div>
+	<div class="grid-1">
+		<div class="box">
+			<p>.grid-1</p>
+		</div>
+	</div>
+	<div class="grid-1">
+		<div class="box">
+			<p>.grid-1</p>
+		</div>
+	</div>
+	<div class="grid-1">
+		<div class="box">
+			<p>.grid-1</p>
+		</div>
+	</div>
+	<div class="grid-1">
+		<div class="box">
+			<p>.grid-1</p>
+		</div>
+	</div>
+	<div class="grid-1">
+		<div class="box">
+			<p>.grid-1</p>
+		</div>
+	</div>
+	<div class="grid-1">
+		<div class="box">
+			<p>.grid-1</p>
+		</div>
+	</div>
+	<div class="grid-1 last">
+		<div class="box">
+			<p>.grid-1</p>
+		</div>
+	</div>
+	<div class="clear"></div>
+
+	<div class="grid-2">
+		<div class="box">
+			<p>.grid-2</p>
+		</div>
+	</div>
+	<div class="grid-2">
+		<div class="box">
+			<p>.grid-2</p>
+		</div>
+	</div>
+	<div class="grid-2">
+		<div class="box">
+			<p>.grid-2</p>
+		</div>
+	</div>
+	<div class="grid-2">
+		<div class="box">
+			<p>.grid-2</p>
+		</div>
+	</div>
+	<div class="grid-2">
+		<div class="box">
+			<p>.grid-2</p>
+		</div>
+	</div>
+	<div class="grid-2 last">
+		<div class="box">
+			<p>.grid-2</p>
+		</div>
+	</div>
+	<div class="clear"></div>
+	
+	<div class="grid-3">
+		<div class="box">
+			<p>.grid-3</p>
+		</div>
+	</div>
+	<div class="grid-3">
+		<div class="box">
+			<p>.grid-3</p>
+		</div>
+	</div>
+	<div class="grid-3">
+		<div class="box">
+			<p>.grid-3</p>
+		</div>
+	</div>
+	<div class="grid-3 last">
+		<div class="box">
+			<p>.grid-3</p>
+		</div>
+	</div>
+	<div class="clear"></div>
+	
+	<div class="grid-4">
+		<div class="box">
+			<p>.grid-4</p>
+		</div>
+	</div>
+	<div class="grid-4">
+		<div class="box">
+			<p>.grid-4</p>
+		</div>
+	</div>
+	<div class="grid-4 last">
+		<div class="box">
+			<p>.grid-4</p>
+		</div>
+	</div>
+	<div class="clear"></div>
+	
+	<div class="grid-5">
+		<div class="box">
+			<p>.grid-5</p>
+		</div>
+	</div>
+	<div class="grid-7 last">
+		<div class="box">
+			<p>.grid-7</p>
+		</div>
+	</div>
+	<div class="clear"></div>
+	
+	<div class="grid-6">
+		<div class="box">
+			<p>.grid-6</p>
+		</div>
+	</div>
+	<div class="grid-6 last">
+		<div class="box">
+			<p>.grid-6</p>
+		</div>
+
+	</div>
+	<div class="clear"></div>
+
+	<h2>Prefix/Suffix</h2>
+	<p>You can add space before and/or after a grid element by using prefix-# and suffix-#.  All boxes below are .grid-1</p>
+	<div class="grid-1 suffix-11">
+		<div class="box">
+			<p>.suffix-11</p>
+		</div>
+	</div>
+	<div class="clear"></div>
+
+	<div class="grid-1 prefix-1 suffix-10">
+		<div class="box">
+			<p>.prefix-1 .suffix-10</p>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="grid-1 prefix-2 suffix-9">
+		<div class="box">
+			<p>.prefix-2 .suffix-9</p>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="grid-1 prefix-3 suffix-8">
+		<div class="box">
+			<p>.prefix-3 .suffix-8</p>
+		</div>
+
+	</div>
+	<div class="clear"></div>
+	<div class="grid-1 prefix-4 suffix-7">
+		<div class="box">
+			<p>.prefix-4 .suffix-7</p>
+		</div>
+	</div>
+	<div class="clear"></div>
+
+	<div class="grid-1 prefix-5 suffix-6">
+		<div class="box">
+			<p>.prefix-5 .suffix-6</p>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="grid-1 prefix-6 suffix-5">
+		<div class="box">
+
+			<p>.prefix-6 .suffix-5</p>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="grid-1 prefix-7 suffix-4">
+		<div class="box">
+			<p>.prefix-7 .suffix-4</p>
+		</div>
+
+	</div>
+	<div class="clear"></div>
+	<div class="grid-1 prefix-8 suffix-3">
+		<div class="box">
+			<p>.prefix-8 .suffix-3</p>
+		</div>
+	</div>
+	<div class="clear"></div>
+
+	<div class="grid-1 prefix-9 suffix-2">
+		<div class="box">
+			<p>.prefix-9 .suffix-2</p>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="grid-1 prefix-10 suffix-1">
+		<div class="box">
+
+			<p>.prefix-10 .suffix-1</p>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="grid-1 prefix-11">
+		<div class="box">
+			<p>.prefix-11</p>
+		</div>
+
+	</div>
+	<div class="clear"></div>
+</div>
+<div id="embeddedgrid" class="padding-sm popup-sm">
+	<p>	If you put a grid-50 (50%) inside of a grid-6 it will be the equivalent of a grid-3 as you would expect. But the 2% gutter is 2% of a smaller width, and so the gutter will be smaller at the second level then the first level.</p>
+	<p>This can technically be compensated for, but it would require a very complex (read:large) set of CSS to do so. You would have to say what a grid-3 was when inside of a grid-4, grid-5, grid-6, etc. Then what a grid-4 is inside of a grid-5, grid-6, grid-7, etc.</p>
+</div>

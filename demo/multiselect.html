@@ -1,0 +1,147 @@
+<h1>MultiSelect</h1>
+
+
+<div class="source">
+	<select name="multiselect" id="multiselect" multiple class="multiselect">
+		<option value="option1">option1</option>
+		<option value="option2" selected>option2</option>
+		<option value="option3">option3</option>
+		<option value="option4" selected>option4</option>
+		<option value="option5">option5</option>
+	</select>
+</div>
+
+
+
+	
+
+<div class="ixf-tabs-wrapper" id="docs">
+	<ul class="ixf-tabs">
+		<li><a href="#overview"><span>Overview</span></a></li>
+		<li><a href="#documentation"><span>Documentation</span></a></li>
+		<li><a href="#ixfapi"><span>Ixf API</span></a></li>
+	</ul>
+	<div id="overview" class="padding-md"><p>Takes a &lt;select multiple&gt; that has a class of "multiselect" and makes it into a more usable component. Standard &lt;select multiple&gt; elements are hard to use due to needing to be sure you are holding the control key down when making multiple selection, and not showing all selected items at once. This provides a differnt view into the selected items.</p>
+
+<p>For the developer, this is 100% front-end trickery.  Any changes the user makes is made to the original &lt;select multiple&gt; and that is what you will look for to get submitted back.  It's like the front-end stuff never even happened.</p></div>
+	<div id="documentation" class="padding-md">
+
+		<h3>HTML</h3>
+		<p>You just need a standard multi-select box. Which the script aill automatically convert to individual dropdowns.</p>
+		<div class="code-example"><pre class="javascript"><code>&lt;select id="test" name="test" multiple="multiple" size="3">...&lt;/select></code></pre></div>
+
+		<h3>CSS</h3>
+		<p>No extra CSS needed if you are using the sprites. Otherwise you will need to define images to be used via the addPath/removePath or have classes available to be used for the add/remove buttons.</p>
+
+		<h3>API</h3>
+		<p>These are the variables that you can set to turn on and off various options.  </p>
+
+		<div class="code-example"><pre class="javascript"><code>$("#example").multiSelect({maxFields:5});</code></pre></div>
+
+		<table class="ixf-table ixf-table-default">
+			<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Default</th>
+				<th>Options</th>
+				<th>Description</th>
+			</tr>
+			</thead>
+			<tr>
+				<td>addWhere</td>
+				<td>string</td>
+				<td>bottom</td>
+				<td></td>
+				<td>values(bottom/top) where to show the "adder" link.  new fields always add to bottom</td>
+			</tr>
+			<tr>
+				<td>maxFields</td>
+				<td>number</td>
+				<td>0</td>
+				<td></td>
+				<td>what is the maximum number of fields they can have (0 for infinite). Auto sets maxFields to the total number of options in original select element</td>
+			</tr>
+			<tr>
+				<td>adderClass</td>
+				<td>string</td>
+				<td>sprite icon add</td>
+				<td></td>
+				<td>class to apply to the adding anchor (using classes to leverage sprites by default)</td>
+			</tr>
+			<tr>
+				<td>addPath</td>
+				<td>string</td>
+				<td></td>
+				<td></td>
+				<td>Path to the add icon image.</td>
+			</tr>
+			<tr>
+				<td>addTitle</td>
+				<td>string</td>
+				<td>Add additional row</td>
+				<td></td>
+				<td>Text use for the title attribute.</td>
+			</tr>
+			<tr>
+				<td>removerClass</td>
+				<td>string</td>
+				<td>sprite icon delete</td>
+				<td></td>
+				<td>class to apply to the removing anchor (using classes to leverage sprites by default)</td>
+			</tr>
+			<tr>
+				<td>removePath</td>
+				<td>string</td>
+				<td></td>
+				<td></td>
+				<td>Path to the remove icon image.</td>
+			</tr>
+			<tr>
+				<td>removeTitle</td>
+				<td>string</td>
+				<td>Remove this row</td>
+				<td></td>
+				<td>Text use for the title attribute.</td>
+			</tr>
+			<tr>
+				<td>removeConfirm</td>
+				<td>string</td>
+				<td>Are you sure you want to remove this?</td>
+				<td></td>
+				<td>text that is displayed by the JS prompt when removing an item.</td>
+			</tr>
+			<tr>
+				<td>matchWidths</td>
+				<td>boolean</td>
+				<td>true</td>
+				<td></td>
+				<td>Should the script keep all the dropdown widths the same.  If false, when longer options are selected (and thus removed from other dropdowns) the width of those dropdowns will reduce and icons will not all line up</td>
+			</tr>
+			<tr>
+				<td>onAdd</td>
+				<td>function</td>
+				<td></td>
+				<td></td>
+				<td>Script to fire after an element is added. Element that is added is passed in.</td>
+			</tr>
+			<tr>
+				<td>onDelete</td>
+				<td>function</td>
+				<td></td>
+				<td></td>
+				<td>Script to fire after an element is removed.</td>
+			</tr>
+			<tr>
+				<td>onChange</td>
+				<td>function</td>
+				<td></td>
+				<td></td>
+				<td>Script to fire after an element is changed. Element that is changed is passed in.</td>
+			</tr>
+		</table>
+		<p><strong>Options</strong> = The script only recognizes these values</p>
+		
+	</div>
+	<div id="ixfapi" class="padding-md"><p>There is no currently exposed API via the IxF.</p></div>
+</div><!-- /ixf-tabs-wrapper -->
