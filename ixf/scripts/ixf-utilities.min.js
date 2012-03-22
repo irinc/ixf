@@ -1,8 +1,8 @@
 /*!
  * IxF Utilities
  * @description This file is for initializing all of the IXF functionality.
- * @version     1.1.2 - 2012/3/19
- * @copyright   Intellectual Reserve, Inc.
+ * @version     1.1.2 - 2012/3/22
+ * @copyright   Copyright © 2012 Intellectual Reserve, Inc.
  * @URL         http://irinc.github.com/ixf
  * dependencies ixf-plugins.js
  * global       ixf,$,window
