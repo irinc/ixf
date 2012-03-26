@@ -16,6 +16,7 @@ Start using IxF in a project by downloading the [KickStart](http://irinc.github.
 
 * Install [Node.js](http://nodejs.org/)
 * Check out IxF from github
+* Modify the versionNumber in build/build.js (line 8)
 * In a terminal or command prompt, cd to the build directory
 * Run "node build.js"
 * Notice that the ixf directory is updated and the downloads/ixf-kickstart*.zip file has been generated.
