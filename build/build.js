@@ -265,8 +265,8 @@ function generateKickstart(callback) {
 
 	//Create Zip Files
 
-	if(!path.existsSync("downloads"))
-		fs.mkdirSync("downloads");
+	if(!path.existsSync("../downloads"))
+		fs.mkdirSync("../downloads");
 
 	generateZipFile("kickstart","../downloads/ixf-kickstart-"+versionNumber+".zip", "kickstart/.gitignore", function() {
 	});
@@ -277,7 +277,7 @@ function generateZipFile(sourceDir, destinationPath, ignore, callback) {
 
 	var cp = require('child_process'),
 		exec = cp.exec, spawn = cp.spawn,
-		path = require('path'), zip, command = 'zip -x ' + ignore + ' -r ' + destinationPath + ' ' + sourceDir,
+		path = require('path'), zip, command = 'zip ' + (ignore ? '-x ' + ignore : '') + ' -r ' + destinationPath + ' ' + sourceDir,
 		cwd = process.cwd();
 
 	if(path.existsSync(destinationPath)) {
