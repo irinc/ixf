@@ -1,6 +1,6 @@
 /*
  * IxF Style Sheet
- * @version   1.1.2 - 2012/3/22
+ * @version   1.1.2 - 2012/3/26
  * @copyright Copyright © 2012 Intellectual Reserve, Inc.
  * @URL       http://irinc.github.com/ixf
 */
@@ -19,9 +19,6 @@ body.ixf-smallapp {
 	background: #656a72 url(../images/smallapp_back.jpg) repeat-x 0 0;
 	}
 
-body.ixf-smallapp2 {
-	background: #2a3753 url(../images/smallapp2_back.jpg) no-repeat 50% 0;
-	}
 
 hr {
 	border-top: 1px solid #C9C9C6;
@@ -961,15 +958,6 @@ a.ixf-tools-link.menu-arrow:after,.ixf-appname-link:after { /* not supported by 
 /*	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EDEDEC', endColorstr='#D5D5D3'); Filter forces that element to clip anything inside it, so the pin was getting cropped. */
 	}
 
-body.ixf-smallapp2 .ui-layout-resizer-east,
-body.ixf-smallapp2 .ui-layout-resizer-west,
-body.ixf-smallapp2 .ui-layout-resizer-north,
-body.ixf-smallapp2 .ui-layout-resizer-south {
-	border: 0 !important;
-	background: #fff !important;
-	filter:none;
-	}
-
 .ui-layout-toggler {
 	position: absolute;
 	top: 50%;
@@ -995,15 +983,6 @@ body.ixf-smallapp2 .ui-layout-resizer-south {
 	background: transparent url(../images/ixf-sprite.png) no-repeat -474px -450px; /* divots-h +0 +3 */
 	}
 
-body.ixf-smallapp2 .ui-layout-toggler {
-	left: 1px !important;
-	}
-
-body.ixf-smallapp2 .ui-layout-resizer-north .ui-layout-toggler,
-body.ixf-smallapp2 .ui-layout-resizer-south .ui-layout-toggler {
-	left: 48% !important;
-	top: 1px !important;
-	}
 
 .sunken{ 
 	-moz-box-shadow:	#999 0px 0px 10px inset;
@@ -1851,15 +1830,6 @@ a <input type="hidden"/> tag after the <input type="checkbox"/> tag.
 	margin: 0 auto;
 	}
 
-body.ixf-smallapp2 .ixf-panels {
-	border: 8px solid #fff;
-	}
-
-body.ixf-smallapp2 .ixf-smallapp-wrapper {
-	-webkit-box-shadow: 0 2px 15px #1a212c;
-	-moz-box-shadow: 0 2px 15px #1a212c;
-	box-shadow: 0 2px 15px #1a212c;
-	}
 
 .ixf-smallapp-header {
 	position: relative;
@@ -1883,21 +1853,6 @@ body.ixf-smallapp2 .ixf-smallapp-wrapper {
 	}
 
 .ixf-smallapp-header .tools a:hover {
-	text-decoration: underline;
-	}
-
-body.ixf-smallapp2 .ixf-smallapp-header .tools {
-	color: #7b88a1;
-	text-shadow: #1d2840 0 1px 3px;
-	font-family: "Lucida Grande", "Lucida Sans", "Lucida Sans Regular", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
-	}
-
-body.ixf-smallapp2 .ixf-smallapp-header .tools a {
-	color: #7b88a1;
-	}
-
-body.ixf-smallapp2 .ixf-smallapp-header .tools a:hover {
-	color: #7b88a1;
 	text-decoration: underline;
 	}
 
