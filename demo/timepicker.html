@@ -13,7 +13,13 @@
 		<li><a href="#documentation"><span>Documentation</span></a></li>
 		<li><a href="#ixfapi"><span>Ixf API</span></a></li>
 	</ul>
-	<div id="overview" class="padding-md"><p>Takes any provided <code>&lt;input type="text"&gt;</code> or <code>&lt;textarea&gt;</code> field that has a <code>placeholder</code> attribute and uses the value of the placeholder attribute to make a placeholder or hint for that field.  The placeholder will disappear when the user focuses on the field and return if the user leaves the field and there is no text entered by the user.</p></div>
+	<div id="overview" class="padding-md"><p>
+	Focus of the text box displays a drop-down of suggested times within a pre-defined time range.  Two text boxes can be used to define a time range.
+    Users can type 2:00 pm, 2pm or 2p and the script will understand. The space between the time and am/pm is optional, and the script will allow ":;.," any of those as a separator for the hour/minute.
+    Once you change the duration of the time period, the script will keep that duration if you change the first field. Meaning, by default the duration is 60 minutes. If you changed that to 4 hours by selecting a l0am - 2pm, and then changed the 10am to 11am, the script would automatically update the second field to be 4 hours later, or 3pm.
+    Currently not accessible, but it does allow for the manual entry which helps there.
+
+	</p></div>
 	<div id="documentation" class="padding-md">
 		<h3>HTML</h3>
 		<p>Other then marking the appropriate input fields with the ID or class needed to reference that field as a target for the script to act upon, nothing is required to be done to the HTML of the page for the calendar to work. </p>
