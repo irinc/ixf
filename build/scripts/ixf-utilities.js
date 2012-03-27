@@ -235,7 +235,7 @@ ixf.setupGeneral = function(container){ // run all the small one liners and simp
 	$(".ixf-button:has(.sprite)").addClass("spritefix");
 
 	// adds watermark for text field hints
-	if($.ui.watermark){
+	if($.ixf.watermark){
 		// $(":text[placeholder]").watermark();
 		// $(":password[placeholder]").watermark();
 		// can't use the above :text or :password pseduo selector due to a jquery bug http://bugs.jquery.com/ticket/7071 so do it the long way (still in jquery 1.4.4, targeted for 1.4.5)
