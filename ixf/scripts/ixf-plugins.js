@@ -2394,7 +2394,7 @@ var ixf = ixf || {};
 			// we have a second field, so lets set it up
 			if(opts.secondField){
 				// make a copy of the options for the second field
-				var opts2 = $.extend({}, $.ixf.timePicker.defaults, opts); 
+				var opts2 = $.extend({}, $.ixf.timePicker.defaults, opts);
 				
 				// add a few new options
 				opts2.secondField = false; // clear out that there is a secondField (since this IS the second field)
