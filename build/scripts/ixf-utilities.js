@@ -401,7 +401,7 @@ ixf.setupGeneral = function(container){ // run all the small one liners and simp
 		});
 	}
 // INITIALIZE STANDARD TIME PICKER
-	if($.ui.timePicker){
+	if($.ixf.timePicker){
 		$('input.timepicker',container).each(function(){
 			var curElem = $(this),
 				options = {},
