@@ -1,7 +1,7 @@
 /*!
  * IxF Utilities
  * @description This file is for initializing all of the IXF functionality.
- * @version     1.1.2 - 2012/3/27
+ * @version     1.1.2 - 2012/3/28
  * @copyright   Copyright © 2012 Intellectual Reserve, Inc.
  * @URL         http://irinc.github.com/ixf
  * dependencies ixf-plugins.js
@@ -548,6 +548,12 @@ function movePopup(event,api){ // defined outside of the setup so it can be call
 ixf.setupPopups = function(container){
 	container = container||$("body");
 	// setup qtip on any anchors (and now form fields) that are marked to do so. Set the title of the tooltip via the title attribute, and what hidden element is supposed to show as the href (<a href="#the_elem">) or data-pop-source attribute.
+
+	if(typeof String.prototype.trim !== 'function') {
+		String.prototype.trim = function() {
+			return this.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+		}
+	}
 
 	// give a class of "closer" to any elements within the target you want the user to click to make the qtip close
 	// console.debug($("a.ixf-popup, :input.ixf-popup",container).length,container);
