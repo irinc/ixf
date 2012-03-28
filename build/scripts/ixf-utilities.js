@@ -549,6 +549,12 @@ ixf.setupPopups = function(container){
 	container = container||$("body");
 	// setup qtip on any anchors (and now form fields) that are marked to do so. Set the title of the tooltip via the title attribute, and what hidden element is supposed to show as the href (<a href="#the_elem">) or data-pop-source attribute.
 
+	if(typeof String.prototype.trim !== 'function') {
+		String.prototype.trim = function() {
+			return this.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+		}
+	}
+
 	// give a class of "closer" to any elements within the target you want the user to click to make the qtip close
 	// console.debug($("a.ixf-popup, :input.ixf-popup",container).length,container);
 	$(".ixf-popup",container).each(function(){
