@@ -25,5 +25,5 @@ Start using IxF in a project by downloading the [KickStart](http://irinc.github.
 ## Updating Documentation
 
 * Make sure you commit your changes to the "gh-pages" branch
-* When a new version of IxF is released, update index.html, intro/changelog.html, and intro.kickstart.html.  Also make sure that the ixf directory in the master branch is merged to the "gh-pages" branch.
+* When a new version of IxF is released, update index.html, intro/changelog.html, and intro/kickstart.html.  Also make sure that the ixf directory in the master branch is merged to the "gh-pages" branch.
 
