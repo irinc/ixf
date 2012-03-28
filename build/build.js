@@ -5,7 +5,7 @@ var path = require('path');
 var jsp = require("uglify-js").parser;
 var pro = require("uglify-js").uglify;
 
-var versionNumber = "1.1.2";
+var versionNumber = "1.1.3";
 
 console.log("\nBuilding IxF " + versionNumber + "...");
 
