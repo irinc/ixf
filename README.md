@@ -20,4 +20,10 @@ Start using IxF in a project by downloading the [KickStart](http://irinc.github.
 * In a terminal or command prompt, cd to the build directory
 * Run "node build.js"
 * Notice that the ixf directory is updated and the downloads/ixf-kickstart*.zip file has been generated.
+* Make sure that you merge the ixf directory to the "gh-pages" branch so that the website will use the latest build.
+
+## Updating Documentation
+
+* Make sure you commit your changes to the "gh-pages" branch
+* When a new version of IxF is released, update index.html, intro/changelog.html, and intro.kickstart.html.  Also make sure that the ixf directory in the master branch is merged to the "gh-pages" branch.
 
