@@ -1,7 +1,7 @@
 /*!
  * IxF Utilities
  * @description This file is for initializing all of the IXF functionality.
- * @version     1.1.2 - 2012/3/28
+ * @version     1.1.3 - 2012/3/28
  * @copyright   Copyright © 2012 Intellectual Reserve, Inc.
  * @URL         http://irinc.github.com/ixf
  * dependencies ixf-plugins.js
@@ -9,7 +9,7 @@
  */
 
 var ixf = ixf || {}; // for use in keeping track of anything related to the IXF so we don't pollute the global namespace
-ixf.version = "1.1.2";
+ixf.version = "1.1.3";
 ixf.isSetup = {}; // for keeping track of things that are setup.
 
 // IE7/8 and FF < 4 have issues with the bigger sprites, trying to load them up as early in the process as possible. Even cached it needs time to parse
