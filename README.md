@@ -1,6 +1,6 @@
 # Interaction Framework (IxF)
 
-Version:  1.1.2
+Version:  1.1.3
 
 IxF is an open web framework used to quickly build out web application interfaces by having a good and consistent style, commonly used widgets, and an easy way to implement those widgets right out of the box. The goal of IxF is to make development and prototyping faster, to ensure best practices in UI design, and to ultimately make the user experience better.
 
