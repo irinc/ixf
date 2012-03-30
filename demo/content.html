@@ -2,19 +2,19 @@
 
 	$(function(){
 
-		$("table tbody a").click(function(){
+		$("#detail table tbody a").click(function(){
 			$(".ui-layout-center .padding-md").load($(this).attr("href"));
 			return false;
 		})
-		$(".stylebox").each(function(){
+		$("#detail .stylebox").each(function(){
 			$(this).addClass($(this).text());
 
 		});
-		$(".stylegroup .stylebox").each(function(){
+		$("#detail .stylegroup .stylebox").each(function(){
 			$(this).text("."+$(this).text())
 			$(this).wrap("<span class='styleboxwrapper'></span>")
 		});
-		$("#utility td").each(function(){
+		$("#detail #utility td").each(function(){
 			$(this).addClass($(this).text());
 			$(this).text("."+$(this).text())
 		});
