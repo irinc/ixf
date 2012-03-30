@@ -22,6 +22,13 @@ Start using IxF in a project by downloading the [KickStart](http://irinc.github.
 * Notice that the ixf directory is updated and the downloads/ixf-kickstart*.zip file has been generated.
 * Merge the changes in the ixf directory from the "master" branch to the "gh-pages" branch so that the website will use the latest build.
 
+## Running the IxF Website Locally
+
+*  Install [Jekkyl](https://github.com/mojombo/jekyll/wiki/install)
+*  In a terminal or command prompt, change to the directory where your IxF repo is installed.
+*  Run "jekyll --server" command.
+*  Open a browser window to http://localhost:4000
+
 ## Updating Documentation
 
 * Commit changes to the "gh-pages" branch.
