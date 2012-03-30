@@ -1,221 +1,85 @@
-<script type="text/javascript" charset="utf-8">
 
-	$(function(){
+<h1>Buttons</h1>
 
-		$("table tbody a").click(function(){
-			$(".ui-layout-center .padding-md").load($(this).attr("href"));
-			return false;
-		})
-		$(".stylebox").each(function(){
-			$(this).addClass($(this).text());
-
-		});
-		$(".stylegroup .stylebox").each(function(){
-			$(this).text("."+$(this).text())
-			$(this).wrap("<span class='styleboxwrapper'></span>")
-		});
-		$("#utility td").each(function(){
-			$(this).addClass($(this).text());
-			$(this).text("."+$(this).text())
-		});
-	})
-
-</script>
-<style type="text/css" media="screen">
-
-	.styleboxwrapper { background:#fff; margin:20px 0}
-	.stylegroup .styleboxwrapper { margin-right:10px;} /* separate to not have the margin in the intro text*/
-	.stylegroup { clear:both; overflow:hidden; }
-	.stylegroup .stylebox { display:inline-block; float:left;}
-	.stylegroup .styleboxwrapper { display:inline-block; float:left;  }
-	.makebox .stylebox { height:50px; width:100px; }
-	.makebox2 .styleboxwrapper { height:50px; width:100px; }
-	#utility td { height:50px; }
-</style>
-<p class="ixf-breadcrumb"><a href="#d">This is a</a> <span class="separator">&gt;</span> <a href="#d">Breadcrumb</a> <span class="separator">&gt;</span> <a href="#d">for your use and enjoyment</a></p>
-<!-- The .separator above isn't styled yet, but having the hook available is a good thing :) -->
-<h1>Content Styles</h1>
-
-<p>This page gives you a good one-stop-shop for seeing how many styles look.  There is another page for <a href="../demo/forms.html">form elements</a>.</p>
-
-<div class="ixf-tabs-wrapper ixf-set-minheight" id="styles">
-
-	<ul class="ixf-tabs">
-		<li><a href="#html"><span>Default HTML Styling</span></a></li>
-		<li><a href="#utility"><span>Utility Classes</span></a></li>
-	</ul>
-
-	<div id="html" class="padding-md">
-		<h3>Paragraphs</h3>
-
-		<p>Regular paragraph. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-		<blockquote>
-			<p>Inside a <code>&lt;blockquote&gt;</code>. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-		</blockquote>
-		<hr />
-
-		<h3>Unordered Lists</h3>
-		<ul>
-			<li>Unordered list test</li>
-			<li>Another list element. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-			<li>Yet another element in the list</li>
-			<li>Some long text. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-		</ul>
-
-		<h3>Ordered List</h3>
-		<ol>
-			<li>Ordered list test</li>
-			<li>Another list element</li>
-			<li>Yet another element in the list</li>
-		</ol>
-
-
-		<h3>Various</h3>
-		<ol>
-			<li>Ordered list</li>
-			<li>Here's a nested unordered list
-				<ul>
-					<li>Nested Unordered list</li>
-					<li>Nested ordered list
-						<ol>
-							<li>The first</li>
-							<li>And the second</li>
-						</ol>
-					</li>
-				</ul>
-			</li>
-			<li>Ordered List item</li>
-			<li>Nested Ordered list
-				<ol>
-					<li>Some point</li>
-					<li>Nested Unordered list
-						<ul>
-							<li>The first</li>
-							<li>And the second</li>
-						</ul>
-					</li>
-				</ol>
-			</li>
-		</ol>
-
-		<h3>Definition List</h3>
-		<dl>
-			<dt>Term A</dt>
-			<dd>Definition lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</dd>
-			<dt>Term B</dt>
-			<dd>Definition lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</dd>
-			<dt>Term C</dt>
-			<dd>Definition lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</dd>
-			<dt>Long Term D and Some Stuff Here</dt>
-			<dd>Definition lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</dd>
-		</dl>
-		<hr />
-
-		<h3>Headings</h3>
-		<h1>H1: Lorem ipsum dolor sit amet</h1>
-		<h2>H2: Lorem ipsum dolor sit amet, consectetur elit</h2>
-		<h3>H3: Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
-		<h4>H4: Lorem ipsum dolor sit amet, consectetur adipisicing elit adipis</h4>
-		<h5>H5: Lorem ipsum dolor sit amet, consectetur adipisicing elit adipisicing elit adipisicing elit</h5>
-		<h6>H6: Lorem ipsum dolor sit amet, consectetur adipisicing elit adipisicing elit adipisicing elit</h6>
-
-		<h1>Heading 1</h1><hr />
-		<h2>Heading 2</h2><hr />
-		<h3>Heading 3</h3><hr />
-		<h4>Heading 4</h4><hr />
-		<h5>Heading 5</h5><hr />
-		<h6>Heading 6</h6>
-		<hr />
-
-		<h3>Misc Elements</h3>
-		<p>
-			<strong>&lt;strong&gt;</strong><br />
-			<del>&lt;del&gt; deleted</del><br />
-			<dfn>&lt;dfn&gt; dfn</dfn><br />
-			<em>&lt;em&gt; emphasis</em>
-		</p>
-		<p>
-			<a>&lt;a&gt; anchor</a><br />
-			<a href="http://www.google.com">&lt;a&gt; a + href</a>
-		</p>
-		<p>
-			<abbr title="extended abbr text should show when mouse over">&lt;abbr&gt; abbr - extended text when mouseover.</abbr><br />
-			<acronym title="extended acronym text should show when mouse over">&lt;acronym&gt; acronym - extended text when mouseover.</acronym>
-		</p>
-		<address>
-			&lt;address&gt;<br />
-			Donald Duck<br />
-			Box 555<br />
-			Disneyland
-		</address>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore.</p>
-
-
-<pre>&lt;pre&gt;
-pre  space1
-pre  space1
-pre    space2
-pre    space2
-pre	tab
-pre	tab</pre>
-
-		<code>&lt;code&gt;
-			Not indented
-			indent1
-			indent1
-			indent2
-			indent3</code>
+<div id="examples">
+	<div class="example" id="anchors">
+		<h2>Anchors</h2>
+		<div class="source">
+			<a href="#d" class="ixf-button primary">Primary</a>
+			<a href="#d" class="ixf-button secondary">Secondary</a>
+			<a href="#d" class="ixf-button">Standard</a><br />
+			<a href="#d" class="ixf-button primary disabled" aria-disabled="true">Primary Disabled</a>
+			<a href="#d" class="ixf-button secondary disabled" aria-disabled="true">Secondary Disabled</a>
+			<a href="#d" class="ixf-button disabled" aria-disabled="true">Standard Disabled</a>
+		</div>
 	</div>
-	<div id="utility" class="padding-md">
-		<p>The IxF also offers a number of style options that help with layouts. Many of these aren't obvious by looking at the demos. You can use them by adding the class name to the object.</p>
-
-		<p>The element the style has been applied to is in <span class="stylebox">this color</span>. There is a wrapper around it that has <span class="styleboxwrapper">this treatment</span> to show any applied margins (which are normally not visible). The text may be abnormally close to the sides of the box. But since we are demoing padding and margin given by applying classes we can't add extra padding to look spiffy.</p>
-
-		<p>Most classes that have different sizes use the same xs, sm, md, lg, xl, xxl suffixes. This makes it easy to remember how to move up or down a size with whatever you are using. These are also used on the <a href="../demo/forms.html">forms</a> for text input fields and textareas (scroll down on the first tab).</p>
-
-		<h2>Padding and Margins</h2>
-		<p>By default, almost none of the components in the IxF have margins or padding on them relative to parent items. This is so that full width elements can be mixed with elements with an inset (see the sidebar of <a href="../demo/layout.html">this page</a> for an example). Padding and margins can be easily and consistently set with the following classes:</p>
-		<p><span class="stylebox">default</span></p>
-		<p class="stylegroup"><span class="stylebox">padding-xs</span> <span class="stylebox">padding-sm</span> <span class="stylebox">padding-md</span> <span class="stylebox">padding-lg</span> <span class="stylebox">padding-xl</span></p>
-		<p class="stylegroup"><span class="stylebox">margin-xs</span> <span class="stylebox">margin-sm</span> <span class="stylebox">margin-md</span> <span class="stylebox">margin-lg</span> <span class="stylebox">margin-xl</span></p>
-		<p class="stylegroup"><span class="stylebox">margin-top-xs</span> <span class="stylebox">margin-top-sm</span> <span class="stylebox">margin-top-md</span> <span class="stylebox">margin-top-lg</span> <span class="stylebox">margin-top-xl</span></p>
-		<p class="stylegroup"><span class="stylebox">margin-left-xs</span> <span class="stylebox">margin-left-sm</span> <span class="stylebox">margin-left-md</span> <span class="stylebox">margin-left-lg</span> <span class="stylebox">margin-left-xl</span></p>
-		<p class="stylegroup"><span class="stylebox">margin-right-xs</span> <span class="stylebox">margin-right-sm</span> <span class="stylebox">margin-right-md</span> <span class="stylebox">margin-right-lg</span> <span class="stylebox">margin-right-xl</span></p>
-		<p class="stylegroup"><span class="stylebox">margin-bottom-xs</span> <span class="stylebox">margin-bottom-sm</span> <span class="stylebox">margin-bottom-md</span> <span class="stylebox">margin-bottom-lg</span> <span class="stylebox">margin-bottom-xl</span></p>
-
-		<h2>Simple Text Alignment</h2>
-		<p class="stylegroup makebox"><span class="stylebox">left</span> <span class="stylebox">center</span> <span class="stylebox">right</span></p>
-
-		<h2>Vertical Alignment (Mostly for tables)</h2>
-		<table class="ixf-table fixed">
-			<tbody>
-			<tr>
-				<td>top</td>
-				<td>middle</td>
-				<td>bottom</td>
-				<td>baseline</td>
-			</tr>
-			</tbody>
-		</table>
-		<!-- END ixf-table -->
-
-		<h2>Floats</h2>
-		<p>These classes do NOT have any margin. The wrapping box was made bigger so you could see the float.</p>
-		<p class="stylegroup makebox2"><span class="stylebox">float-left</span> <span class="stylebox">float-right</span></p>
-
-		<h2>Clearing Without Extra Markup</h2>
-		<p>This can be added to a floated item or its parent. It will automatically clear the float when it's done.</p>
-		<p class="stylegroup"><span class="stylebox">clear</span></p>
-
-		<h2>Font Size</h2>
-		<p>Font sizes can be adjusted globally or per component with these classes.</p>
-		<p class="stylegroup"><span class="stylebox">text-xs</span> <span class="stylebox">text-sm</span> <span class="stylebox">text-md</span> <span class="stylebox">text-lg</span> <span class="stylebox">text-xl</span> <span class="stylebox">text-xxl</span></p>
-
-		<h2>Master/Detail Stuff</h2>
-		<p>When you have a master ixf-list or ixf-table in a sidebar, add the following style to change its behavior.</p>
-		<p class="stylegroup"><span class="stylebox">master</span></p>
-		<p>And when a list is right against the top or bottom of something, you can turn off the top or bottom borders to make it look better with these styles:</p>
-		<p class="stylegroup"><span class="stylebox">noline-top</span> <span class="stylebox">noline-bottom</span></p>
+	<div class="example" id="buttons2">
+		<h2>Buttons</h2>
+		<div class="source">
+			<button class="ixf-button primary">Primary</button>
+			<button class="ixf-button secondary">Secondary</button>
+			<button class="ixf-button">Standard</button><br />
+			<button class="ixf-button primary disabled" aria-disabled="true">Primary Disabled</button>
+			<button class="ixf-button secondary disabled" aria-disabled="true">Secondary Disabled</button>
+			<button class="ixf-button disabled" aria-disabled="true">Standard Disabled</button>
+		</div>
+	</div>
+	<div class="example" id="inputs">
+		<h2>inputs</h2>
+		<div class="source">
+			<input type="submit" class="ixf-button primary" value="Primary"/>
+			<input type="submit" class="ixf-button secondary" value="Secondary"/>
+			<input type="submit" class="ixf-button" value="Standard"/><br />
+			<input type="submit" class="ixf-button primary disabled" aria-disabled="true" value="Primary Disabled"/>
+			<input type="submit" class="ixf-button secondary disabled" aria-disabled="true" value="Secondary Disabled"/>
+			<input type="submit" class="ixf-button disabled" aria-disabled="true" value="Standard Disabled"/>
+		</div>
+	</div>
+	<div class="example" id="sizes">
+		<h2>Sizes</h2>
+		<p>This is changing the text size, not the button size.</p>
+		<div class="source">
+			<a href="#d" class="ixf-button text-xs">text-xs</a><br />
+			<a href="#d" class="ixf-button text-sm">text-sm</a><br />
+			<a href="#d" class="ixf-button text-md">text-md</a><br />
+			<a href="#d" class="ixf-button text-lg">text-lg</a>
+		</div>
+	</div>
+	<div class="example" id="withicons">
+		<h2>Button with icon</h2>
+		<div class="source">
+			<a href="#d" class="ixf-button"><span class="sprite prefix add">Button With Icon</span></a>
+		</div>
+	</div>
+	<div class="example" id="toolbar">
+		<h2>Toolbar</h2>
+		<p>Placing anchors inside of an element with <code>.ixf-toolbar</code> makes them act a little differently. They get a hover state and are sized a touch differenly.</p>
+		<div class="source">
+			<div class="ixf-toolbar">
+				<span class="tool"><a href="#X" class="sprite delete prefix">Delete Checked</a></span>
+				<span class="tool"><a href="#d" class="sprite add prefix" id="addItem">Add Item</a></span>
+				<div class="float-right ixf-form text-sm">
+					<select name="" id="">
+						<option>Option One</option>
+					</select>
+				</div>
+				<input type="text" name="some_name" value="" id="details-filter" class="float-right ixf-filter text-sm" />
+				<span class="tool float-right"><a href="#d" class="sprite add prefix" id="addItem">Add Item</a></span>
+			</div><!-- /ixf-toolbar -->
+		</div>
 	</div>
 </div>
+	
+
+<div class="ixf-tabs-wrapper" id="docs">
+	<ul class="ixf-tabs">
+		<li><a href="#overview"><span>Overview</span></a></li>
+		<li><a href="#documentation"><span>Documentation</span></a></li>
+		<li><a href="#ixfapi"><span>Ixf API</span></a></li>
+	</ul>
+	<div id="overview" class="padding-md"><p>Creates 100% CSS buttons that are easy to update.</p></div>
+	<div id="documentation" class="padding-md"><p>Simply add the class <code>ixf-button</code> to any <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code> or <code>&lt;input type="submit"&gt;</code> element.</p>
+<p>You can optionally add <code>primary</code> (green) or <code>secondary</code> (blue) buttons.</p>
+<p>For accessibility we may need to add the disabled word in using whatever class we use to hide things visually. Otherwise screen reader users have no idea it's disabled. Aria-disabled is applied but doesn't do anything in the screen reader (jaws) currently. Tried a title attribute but that isn't read either. Awaiting accessibility review.</p></div>
+	<div id="ixfapi" class="padding-md"><p>There is no currently exposed API via the IxF.</p></div>
+</div><!-- /ixf-tabs-wrapper -->
