@@ -1106,6 +1106,7 @@ a.ixf-tools-link.menu-arrow:after,.ixf-appname-link:after { /* not supported by 
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#e7e6e2', endColorstr='#cfceca');
 	text-align: left;
 	font-weight: normal;
+	line-height: 14px;
 	padding: 6px 10px;
 	vertical-align:bottom;
 	}
