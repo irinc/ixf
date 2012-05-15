@@ -1,7 +1,7 @@
 /*!
  * IxF Utilities
  * @description This file is for initializing all of the IXF functionality.
- * @version     1.1.3 - 2012/3/28
+ * @version     1.1.3 - 2012/5/15
  * @copyright   Copyright © 2012 Intellectual Reserve, Inc.
  * @URL         http://irinc.github.com/ixf
  * dependencies ixf-plugins.js
@@ -436,16 +436,19 @@ ixf.setupGeneral = function(container){ // run all the small one liners and simp
 				elem.click();
 				return false;
 			});
-		elem
-			.wrap(wrapper)
-			.addClass("ixf-file")
-			.bind("change.file",function(){
-				fakefile.val($(this).val());
+		//If'n we don't want to use IxF files
+		if (!$(this).hasClass('file-input-override')) {
+			elem
+				.wrap(wrapper)
+				.addClass("ixf-file")
+				.bind("change.file",function(){
+					fakefile.val($(this).val());
+				});
+			elem.after(fakebrowse).after(fakefile);
+			fakefile.bind("select",function(){
+				elem.trigger("select");
 			});
-		elem.after(fakebrowse).after(fakefile);
-		fakefile.bind("select",function(){
-			elem.trigger("select");
-		});
+		}
 	});
 // INITIALIZE PERCENTAGE BARS
 	$(".ixf-percentage",container).each(function(){

@@ -39,7 +39,7 @@ for($x=0; $x<100; $x++){
 	$name = getRand($lastNames).", ".getRand($firstNames);
 	// now put the above variables wherever you need them in some HTML
 ?>
-						<tr<?if(($x-1)%2){ echo ' class="even"';} else { echo ' class="odd"'; }?> id="family<?=$x;?>">
+						<tr class="<?=if(($x-1)%2){ echo 'even';} else { echo 'odd'; }?>" id="family<?=$x;?>">
 							<td><a href="../demo/finder-ajax.html?grab=family&amp;name=<?=$name;?>&amp;rowID=family<?=$x;?>"><?=$name;?></a></td>
 							<td><?=rand(0,9999)?> <?=$dir;?> <?=$street;?> St</td>
 							<td><?=$city;?></td>
