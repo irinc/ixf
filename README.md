@@ -37,6 +37,7 @@ are for the website/demo.
 ## Running the IxF Website Locally
 
 *  Install [Jekkyl](https://github.com/mojombo/jekyll/wiki/install)
+	* **Note for Macs** - If you have the version of Xcode from the Mac App Store, you may need to install the gcc compiler separately before you will be able to install jekyll. The [standalone gcc compiler](https://github.com/kennethreitz/osx-gcc-installer) is available on github.
 *  In a terminal or command prompt, change to the directory where your IxF repo is installed.
 *  Run "jekyll --server" command.
 *  Open a browser window to http://localhost:4000
