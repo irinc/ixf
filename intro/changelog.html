@@ -4,17 +4,24 @@ title: Changelog
 intro-menu-changelog: selected
 ---
 		<div class="grid-12">
-		<h3 id="1.1.3">Current Release - <a href="../downloads/ixf-kickstart-1.1.3.zip">1.1.3</a> - March 28, 2012</h3>
-		<ul>
-			<li>Added "ixf." prefix to all IxF jQuery Plugins (fixSelect, fillHeight, fixHeader, watermark, multiSelect, finder, masterDetail, and timePicker).</li>
-			<li>Fixed problem in ixf-utilities.js with IE 8- not having a String.trim() function.</li>
+		<h3 id="1.1.4">Current Release - <a href="../downloads/ixf-kickstart-1.1.4.zip">1.1.4</a> - July 18, 2012</h3>
+			<ul>
+				<li>Moved $.fn.dataTableExt functions to the end of the setupDataTables method, in case DataTables are not used.</li>
+				<li>Don't update [input type=file] if a class of "file-input-override" exists.</li>
+				<li>Fixed error when a tag with ixf-popup class doesn't have data-pop-source or href attributes.</li>
 		</ul>
 		
 		<h2>Previous Updates</h2>
 	
 		<div style="height:200px; overflow:auto">
 
-			<h3 id="1.1.2">Current Release - <a href="../downloads/ixf-kickstart-1.1.2.zip">1.1.2</a> - March 19, 2012</h3>
+			<h3 id="1.1.3"><a href="../downloads/ixf-kickstart-1.1.3.zip">1.1.3</a> - March 28, 2012</h3>
+			<ul>
+				<li>Added "ixf." prefix to all IxF jQuery Plugins (fixSelect, fillHeight, fixHeader, watermark, multiSelect, finder, masterDetail, and timePicker).</li>
+				<li>Fixed problem in ixf-utilities.js with IE 8- not having a String.trim() function.</li>
+			</ul>
+
+			<h3 id="1.1.2"><a href="../downloads/ixf-kickstart-1.1.2.zip">1.1.2</a> - March 19, 2012</h3>
 			<ul>
 				<li>Fixed problem (when using jQuery 1.6+) with ixf-autocomplete not populating the alternate input (referenced by the "data-ac-alternate-id" attribute of the "ixf-autocomplete" input) and you click on an item from the drop-down.</li>
 				<li>Fixed problem (when using jQuery 1.6+) with "data-layout-minSize", "data-layout-maxSize", and "data-layout-initClosed" attributes for layout configuration.</li>
