@@ -567,7 +567,7 @@ ixf.setupPopups = function(container){
 				setTitle = curtip.attr("title")?"":curtip.attr("title","&nbsp;"), // qtip script apparently requires a title, so give it one if it doesn't have one
 				source = curtip.data("pop-source"),
 				href = source?source:curtip.attr("href"),
-				isInline = source?source.trim().indexOf("#") === 0:href.trim().indexOf("#") === 0,
+				isInline = source?source.trim().indexOf("#") === 0:href && href.trim().indexOf("#") === 0,
 				content,
 				parentPanel = curtip.closest(".ixf-panel,.ixf-panels,body"),
 				options = {
@@ -800,7 +800,7 @@ ixf.setupDataTables = function(container){
 						info.find(".dt-results").text(matchedRows+" "); // extra space is for IE7
 					}
 
-					// update column soring titles
+					// update column sorting titles
 					ascCols = $(a.nTable).find("thead .sorting_asc a").attr("title",ixf.strings.columnSortAsc);
 					descCols = $(a.nTable).find("thead .sorting_desc a").attr("title",ixf.strings.columnSortDesc);
 					$(a.nTable).find("thead a").not(ascCols).not(descCols).attr("title","");
