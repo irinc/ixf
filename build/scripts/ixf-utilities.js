@@ -1088,27 +1088,30 @@ ixf.setupDataTables = function(container){
 	if($.ixf.fixHeader && !$("html").hasClass("ie7")){
 		$("table.ixf-fixed:not(.fixHeaderApplied)",container).fixHeader();
 	}
-}; // end setupDataTables
-// the following is a dataTable extension for sorting columns based on input/select/checkbox fields
-$.fn.dataTableExt.afnSortData['dom-inputs'] = function  ( oSettings, iColumn ){
-	var aData = [];
-	$( 'td:eq('+iColumn+') :input', oSettings.oApi._fnGetTrNodes(oSettings) ).each( function () {
-		var val = $(this).val();
-		if($(this).is(":checkbox")){
-			val = this.checked===true ? "1" : "0";
-		}
-		aData.push( val );
-	} );
-	return aData;
-};
-$.fn.dataTableExt.afnSortData['dom-checkbox'] = function  ( oSettings, iColumn ){
-	var aData = [];
-	$( 'td:eq('+iColumn+') input', oSettings.oApi._fnGetTrNodes(oSettings) ).each( function () {
-		aData.push( this.checked===true ? "1" : "0" );
-	} );
-	return aData;
-};
 
+	if($.fn.dataTableExt) {
+		// the following is a dataTable extension for sorting columns based on input/select/checkbox fields
+		$.fn.dataTableExt.afnSortData['dom-inputs'] = function  ( oSettings, iColumn ){
+			var aData = [];
+			$( 'td:eq('+iColumn+') :input', oSettings.oApi._fnGetTrNodes(oSettings) ).each( function () {
+				var val = $(this).val();
+				if($(this).is(":checkbox")){
+					val = this.checked===true ? "1" : "0";
+				}
+				aData.push( val );
+			} );
+			return aData;
+		};
+		$.fn.dataTableExt.afnSortData['dom-checkbox'] = function  ( oSettings, iColumn ){
+			var aData = [];
+			$( 'td:eq('+iColumn+') input', oSettings.oApi._fnGetTrNodes(oSettings) ).each( function () {
+				aData.push( this.checked===true ? "1" : "0" );
+			} );
+			return aData;
+		};
+	}
+
+}; // end setupDataTables
 
 // a collection of things that only need to be setup once. Live events, window level stuff, etc
 ixf.oneTime = function(){
