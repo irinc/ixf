@@ -1,7 +1,7 @@
 /*!
  * fillHeight
  * @description	allows one of X siblings to take up all available space that the other siblings are not taking up.
- * @version     1.0 beta 2  - 2010/10/08
+ * @version     1.0.2  - 2010/10/08
  * @copyright   Intellectual Reserve, Inc.
  * @URL         http://irinc.github.com/ixf
  * @requires	  ui.core.js (1.8+)
@@ -41,6 +41,6 @@
 	});
 
 	$.extend($.ixf.fillHeight, {
-		version: "1.0 beta 2"
+		version: "1.0.2"
 	});
 })(jQuery);

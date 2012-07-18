@@ -5,7 +5,7 @@ var path = require('path');
 var jsp = require("uglify-js").parser;
 var pro = require("uglify-js").uglify;
 
-var versionNumber = "1.1.3";
+var versionNumber = "1.1.4";
 
 console.log("\nBuilding IxF " + versionNumber + "...");
 
@@ -167,14 +167,14 @@ function generateKickstart(callback) {
 		subdir = "scripts", i, files = fs.readdirSync(srcDir + "/" + subdir),
 		length = files.length, fileName, data, out, now = new Date();
 
-	if(!path.existsSync(destDir))
+	if(!fs.existsSync(destDir))
 		fs.mkdirSync(destDir);
-	if(!path.existsSync(webDestDir))
+	if(!fs.existsSync(webDestDir))
 		fs.mkdirSync(webDestDir);
 
-	if(!path.existsSync(destDir + "/" + subdir))
+	if(!fs.existsSync(destDir + "/" + subdir))
 		fs.mkdirSync(destDir + "/" + subdir);
-	if(!path.existsSync(webDestDir + "/" + subdir))
+	if(!fs.existsSync(webDestDir + "/" + subdir))
 		fs.mkdirSync(webDestDir + "/" + subdir);
 
 	for(i=0; i<length; i++) {
@@ -219,9 +219,9 @@ function generateKickstart(callback) {
 	files = fs.readdirSync(srcDir + "/" + subdir);
 	length = files.length;
 
-	if(!path.existsSync(destDir + "/" + subdir))
+	if(!fs.existsSync(destDir + "/" + subdir))
 		fs.mkdirSync(destDir + "/" + subdir);
-	if(!path.existsSync(webDestDir + "/" + subdir))
+	if(!fs.existsSync(webDestDir + "/" + subdir))
 		fs.mkdirSync(webDestDir + "/" + subdir);
 
 	for(i=0; i<length; i++) {
@@ -248,9 +248,9 @@ function generateKickstart(callback) {
 	files = fs.readdirSync(srcDir + "/" + subdir);
 	length = files.length;
 
-	if(!path.existsSync(destDir + "/" + subdir))
+	if(!fs.existsSync(destDir + "/" + subdir))
 		fs.mkdirSync(destDir + "/" + subdir);
-	if(!path.existsSync(webDestDir + "/" + subdir))
+	if(!fs.existsSync(webDestDir + "/" + subdir))
 		fs.mkdirSync(webDestDir + "/" + subdir);
 
 	for(i=0; i<length; i++) {
@@ -265,7 +265,7 @@ function generateKickstart(callback) {
 
 	//Create Zip Files
 
-	if(!path.existsSync("../downloads"))
+	if(!fs.existsSync("../downloads"))
 		fs.mkdirSync("../downloads");
 
 	generateZipFile("kickstart","../downloads/ixf-kickstart-"+versionNumber+".zip", "kickstart/.gitignore", function() {
@@ -280,7 +280,7 @@ function generateZipFile(sourceDir, destinationPath, ignore, callback) {
 		path = require('path'), zip, command = 'zip ' + (ignore ? '-x ' + ignore : '') + ' -r ' + destinationPath + ' ' + sourceDir,
 		cwd = process.cwd();
 
-	if(path.existsSync(destinationPath)) {
+	if(fs.existsSync(destinationPath)) {
 		console.log("  Deleting: " + cwd + "/" + destinationPath);
 		fs.unlinkSync(destinationPath);
 	}

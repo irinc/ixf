@@ -1,6 +1,6 @@
 /*
  * IxF Style Sheet
- * @version   1.1.3 - 2012/3/28
+ * @version   1.1.4 - 2012/7/18
  * @copyright Copyright © 2012 Intellectual Reserve, Inc.
  * @URL       http://irinc.github.com/ixf
 */
@@ -1106,7 +1106,6 @@ a.ixf-tools-link.menu-arrow:after,.ixf-appname-link:after { /* not supported by 
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#e7e6e2', endColorstr='#cfceca');
 	text-align: left;
 	font-weight: normal;
-	line-height:14px;
 	padding: 6px 10px;
 	vertical-align:bottom;
 	}

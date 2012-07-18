@@ -1,2 +1,5 @@
 .idea
 _site
+build/scripts/ixf-plugins.js
+build/scripts/ixf-plugins.min.js
+build/scripts/ixf-utilities.min.js

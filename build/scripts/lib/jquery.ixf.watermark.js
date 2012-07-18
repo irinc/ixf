@@ -1,5 +1,5 @@
 /*!
- * jQuery UI Watermark 1.8.ixf.6
+ * jQuery UI Watermark 1.8.6
  *
  * Copyright (c) 2009 AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT (MIT-LICENSE.txt)
@@ -74,7 +74,7 @@
 
 
 	$.extend($.ixf.watermark, {
-		version: "1.8.ixf.5"
+		version: "1.8.6"
 	});
 
 })(jQuery);

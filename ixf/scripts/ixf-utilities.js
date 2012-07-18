@@ -1,7 +1,7 @@
 /*!
  * IxF Utilities
  * @description This file is for initializing all of the IXF functionality.
- * @version     1.1.3 - 2012/3/28
+ * @version     1.1.4 - 2012/7/18
  * @copyright   Copyright © 2012 Intellectual Reserve, Inc.
  * @URL         http://irinc.github.com/ixf
  * dependencies ixf-plugins.js
@@ -9,7 +9,7 @@
  */
 
 var ixf = ixf || {}; // for use in keeping track of anything related to the IXF so we don't pollute the global namespace
-ixf.version = "1.1.3";
+ixf.version = "1.1.4";
 ixf.isSetup = {}; // for keeping track of things that are setup.
 
 // IE7/8 and FF < 4 have issues with the bigger sprites, trying to load them up as early in the process as possible. Even cached it needs time to parse
@@ -436,16 +436,19 @@ ixf.setupGeneral = function(container){ // run all the small one liners and simp
 				elem.click();
 				return false;
 			});
-		elem
-			.wrap(wrapper)
-			.addClass("ixf-file")
-			.bind("change.file",function(){
-				fakefile.val($(this).val());
+		//If'n we don't want to use IxF files
+		if (!$(this).hasClass('file-input-override')) {
+			elem
+				.wrap(wrapper)
+				.addClass("ixf-file")
+				.bind("change.file",function(){
+					fakefile.val($(this).val());
+				});
+			elem.after(fakebrowse).after(fakefile);
+			fakefile.bind("select",function(){
+				elem.trigger("select");
 			});
-		elem.after(fakebrowse).after(fakefile);
-		fakefile.bind("select",function(){
-			elem.trigger("select");
-		});
+		}
 	});
 // INITIALIZE PERCENTAGE BARS
 	$(".ixf-percentage",container).each(function(){
@@ -564,7 +567,7 @@ ixf.setupPopups = function(container){
 				setTitle = curtip.attr("title")?"":curtip.attr("title","&nbsp;"), // qtip script apparently requires a title, so give it one if it doesn't have one
 				source = curtip.data("pop-source"),
 				href = source?source:curtip.attr("href"),
-				isInline = source?source.trim().indexOf("#") === 0:href.trim().indexOf("#") === 0,
+				isInline = source?source.trim().indexOf("#") === 0:href && href.trim().indexOf("#") === 0,
 				content,
 				parentPanel = curtip.closest(".ixf-panel,.ixf-panels,body"),
 				options = {
@@ -797,7 +800,7 @@ ixf.setupDataTables = function(container){
 						info.find(".dt-results").text(matchedRows+" "); // extra space is for IE7
 					}
 
-					// update column soring titles
+					// update column sorting titles
 					ascCols = $(a.nTable).find("thead .sorting_asc a").attr("title",ixf.strings.columnSortAsc);
 					descCols = $(a.nTable).find("thead .sorting_desc a").attr("title",ixf.strings.columnSortDesc);
 					$(a.nTable).find("thead a").not(ascCols).not(descCols).attr("title","");
@@ -1085,27 +1088,30 @@ ixf.setupDataTables = function(container){
 	if($.ixf.fixHeader && !$("html").hasClass("ie7")){
 		$("table.ixf-fixed:not(.fixHeaderApplied)",container).fixHeader();
 	}
-}; // end setupDataTables
-// the following is a dataTable extension for sorting columns based on input/select/checkbox fields
-$.fn.dataTableExt.afnSortData['dom-inputs'] = function  ( oSettings, iColumn ){
-	var aData = [];
-	$( 'td:eq('+iColumn+') :input', oSettings.oApi._fnGetTrNodes(oSettings) ).each( function () {
-		var val = $(this).val();
-		if($(this).is(":checkbox")){
-			val = this.checked===true ? "1" : "0";
-		}
-		aData.push( val );
-	} );
-	return aData;
-};
-$.fn.dataTableExt.afnSortData['dom-checkbox'] = function  ( oSettings, iColumn ){
-	var aData = [];
-	$( 'td:eq('+iColumn+') input', oSettings.oApi._fnGetTrNodes(oSettings) ).each( function () {
-		aData.push( this.checked===true ? "1" : "0" );
-	} );
-	return aData;
-};
 
+	if($.fn.dataTableExt) {
+		// the following is a dataTable extension for sorting columns based on input/select/checkbox fields
+		$.fn.dataTableExt.afnSortData['dom-inputs'] = function  ( oSettings, iColumn ){
+			var aData = [];
+			$( 'td:eq('+iColumn+') :input', oSettings.oApi._fnGetTrNodes(oSettings) ).each( function () {
+				var val = $(this).val();
+				if($(this).is(":checkbox")){
+					val = this.checked===true ? "1" : "0";
+				}
+				aData.push( val );
+			} );
+			return aData;
+		};
+		$.fn.dataTableExt.afnSortData['dom-checkbox'] = function  ( oSettings, iColumn ){
+			var aData = [];
+			$( 'td:eq('+iColumn+') input', oSettings.oApi._fnGetTrNodes(oSettings) ).each( function () {
+				aData.push( this.checked===true ? "1" : "0" );
+			} );
+			return aData;
+		};
+	}
+
+}; // end setupDataTables
 
 // a collection of things that only need to be setup once. Live events, window level stuff, etc
 ixf.oneTime = function(){
