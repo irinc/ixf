@@ -67,7 +67,7 @@ project will need.  Below are the plugins that are included in ixf-plugins.js:
 
 *  Install [Jekkyl](https://github.com/mojombo/jekyll/wiki/install)
 	* **Note for Macs** - If you have the version of Xcode from the Mac App Store, you may need to install the gcc compiler separately before you will be able to install jekyll. The [standalone gcc compiler](https://github.com/kennethreitz/osx-gcc-installer) is available on github.
-	* **Note for Windows** - To install ruby,  go to [rubyinstaller](rubyinstaller.org/downloads) and download/install the RubyInstaller AND the [DevKit](https://github.com/oneclick/rubyinstaller/wiki/Development-Kit).
+	* **Note for Windows** - To install ruby, go to [rubyinstaller.org](http://rubyinstaller.org/downloads/) and download/install the latest rubyinstaller-*.exe AND DevKit-*.exe.  Follow the [install instructions](http://github.com/oneclick/rubyinstaller/wiki/Development-Kit) for the DevKit.
 *  In a terminal or command prompt, change to the directory where your IxF repo is installed.
 *  Run "jekyll --server" command.
 *  Open a browser window to http://localhost:4000
