@@ -1,6 +1,6 @@
 /*!
  * MultiSelect
- * @description	Take a multiple select element and breakes it into individual selects
+ * @description	Takes a multiple select element and breaks it into individual selects
  * @version		  2.0.7 - 2011/08/16
  * @copyright   Intellectual Reserve, Inc.
  * @URL         http://irinc.github.com/ixf
