@@ -1,14 +1,13 @@
 /*!
  * fixHeader
  * @description	Fixes the header at the top of the page/scrollable element when it reaches the top. Scrolls of page with the end of the table.
- * @version		1.4  - 2011/04/11
+ * @version		1.5  - 2012/08/29
  * @copyright   Intellectual Reserve, Inc.
  * @URL         http://irinc.github.com/ixf
  * @requires	ui.core.js (1.8+)
  * @optional	jCaret (http://plugins.jquery.com/project/jCaret)
  */
 (function($) {
-	$.widget("ixf.fixHeader", {
 		options: {
 			classFilter: /margin\-bottom\-\w+/,
 			removeID:true,
@@ -185,11 +184,10 @@
 			self.update(); // update position in case a container changed
 		},
 		getCaret:function(elem){
-			var opts = this.options;
-			if($.fn.caret){
+			var opts = this.options, $elem = $(elem), type = $elem.attr("type");
+			if($.fn.caret && type!= "checkbox" && type != "radio"){
 				opts.cursorStart = $(elem).caret().start;
 				opts.cursorEnd = $(elem).caret().end;
-				// console.debug("getCaret",opts.cursorEnd);
 			}
 		},
 		update: function(){
@@ -320,7 +318,7 @@
 			var opts = this.options;
 			if(opts.lastCol !== undefined){
 				setTimeout(function(){ // need to give a few milliseconds for the clone to be put into place, else it will focus down at the bottom where it was originally
-					var cur = $("td:eq("+opts.lastCol+")",where).find("input,select");
+					var cur = $("td:eq("+opts.lastCol+")",where).find("input[type=text],select");
 					// cur.focus();
 					// console.debug("focus");
 					if($.fn.caret && cur.is("input") && cur.is("input:visible")){ // if jCaret plugin is available
