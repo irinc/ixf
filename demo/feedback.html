@@ -11,11 +11,14 @@ $(function(){
 	});
 	
 	//Loading Demo + Change Selected Row
-			$("#page-loading-demo").click(function(){
+			$("#page-loading-demo").click(function(e){
+				e.preventDefault();
 				$(".panel-loading").fadeIn();
 				setTimeout("loadMania()", 1300);	
 			});
-			$("#save-demo").click(function(){
+			$(".save-demo").click(function(e){
+				e.preventDefault();
+				resetSaved();
 				$(".saving-demo").fadeIn();
 				setTimeout("showSaved()", 3000);	
 			});
@@ -23,6 +26,10 @@ $(function(){
 				$(this).fadeOut();
 			});
 		}); //doc ready
+		function resetSaved(){
+			$(".saving p, .saving span").css("display", "inline-block");
+			$(".saved").hide();
+		}
 		function showSaved(){
 			$(".saving p, .saving span").hide();
 			$(".saved").fadeIn();
@@ -305,7 +312,7 @@ $(function(){
 <div id="tab-4" class="padding-lg">
 	
 	<p><a href="#d" id="page-loading-demo">Page Loading</a> &ndash; Used in the master/detail layout where the entire detail portion of the screen needs time to load. It can also be used when loading and entire page, regardless of layout, if there is a delay when loading content.</p>
-	<p><a href="#d" id="save-demo">Action Bar Saving</a> &ndash; When you click <strong>Save</strong>, this is a way of confirming with the user without leaving the page. When saving is complete, a small confirmation follows. The confirmation can stay there until the user navigates away from the page, or they can click to dismiss it.</p>
+	<p><a href="#d" class="save-demo">Action Bar Saving</a> &ndash; When you click <strong>Save</strong>, this is a way of confirming with the user without leaving the page. When saving is complete, a small confirmation follows. The confirmation can stay there until the user navigates away from the page, or they can click to dismiss it.</p>
 	
 	<form action="" method="get" class="ixf-form">
 		<input type="hidden" name="showErrors" value="true" id="showErrors" />
@@ -322,9 +329,9 @@ $(function(){
 	</div><!-- /ixf-tabs-wrapper -->
 
 	<div class="ixf-actions">
-	<a href="#x" class="ixf-button primary float-right">Save</a>
+	<a href="#x" class="save-demo ixf-button primary float-right">Save</a>
 		<div class="notifier saving saving-demo" style="display:none;"><p>Saving...</p><span></span><p class="sprite check prefix saved" style="display:none;">Saved</p></div>
 		<div class="notifier errors" id="notifier-error" style="display:none;"><p>7 Errors</p></div>
-	<a href="#x" class="ixf-button">Cancel</a>
+	<a href="javascript:void(0);" class="ixf-button">Cancel</a>
 
 	</div><!-- /ixf-actions -->
