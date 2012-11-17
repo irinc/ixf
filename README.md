@@ -1,4 +1,5 @@
-# Interaction Framework (IxF)
+# DEPRECATED - please use something similar like [Twitter Bootstrap](https://github.com/twitter/bootstrap).
+Interaction Framework (IxF)
 
 Version:  1.1.4
 
